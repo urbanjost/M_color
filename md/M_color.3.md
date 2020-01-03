@@ -105,30 +105,16 @@
           </ul>
         </dd><!-- ======================================================================= -->
 
-        <dt>SEE ALSO</dt>
-
-        <dd>
-          <p>A simple interactive javascript-based <a href="../../../public_html/javascript/color/iframe.html">color selector</a> lets you interactively
-          select colors.</p>
-
-          <p>The color wheel below was generated using a <a href="BOOK_M_draw.html">M_draw(3f)</a> graphics library program <a href=
-          "../PROGRAMS/huegif.f90">(huegif.f90)</a> that uses the M_color module.</p>
-
-          <div class="c13"><img alt="HLS circle" src="../images/hls.gif" width="50%" height="" /></div>
-        </dd><!-- ======================================================================= -->
 
         <dt>REFERENCES</dt>
 
         <dd>The algorithms are based on chapter 17 of "Fundamentals of Interactive Computer Graphics"; J. D. Foley and A. Van Dam.</dd>
-        <!-- ======================================================================= -->
 
       <dl>
-        <!-- ======================================================================= -->
 
         <dt><a name="RGBHLS" id="RGBHLS">NAME</a></dt>
 
         <dd>RGBHLS(3fp) - [M_color] Given red, green, and blue color components calculates the hue, lightness, and saturation for a color (LICENSE:PD)</dd>
-        <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>
 
@@ -145,7 +131,7 @@
     integer           :: status
    
 </pre>
-        </dd><!-- ======================================================================= -->
+        </dd>
 
         <dt>DESCRIPTION</dt>
 
@@ -157,191 +143,118 @@
             <table border="1">
               <tr>
                 <th>Color</th>
-
                 <th colspan="3">RGB</th>
-
                 <th colspan="3">HLS</th>
-
                 <th>Sample</th>
               </tr>
 
               <tr align="right">
                 <td align="left">Red</td>
-
                 <td width="30">100.0</td>
-
                 <td width="30">0.0</td>
-
                 <td width="30">0.0</td>
-
                 <td width="30">0</td>
-
                 <td width="30">50.0</td>
-
                 <td width="30">100.0</td>
-
                 <td class="c14"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Yellow</td>
-
                 <td>100.0</td>
-
                 <td>100.0</td>
-
                 <td>0.0</td>
-
                 <td>60</td>
-
                 <td>50.0</td>
-
                 <td>100.0</td>
-
                 <td class="c15"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Green</td>
-
                 <td>0.0</td>
-
                 <td>100.0</td>
-
                 <td>0.0</td>
-
                 <td>120</td>
-
                 <td>50.0</td>
-
                 <td>100.0</td>
-
                 <td class="c16"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Cyan</td>
-
                 <td>0.0</td>
-
                 <td>100.0</td>
-
                 <td>100.0</td>
-
                 <td>180</td>
-
                 <td>50.0</td>
-
                 <td>100.0</td>
-
                 <td class="c17"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Blue</td>
-
                 <td>0.0</td>
-
                 <td>0.0</td>
-
                 <td>100.0</td>
-
                 <td>240</td>
-
                 <td>50.0</td>
-
                 <td>100.0</td>
-
                 <td class="c18"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Magenta</td>
-
                 <td>100.0</td>
-
                 <td>0.0</td>
-
                 <td>100.0</td>
-
                 <td>300</td>
-
                 <td>50.0</td>
-
                 <td>100.0</td>
-
                 <td class="c19"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">White</td>
-
                 <td>100.0</td>
-
                 <td>100.0</td>
-
                 <td>100.0</td>
-
                 <td>(any)</td>
-
                 <td>100.0</td>
-
                 <td>(any)</td>
-
                 <td class="c20"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Black</td>
-
                 <td>0.0</td>
-
                 <td>0.0</td>
-
                 <td>0.0</td>
-
                 <td>(any)</td>
-
                 <td>0.0</td>
-
                 <td>(any)</td>
-
                 <td class="c21"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Maroon</td>
-
                 <td>50.0</td>
-
                 <td>0.0</td>
-
                 <td>0.0</td>
-
                 <td>0</td>
-
                 <td>25.0</td>
-
                 <td>100.0</td>
-
                 <td class="c22"></td>
               </tr>
 
               <tr align="right">
                 <td align="left">Pink</td>
-
                 <td>100.0</td>
-
                 <td>50.0</td>
-
                 <td>50.0</td>
-
                 <td>0</td>
-
                 <td>75.0</td>
-
                 <td>100.0</td>
-
                 <td class="c23"></td>
               </tr>
             </table>
