@@ -5,27 +5,17 @@
     <div id="Content">
       <h1><img src="../images/swirl.gif" height="140" width="140" /> Fortran color module M_color</h1>
 
-      <p>A GPF (General Purpose Fortran) example utility program <a href="../PROGRAMS/colors.f90">colors.f90</a> with a man(1) page <a href=
-      "colors.1.html">colors.1</a> exercises the module.</p>
-
       <dl>
-        <!-- ======================================================================= -->
 
         <dt><a name="M_COLOR" id="M_COLOR">NAME</a></dt>
 
         <dd><em>M_COLOR(3f)</em> - [M_color] a Fortran module that lets you convert between common color models (LICENSE:PD)</dd>
-        <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>
 
         <dd>
           <pre>
-   use M_color, only : &amp;
-
-      &amp; <a href="hue.3.html">hue</a>, &amp;
-      &amp; <a href="closest_color_name.3.html">closest_color_name</a>, &amp;
-      &amp; <a href="color_name2rgb.3.html">color_name2rgb</a>, &amp;
-      &amp; <a href="rgbmono.3.html">rgbmono</a>
+   use M_color, only : <a href="hue.3.md">hue</a>, <a href="closest_color_name.3.md">closest_color_name</a>, <a href="color_name2rgb.3.md">color_name2rgb</a>, <a href="rgbmono.3.md">rgbmono</a>
 </pre>
         </dd><!-- ======================================================================= -->
 
@@ -35,7 +25,7 @@
           <p>Highly accurate color conversions are a tricky business, and color is a complex topic; but these simplified conversions between common color
           models work quite well for most basic needs.</p>
 
-          <p>For most uses the only user routine called is <a href="hue.3.html">HUE(3f)</a> HUE(3f) is a single routine that interfaces to all the private
+          <p>For most uses the only user routine called is <a href="hue.3.md">HUE(3f)</a> HUE(3f) is a single routine that interfaces to all the private
           low-level color conversion routines to convert a color's components from one color model to another. HUE(3f) converts between the following color
           models:</p>
 
@@ -53,9 +43,9 @@
 
           <p>In addition to the reversible color model conversions there are a few other user-callable color-related procedures:</p>
           <pre>
-   <a href="closest_color_name.3.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-   <a href="color_name2rgb.3.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-   <a href="rgbmono.3.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
+   <a href="closest_color_name.3.md">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
+   <a href="color_name2rgb.3.md">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
+   <a href="rgbmono.3.md">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
 </pre>
 
           <h3>2*N Design of the module</h3>
