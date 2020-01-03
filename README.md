@@ -14,7 +14,7 @@ the document pages in the PROGRAMS/ sub-directory.
 
 ## DESCRIPTION
 The M_color Fortran module is described in the 
-<?
-<a href="md/M_color.3.md">M_color overview</a>.
+
+   file:md/M_color.3.md
 
 
