@@ -14,7 +14,6 @@ the document pages in the PROGRAMS/ sub-directory.
 
 ## DESCRIPTION
 The M_color Fortran module is described in the 
-<?
-<a href="md/M_color.3.md">M_color overview</a>.
+[M_color overview]("md/M_color.3.md">"top document for M_color.f90").
 
 
