@@ -10,7 +10,7 @@
       <h3><a name="0">NAME</a></h3>
 
       <blockquote>
-        <b>RGBMONO(3f)</b> - [M_color] converts RGB colors to a reasonable grayscale intensity. <b>(LICENSE:PD)</b>
+        <b>RGBMONO(3f)</b> - [M_color] converts RGB colors to a reasonable grayscale intensity. 
       </blockquote><a name="contents" id="contents"></a>
 
 

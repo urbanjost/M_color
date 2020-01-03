@@ -10,7 +10,7 @@
       <h3><a name="0">NAME</a></h3>
 
       <blockquote>
-        <b>huegif(1f)</b> - [M_pixel] generate color wheels as GIF pixmap files <b>(LICENSE:PD)</b>
+        <b>huegif(1f)</b> - [M_pixel] generate color wheels as GIF pixmap files 
       </blockquote><a name="contents" id="contents"></a>
 
       <h3><a name="6">SYNOPSIS</a></h3>

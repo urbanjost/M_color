@@ -9,7 +9,7 @@
 
         <dt><a name="M_COLOR" id="M_COLOR">NAME</a></dt>
 
-        <dd><em>M_COLOR(3f)</em> - [M_color] a Fortran module that lets you convert between common color models (LICENSE:PD)</dd>
+        <dd><em>M_COLOR(3f)</em> - [M_color] a Fortran module that lets you convert between common color models </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -25,42 +25,48 @@
           <p>Highly accurate color conversions are a tricky business, and color is a complex topic; but these simplified conversions between common color
           models work quite well for most basic needs.</p>
 
-          <p>For most uses the only user routine called is <a href="hue.3.md">HUE(3f)</a> HUE(3f) is a single routine that interfaces to all the private
+          <p>For most uses the only user routine called is <a href="hue.3.md">HUE(3f)</a>.  It is a single routine that interfaces to all the private
           low-level color conversion routines to convert a color's components from one color model to another. HUE(3f) converts between the following color
           models:</p>
 
           <ul>
             <li>RGB - Red, Green, Blue (color TV monitors)</li>
-
             <li>HLS - Hue, Lightness, Saturation</li>
-
             <li>CMY - Cyan, Magenta, Yellow (pigment-based printing devices)</li>
-
             <li>HSV - Hue, Saturation, Value</li>
-
             <li>YIQ - Broadcast TV color system</li>
           </ul>
 
           <p>In addition to the reversible color model conversions there are a few other user-callable color-related procedures:</p>
-          <pre>
-   <a href="closest_color_name.3.md">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-   <a href="color_name2rgb.3.md">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-   <a href="rgbmono.3.md">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
-</pre>
+         <ul> 
+          <li><a href="closest_color_name.3.md">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color </li>
+          <li><a href="color_name2rgb.3.md">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100 </li>
+          <li><a href="rgbmono.3.md">RGBMONO</a>:  convert RGB colors to a reasonable grayscale </li>
+         </ul>
 
           <h3>2*N Design of the module</h3>
 
-          <p>The rest of the library is composed of PRIVATE procedures. For each color model supported the general idea of the module is that there are two
-          routines for each color model:</p>
+          <h2>INTERNAL DESIGN</h2>
+
+          <p>
+	     For reference, the rest of the library is composed of PRIVATE
+             procedures. For each color model supported the general idea
+             of the module is that there are two
+             routines for each color model:
+	  </p>
 
           <ul>
             <li>One converts that model to the RGB model</li>
-
             <li>The other converts from RGB to that model</li>
           </ul>
 
-          <p>This allows conversions between all color models with only 2*N routines required to go from any model to any other. That is, to go from model A
-          to model B the intent is that the module would make two calls:</p>
+          <p>
+	     This allows conversions between all color models with only
+             2*N routines required to go from any model to any other. That
+             is, to go from model A to model B the intent is that the module
+             would make two calls:
+	  </p>
+
           <pre>
     call modelA2rgb(...)
     call rgb2modelB(...)
@@ -104,7 +110,7 @@
 
         <dt><a name="RGBHLS" id="RGBHLS">NAME</a></dt>
 
-        <dd>RGBHLS(3fp) - [M_color] Given red, green, and blue color components calculates the hue, lightness, and saturation for a color (LICENSE:PD)</dd>
+        <dd>RGBHLS(3fp) - [M_color] Given red, green, and blue color components calculates the hue, lightness, and saturation for a color </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -258,7 +264,7 @@
         <dt><a name="RGBHVS" id="RGBHVS">NAME</a></dt>
 
         <dd>RGBHVS(3fp) - [M_color] calculates the hue, value, &amp; saturation for a color given in red, green, &amp; blue components values.
-        (LICENSE:PD)</dd>
+        </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -495,7 +501,7 @@
 
         <dt><a name="CMYRGB" id="CMYRGB">NAME</a></dt>
 
-        <dd>cmyrgb(3fp) - [M_color] calculates the cyan, magenta, and yellow components given the red, green, and blue component values. (LICENSE:PD)</dd>
+        <dd>cmyrgb(3fp) - [M_color] calculates the cyan, magenta, and yellow components given the red, green, and blue component values. </dd>
         <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>
@@ -526,7 +532,7 @@
 
         <dt><a name="RGBCMY" id="RGBCMY">NAME</a></dt>
 
-        <dd>rgbcmy(3fp) - [M_color] calculates the cyan, magenta, and yellow components given the red, green, and blue component values. (LICENSE:PD)</dd>
+        <dd>rgbcmy(3fp) - [M_color] calculates the cyan, magenta, and yellow components given the red, green, and blue component values. </dd>
         <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>
@@ -676,7 +682,7 @@
 
         <dt><a name="RGBVAL" id="RGBVAL">NAME</a></dt>
 
-        <dd>RGBVAL(3fp) - [M_color] is an internal private function used by hlsrgb(3fp). (LICENSE:PD)</dd>
+        <dd>RGBVAL(3fp) - [M_color] is an internal private function used by hlsrgb(3fp). </dd>
         <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>
@@ -703,7 +709,7 @@
         <dt><a name="HLSRGB" id="HLSRGB">NAME</a></dt>
 
         <dd>HLSRGB(3fp) - [M_color] calculates the red, green, &amp; blue components for a color given in hue, lightness, &amp; saturation values.
-        (LICENSE:PD)</dd>
+        </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -734,7 +740,7 @@
         <dt><a name="HVSRGB" id="HVSRGB">NAME</a></dt>
 
         <dd>HVSRGB(3fp) - [M_color] calculates the red, green, &amp; blue components for a color given in hue, value, &amp; saturation values.
-        (LICENSE:PD)</dd><!-- ======================================================================= -->
+        </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -751,22 +757,19 @@
     integer           :: status
    
 </pre>
-        </dd><!-- ======================================================================= -->
+        </dd>
 
         <dt>DESCRIPTION</dt>
 
         <dd>HVSRGB() calculates the red, green, &amp; blue components for a color given in hue, value, &amp; saturation values.</dd>
-        <!-- ======================================================================= -->
 
       </dl>
 
       <dl>
-        <!-- ======================================================================= -->
 
         <dt><a name="YIQRGB" id="YIQRGB">NAME</a></dt>
 
-        <dd>YIQRGB(3fp) - [M_color] Convert luma, orange-blue chrominance, and purple-green chrominance to RGB values. (LICENSE:PD)</dd>
-        <!-- ======================================================================= -->
+        <dd>YIQRGB(3fp) - [M_color] Convert luma, orange-blue chrominance, and purple-green chrominance to RGB values. </dd>
 
         <dt>SYNOPSIS</dt>
 
@@ -793,7 +796,7 @@
 
         <dt><a name="RGBYIQ" id="RGBYIQ">NAME</a></dt>
 
-        <dd>RGBYIQ(3fp) - [M_color] Convert RGB values to luma, orange-blue chrominance, and purple-green chrominance. (LICENSE:PD)</dd>
+        <dd>RGBYIQ(3fp) - [M_color] Convert RGB values to luma, orange-blue chrominance, and purple-green chrominance.</dd>
         <!-- ======================================================================= -->
 
         <dt>SYNOPSIS</dt>

@@ -10,7 +10,7 @@
       <h3><a name="0">NAME</a></h3>
 
       <blockquote>
-        <b>closest_color_name(3f)</b> - [M_color] returns the closest name for the given RGB values. <b>(LICENSE:PD)</b>
+        <b>closest_color_name(3f)</b> - [M_color] returns the closest name for the given RGB values. 
       </blockquote><a name="contents" id="contents"></a>
 
 

@@ -5,7 +5,7 @@
       <dl>
         <dt><a name="HUE" id="HUE">NAME</a></dt>
 
-        <dd>HUE(3f) - [M_color] converts a color's components from one color model to another. (LICENSE:PD)</dd>
+        <dd>HUE(3f) - [M_color] converts a color's components from one color model to another. </dd>
 
         <dt>SYNOPSIS</dt>
 

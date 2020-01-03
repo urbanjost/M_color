@@ -10,7 +10,7 @@
       <h3><a name="0">NAME</a></h3>
 
       <blockquote>
-        <b>COLOR_NAME2RGB(3f)</b> - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. <b>(LICENSE:PD)</b>
+        <b>COLOR_NAME2RGB(3f)</b> - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. 
       </blockquote><a name="contents" id="contents"></a>
 
 
