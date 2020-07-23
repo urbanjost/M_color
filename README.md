@@ -14,8 +14,8 @@ The M_color Fortran module is described in the
     # change Makefile if not using gfortran(1) 
     make
 
-This will compile the M_color module and build all the example programs from
-the document pages in the PROGRAMS/ sub-directory.
+This will compile the M_color module and build all the example programs
+from the document pages in the PROGRAMS/ sub-directory.
 
 ## SUPPORTS FPM (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )
 
