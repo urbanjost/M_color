@@ -32,5 +32,7 @@ fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/
 
 or just list it as a dependency in your fpm.toml project file.
 
+```toml
      [dependencies]
      M_color        = { git = "https://github.com/urbanjost/M_color.git" }
+```

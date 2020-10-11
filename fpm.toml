@@ -5,3 +5,28 @@ author = "John S. Urban"
 maintainer = "urbanjost@comcast.net"
 copyright = "2020 John S. Urban"
 description = "conversions between common color models "
+
+[[executable]]
+name="color_name2rgb"
+source-dir="PROGRAMS/color_name2rgb"
+main="color_name2rgb.f90"
+
+[[executable]]
+name="closest_color_name"
+source-dir="PROGRAMS/closest_color_name"
+main="closest_color_name.f90"
+
+[[executable]]
+name="hue"
+source-dir="PROGRAMS/hue"
+main="hue.f90"
+
+[[executable]]
+name="rgbmono"
+source-dir="PROGRAMS/rgbmono"
+main="rgbmono.f90"
+
+[[test]]
+name="runTests"
+source-dir="test"
+main="test_suite_M_color.f90"
