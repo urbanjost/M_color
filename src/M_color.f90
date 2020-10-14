@@ -14,10 +14,10 @@
 !!
 !!    use M_color, only : &amp;
 !!
-!!       &amp; <a href="hue.3.html">hue</a>, &amp;
-!!       &amp; <a href="closest_color_name.3.html">closest_color_name</a>, &amp;
-!!       &amp; <a href="color_name2rgb.3.html">color_name2rgb</a>, &amp;
-!!       &amp; <a href="rgbmono.3.html">rgbmono</a>
+!!       &amp; <a href="hue.3color.html">hue</a>, &amp;
+!!       &amp; <a href="closest_color_name.3color.html">closest_color_name</a>, &amp;
+!!       &amp; <a href="color_name2rgb.3color.html">color_name2rgb</a>, &amp;
+!!       &amp; <a href="rgbmono.3color.html">rgbmono</a>
 !! </pre>
 !! </dd>
 !! <!-- ======================================================================= -->
@@ -33,7 +33,7 @@
 !!
 !! <p>
 !!    Typically the only user routine called is
-!!    <a href="hue.3.html">HUE(3f)</a>.
+!!    <a href="hue.3color.html">HUE(3f)</a>.
 !!    HUE(3f) is a single routine that interfaces to all the private
 !!    low-level color conversion routines to convert a color's components
 !!    from one color model to another. HUE(3f) converts between the
@@ -55,9 +55,9 @@
 !!
 !! <pre>
 !!
-!!    <a href="closest_color_name.3.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-!!    <a href="color_name2rgb.3.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-!!    <a href="rgbmono.3.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
+!!    <a href="closest_color_name.3color.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
+!!    <a href="color_name2rgb.3color.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
+!!    <a href="rgbmono.3color.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
 !! </pre>
 !!
 !! <h3> 2*N Design of the module</h3>
