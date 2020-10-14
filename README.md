@@ -1,4 +1,5 @@
 # M_color.f90 and associated files
+![M-color](docs/images/hls_small.gif)
 
 ## NAME
 
