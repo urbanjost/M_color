@@ -3,7 +3,7 @@
 
   <div id="Container">
     <div id="Content">
-      <h1><img src="../images/swirl.gif" height="140" width="140" /> Fortran color module M_color</h1>
+      <h1><img src="../docs/images/swirl.gif" height="140" width="140" /> Fortran color module M_color</h1>
 
       <dl>
 

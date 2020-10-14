@@ -2,11 +2,17 @@
 
 ## NAME
 
-   M_color - Fortran module for converting between color models
+M_color - Fortran module for converting between color models
 
 ## DESCRIPTION
 The M_color Fortran module is described in the 
 [M_color overview](md/M_color.3.md "top document for M_color.f90").
+which also comes in the distribution as manpages and as individual 
+[HTML](docs/man3.html "HTML index for M_color.f90")
+documents as well as in a 
+[single HTML document](docs/BOOK_M_color.html)
+(requires javascript)
+
 
 ## DOWNLOAD
     git clone https://github.com/urbanjost/M_color.git
@@ -15,7 +21,7 @@ The M_color Fortran module is described in the
     make
 
 This will compile the M_color module and build all the example programs
-from the document pages in the PROGRAMS/ sub-directory.
+from the document pages in the test/demos/ sub-directory.
 
 ## SUPPORTS FPM
 #### (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )

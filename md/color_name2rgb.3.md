@@ -63,7 +63,7 @@
 </pre>
       </blockquote><a name="4"></a>
 
-      <div class="c5"><img src="../images/color_name2rgb.3.gif" /></div>
+      <div class="c5"><img src="../docs/images/color_name2rgb.3.gif" /></div>
     </div>
   </div>
 </body>

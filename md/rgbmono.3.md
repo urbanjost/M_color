@@ -147,7 +147,7 @@
     Pink       65.0000000
 <br />
 </pre>
-      <div class="c31"><img src="../images/rgbmono.3.gif" /></div>
+      <div class="c31"><img src="../docs/images/rgbmono.3.gif" /></div>
     </div>
   </div>
 </body>

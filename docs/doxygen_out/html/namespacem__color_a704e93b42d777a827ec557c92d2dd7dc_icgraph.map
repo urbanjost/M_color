@@ -1,0 +1,7 @@
+<map id="m_color::lower" name="m_color::lower">
+<area shape="rect" id="node2" href="$namespacem__color.html#a56dd07bbf1378ccc78a230d171f9d429" title="m_color::hue" alt="" coords="212,56,319,83"/>
+<area shape="rect" id="node5" href="$namespacem__color.html#a84a36043d278bc56a7148483a862dec8" title="NAMECOLOR_NAME2RGB(3f) &#45; [M_color] returns the RGB values in the range 0 to 100 for a given known col..." alt="" coords="172,107,359,133"/>
+<area shape="rect" id="node3" href="$namespacem__color.html#a40e6c91da216384eded2157cdaf86eba" title="m_color::hlsrgb" alt="" coords="451,5,573,32"/>
+<area shape="rect" id="node4" href="$namespacem__color.html#a334ec90d94bbfb9a4c08c5f9efdb8c47" title="m_color::hvsrgb" alt="" coords="449,56,575,83"/>
+<area shape="rect" id="node6" href="$namespacem__color.html#acad72628ee0b77cf87f40cd46734fb18" title="NAMEclosest_color_name(3f) &#45; [M_color] returns the closest name for the given RGB values..." alt="" coords="407,107,617,133"/>
+</map>

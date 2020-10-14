@@ -1,0 +1,8 @@
+##extract demo programs from FF file
+##put images where github can access them, and style sheets
+
+ffpm build uses include files
+
+80 character limit to manpages
+
+test program that shows help text

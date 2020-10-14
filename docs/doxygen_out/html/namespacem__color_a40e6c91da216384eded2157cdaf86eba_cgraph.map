@@ -1,0 +1,12 @@
+<map id="m_color::hlsrgb" name="m_color::hlsrgb">
+<area shape="rect" id="node2" href="$namespacem__color.html#a56dd07bbf1378ccc78a230d171f9d429" title="m_color::hue" alt="" coords="184,157,291,184"/>
+<area shape="rect" id="node11" href="$namespacem__color.html#a3e97e24dba7b820f685f13eaa64a6caa" title="m_color::rgbval" alt="" coords="176,208,299,235"/>
+<area shape="rect" id="node3" href="$namespacem__color.html#a704e93b42d777a827ec557c92d2dd7dc" title="m_color::lower" alt="" coords="353,5,471,32"/>
+<area shape="rect" id="node4" href="$namespacem__color.html#a334ec90d94bbfb9a4c08c5f9efdb8c47" title="m_color::hvsrgb" alt="" coords="349,56,475,83"/>
+<area shape="rect" id="node5" href="$namespacem__color.html#ab91687e87d0901874e52efe5933e3044" title="m_color::cmyrgb" alt="" coords="347,107,477,133"/>
+<area shape="rect" id="node6" href="$namespacem__color.html#ac9cd845fb9975144a6deb3a21ce29a29" title="m_color::yiqrgb" alt="" coords="351,157,473,184"/>
+<area shape="rect" id="node7" href="$namespacem__color.html#a1dd027cbe65112af243d26195b1fc49a" title="m_color::rgbhls" alt="" coords="351,208,473,235"/>
+<area shape="rect" id="node8" href="$namespacem__color.html#a76f00e1d418c4904a963094bc730a0e6" title="m_color::rgbhvs" alt="" coords="349,259,475,285"/>
+<area shape="rect" id="node9" href="$namespacem__color.html#ad6e8505eef5add299c4475d289f3c5c5" title="m_color::rgbcmy" alt="" coords="347,309,477,336"/>
+<area shape="rect" id="node10" href="$namespacem__color.html#a386d004a1392b7e01ff66f1676d43def" title="m_color::rgbyiq" alt="" coords="351,360,473,387"/>
+</map>

@@ -8,25 +8,25 @@ description = "conversions between common color models "
 
 [[executable]]
 name="color_name2rgb"
-source-dir="PROGRAMS/color_name2rgb"
+source-dir="test/demos/color_name2rgb"
 main="color_name2rgb.f90"
 
 [[executable]]
 name="closest_color_name"
-source-dir="PROGRAMS/closest_color_name"
+source-dir="test/demos/closest_color_name"
 main="closest_color_name.f90"
 
 [[executable]]
 name="hue"
-source-dir="PROGRAMS/hue"
+source-dir="test/demos/hue"
 main="hue.f90"
 
 [[executable]]
 name="rgbmono"
-source-dir="PROGRAMS/rgbmono"
+source-dir="test/demos/rgbmono"
 main="rgbmono.f90"
 
-[[test]]
-name="runTests"
-source-dir="test"
-main="test_suite_M_color.f90"
+#[[test]]
+#name="runTests"
+#source-dir="test/test_suite"
+#main="test_suite_M_color.f90"

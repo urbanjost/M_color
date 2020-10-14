@@ -77,7 +77,7 @@
         </table>
       </blockquote><a name="4"></a>
 
-      <div class="c9"><img src="../images/huegif.1.gif" /></div>
+      <div class="c9"><img src="../docs/images/huegif.1.gif" /></div>
     </div>
   </div>
 </body>

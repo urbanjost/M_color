@@ -103,7 +103,7 @@ subroutine <b>closest_color_name</b>(r,g,b,closestname)
 </pre>
       </blockquote><a name="6"></a>
 
-      <div class="c1"><img src="../images/closest_color_name.3.gif" /></div>
+      <div class="c1"><img src="../docs/images/closest_color_name.3.gif" /></div>
     </div>
   </div>
 </body>
