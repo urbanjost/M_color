@@ -116,10 +116,10 @@ COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for 
 <p class="enddd"></p>
 </dd>
 <dt>SYNOPSIS </dt>
-<dd><pre></pre><pre>    use M_color, only : &amp;</pre><pre>       &amp; <a href="hue.3.html">hue</a>, &amp;
-       &amp; <a href="closest_color_name.3.html">closest_color_name</a>, &amp;
-       &amp; <a href="color_name2rgb.3.html">color_name2rgb</a>, &amp;
-       &amp; <a href="rgbmono.3.html">rgbmono</a>
+<dd><pre></pre><pre>    use M_color, only : &amp;</pre><pre>       &amp; <a href="hue.3m_color.html">hue</a>, &amp;
+       &amp; <a href="closest_color_name.3m_color.html">closest_color_name</a>, &amp;
+       &amp; <a href="color_name2rgb.3m_color.html">color_name2rgb</a>, &amp;
+       &amp; <a href="rgbmono.3m_color.html">rgbmono</a>
  </pre> <p class="enddd"></p>
 </dd>
 <dt>DESCRIPTION </dt>
@@ -130,7 +130,7 @@ COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for 
 <p>Highly accurate color conversions are a tricky business, and color is a complex topic; but these simplified conversions between common color models work quite well for basic conversions. </p>
 <p></p>
 <p></p>
-<p>Typically the only user routine called is <a href="hue.3.html">HUE(3f)</a>. HUE(3f) is a single routine that interfaces to all the private low-level color conversion routines to convert a color's components from one color model to another. HUE(3f) converts between the following color models: </p>
+<p>Typically the only user routine called is <a href="hue.3m_color.html">HUE(3f)</a>. HUE(3f) is a single routine that interfaces to all the private low-level color conversion routines to convert a color's components from one color model to another. HUE(3f) converts between the following color models: </p>
 <p></p>
 <ul>
 <li>
@@ -147,9 +147,9 @@ YIQ - Broadcast TV color system </li>
 <p></p>
 <p>In addition to the reversible color model conversions there are a few other user-callable color-related procedures: </p>
 <p></p>
-<pre></pre><pre>    <a href="closest_color_name.3.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-    <a href="color_name2rgb.3.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-    <a href="rgbmono.3.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
+<pre></pre><pre>    <a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
+    <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
+    <a href="rgbmono.3m_color.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
  </pre><h3>2*N Design of the module</h3>
 <p></p>
 <p></p>
