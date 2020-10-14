@@ -9,9 +9,9 @@ M_color - Fortran module for converting between color models
 The M_color Fortran module is described in the 
 [M_color overview](md/M_color.3.md "top document for M_color.f90").
 which also comes in the distribution as manpages and as individual 
-[HTML](docs/man3.html "HTML index for M_color.f90")
+[HTML](https://urbanjost.github.io/M_color/man3.html "HTML index for M_color.f90")
 documents as well as in a 
-[single HTML document](docs/BOOK_M_color.html)
+[single HTML document](https://urbanjost.github.io/M_color/BOOK_M_color.html)
 (requires javascript)
 
 
