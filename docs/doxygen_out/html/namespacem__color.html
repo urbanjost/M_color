@@ -83,7 +83,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="separator:ad6e8505eef5add299c4475d289f3c5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca19999686fc20d79da580c6a643dc35"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__color.html#aca19999686fc20d79da580c6a643dc35">rgbmono</a> (rr, rg, rb, ri, status)</td></tr>
 <tr class="memdesc:aca19999686fc20d79da580c6a643dc35"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>NAME</h2>
-RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity. (LICENSE:PD)  <a href="#aca19999686fc20d79da580c6a643dc35">More...</a><br /></td></tr>
+RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity (LICENSE:PD)  <a href="#aca19999686fc20d79da580c6a643dc35">More...</a><br /></td></tr>
 <tr class="separator:aca19999686fc20d79da580c6a643dc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e97e24dba7b820f685f13eaa64a6caa"><td class="memItemLeft" align="right" valign="top">real function, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__color.html#a3e97e24dba7b820f685f13eaa64a6caa">rgbval</a> (clr1, clr2, h)</td></tr>
 <tr class="separator:a3e97e24dba7b820f685f13eaa64a6caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,13 +97,11 @@ RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity.
 <tr class="separator:a386d004a1392b7e01ff66f1676d43def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad72628ee0b77cf87f40cd46734fb18"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__color.html#acad72628ee0b77cf87f40cd46734fb18">closest_color_name</a> (r, g, b, closestname)</td></tr>
 <tr class="memdesc:acad72628ee0b77cf87f40cd46734fb18"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>NAME</h2>
-closest_color_name(3f) - [M_color] returns the closest name for the given RGB values. (LICENSE:PD) </p><h2>SYNOPSIS</h2>
- <a href="#acad72628ee0b77cf87f40cd46734fb18">More...</a><br /></td></tr>
+closest_color_name(3f) - [M_color] returns the closest name for the given RGB values. (LICENSE:PD)  <a href="#acad72628ee0b77cf87f40cd46734fb18">More...</a><br /></td></tr>
 <tr class="separator:acad72628ee0b77cf87f40cd46734fb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84a36043d278bc56a7148483a862dec8"><td class="memItemLeft" align="right" valign="top">subroutine, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__color.html#a84a36043d278bc56a7148483a862dec8">color_name2rgb</a> (name, r, g, b, echoname)</td></tr>
 <tr class="memdesc:a84a36043d278bc56a7148483a862dec8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>NAME</h2>
-COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. (LICENSE:PD) </p><h2>SYNOPSIS</h2>
- <a href="#a84a36043d278bc56a7148483a862dec8">More...</a><br /></td></tr>
+COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. (LICENSE:PD)  <a href="#a84a36043d278bc56a7148483a862dec8">More...</a><br /></td></tr>
 <tr class="separator:a84a36043d278bc56a7148483a862dec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704e93b42d777a827ec557c92d2dd7dc"><td class="memItemLeft" align="right" valign="top">elemental pure character(len(str)) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacem__color.html#a704e93b42d777a827ec557c92d2dd7dc">lower</a> (str)</td></tr>
 <tr class="separator:a704e93b42d777a827ec557c92d2dd7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,44 +266,30 @@ The other converts from RGB to that model  </li>
 </div><div class="memdoc">
 
 <p><h2>NAME</h2>
-closest_color_name(3f) - [M_color] returns the closest name for the given RGB values. (LICENSE:PD) </p><h2>SYNOPSIS</h2>
-</p>
-<p>subroutine closest_color_name(r,g,b,closestname)</p>
-<p>real,intent(in) :: r,g,b character(len=20),intent(out) :: closestname </p><h2>DESCRIPTION</h2>
-<pre class="fragment"> closest_color_name() returns the closest name for the given RGB values.
- Most X11 Windows color names are supported.
-</pre><h2>OPTIONS</h2>
-<pre class="fragment"> R   red component, range of 0 to 100
- G   green component, range of 0 to 100
- B   blue component, range of 0 to 100
-</pre><h2>RETURNS</h2>
-<pre class="fragment"> CLOSESTNAME   name of color found closest to given RGB value&lt;/li&gt;
-</pre><h2>EXAMPLE</h2>
-<pre class="fragment">Sample program
+closest_color_name(3f) - [M_color] returns the closest name for the given RGB values. (LICENSE:PD) </p>
+<h2>SYNOPSIS</h2>
+<pre class="fragment">subroutine closest_color_name(r,g,b,closestname)
 
-    program demo_closest_color_name
-    use M_color, only : closest_color_name
-    character(len=100) :: string ! at least 20 characters
-    string=' '
-
-    call closest_color_name(100.0,  0.0,  0.0,string)
-    write(*,*)trim(string)
-
-    call closest_color_name(  0.0,100.0,  0.0,string)
-    write(*,*)trim(string)
-
-    call closest_color_name(  0.0,  0.0,100.0,string)
-    write(*,*)trim(string)
-
-    end program demo_closest_color_name
-
-Results:
-
-    red
-    green
-    blue
-</pre> <h2>AUTHOR</h2>
-<p>John S. Urban </p><h2>LICENSE</h2>
+ real,intent(in)               :: r,g,b
+ character(len=20),intent(out) :: closestname
+</pre><h2>DESCRIPTION</h2>
+<p><a class="el" href="namespacem__color.html#acad72628ee0b77cf87f40cd46734fb18" title="NAMEclosest_color_name(3f) - [M_color] returns the closest name for the given RGB values...">closest_color_name()</a> returns the closest name for the given RGB values. Most X11 Windows color names are supported.</p>
+<h2>OPTIONS</h2>
+<p>R red component, range of 0 to 100 G green component, range of 0 to 100 B blue component, range of 0 to 100</p>
+<h2>RETURNS</h2>
+<p>CLOSESTNAME name of color found closest to given RGB value</p>
+<h2>EXAMPLE</h2>
+<p>Sample program</p>
+<p>program demo_closest_color_name use M_color, only : closest_color_name character(len=100) :: string ! at least 20 characters string=' '</p>
+<p>call closest_color_name(100.0, 0.0, 0.0,string) write(*,*)trim(string)</p>
+<p>call closest_color_name( 0.0,100.0, 0.0,string) write(*,*)trim(string)</p>
+<p>call closest_color_name( 0.0, 0.0,100.0,string) write(*,*)trim(string)</p>
+<p>end program demo_closest_color_name</p>
+<p>Results:</p>
+<p>red green blue</p>
+<h2>AUTHOR</h2>
+<p>John S. Urban</p>
+<h2>LICENSE</h2>
 <p>Public Domain </p>
 
 <p class="reference">References <a class="el" href="namespacem__color.html#a84a36043d278bc56a7148483a862dec8">color_name2rgb()</a>.</p>
@@ -476,15 +460,16 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p><h2>NAME</h2>
-COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. (LICENSE:PD) </p><h2>SYNOPSIS</h2>
-</p>
-<p>subroutine color_name2rgb(name,r,g,b,echoname)</p>
-<p>character(len=20),intent(in) :: name real,intent(out) :: r,g,b character(len=20),intent(out) :: echoname</p>
-<h2>DESCRIPTION</h2>
-<pre class="fragment"> COLOR_NAME2RGB() returns the RGB values in the range 0 to 100 for a given known color name.
- Most X11 Windows color names are supported. If the name is not found, ECHONAME is set to
- "Unknown".
-</pre><h2>EXAMPLE</h2>
+COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. (LICENSE:PD) </p>
+<h2>SYNOPSIS</h2>
+<pre class="fragment">subroutine color_name2rgb(name,r,g,b,echoname)
+
+ character(len=20),intent(in)   :: name
+ real,intent(out)               :: r,g,b
+ character(len=20),intent(out)  :: echoname
+</pre><h2>DESCRIPTION</h2>
+<p>COLOR_NAME2RGB() returns the RGB values in the range 0 to 100 for a given known color name. Most X11 Windows color names are supported. If the name is not found, ECHONAME is set to "Unknown".</p>
+<h2>EXAMPLE</h2>
 <pre class="fragment">A sample program:
 
  program demo_color_name2rgb
@@ -510,8 +495,9 @@ COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for 
  enddo TRYALL
  !write(*,*)'Number of colors found is ',i-1
  end program demo_color_name2rgb
-</pre> <h2>AUTHOR</h2>
-<p>John S. Urban </p><h2>LICENSE</h2>
+</pre><h2>AUTHOR</h2>
+<p>John S. Urban</p>
+<h2>LICENSE</h2>
 <p>Public Domain </p>
 
 <p class="reference">References <a class="el" href="namespacem__color.html#a704e93b42d777a827ec557c92d2dd7dc">lower()</a>.</p>
@@ -1556,7 +1542,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p><h2>NAME</h2>
-RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity. (LICENSE:PD) </p>
+RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity (LICENSE:PD) </p>
 <h2>SYNOPSIS</h2>
 <pre class="fragment">subroutine rgbmono&lt;/a&gt;(rr,rg,rb,ri,status)
 
@@ -1566,18 +1552,12 @@ RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity.
  real, intent(out) :: RI
  integer           :: status
 </pre><h2>DESCRIPTION</h2>
-<pre class="fragment">RGBMONO(3f) converts RGB colors to a reasonable grayscale intensity.
-This can be used to produce monochrome images from color images.
-Intensity is calculated from the specified Red, Green, Blue intensities
-as 0.30*R + 0.59*G + 0.11*B, as in U.S. color television systems,
-NTSC encoding. Note that most devices do not have an infinite range
-of monochrome intensities available.
-</pre> <h2>OPTIONS</h2>
-<pre class="fragment"> RR      red component of the input color in the range 0 to 100
- RG      green component of the input color in the range 0 to 100
- RB      blue component of the input color in the range 0 to 100
-</pre> <h2>RETURNS</h2>
-<p>RI grayscale intensity calculated in the range 0 to 100 status zero (0) if no error occurred, otherwise result is out of bounds </p><h2>EXAMPLES</h2>
+<p>RGBMONO(3f) converts RGB colors to a reasonable grayscale intensity. This can be used to produce monochrome images from color images. Intensity is calculated from the specified Red, Green, Blue intensities as 0.30*R + 0.59*G + 0.11*B, as in U.S. color television systems, NTSC encoding. Note that most devices do not have an infinite range of monochrome intensities available.</p>
+<h2>OPTIONS</h2>
+<p>RR red component of the input color in the range 0 to 100 RG green component of the input color in the range 0 to 100 RB blue component of the input color in the range 0 to 100</p>
+<h2>RETURNS</h2>
+<p>RI grayscale intensity calculated in the range 0 to 100 status zero (0) if no error occurred, otherwise result is out of bounds</p>
+<h2>EXAMPLES</h2>
 <p>Sample:</p>
 <p>program demo_rgbmono use M_color, only : rgbmono implicit none real :: gray integer :: ierr call rgbmono(100.0, 0.0, 0.0,gray,ierr); write(*,*)'red ',gray call rgbmono( 0.0,100.0, 0.0,gray,ierr); write(*,*)'green ',gray call rgbmono( 0.0, 0.0,100.0,gray,ierr); write(*,*)'blue ',gray call rgbmono(100.0,100.0, 0.0,gray,ierr); write(*,*)'Yellow ',gray call rgbmono( 0.0,100.0,100.0,gray,ierr); write(*,*)'Cyan ',gray call rgbmono(100.0, 0.0,100.0,gray,ierr); write(*,*)'Magenta ',gray call rgbmono(100.0,100.0,100.0,gray,ierr); write(*,*)'White ',gray call rgbmono( 00.0, 0.0, 0.0,gray,ierr); write(*,*)'Black ',gray call rgbmono( 50.0, 0.0, 0.0,gray,ierr); write(*,*)'Maroon ',gray call rgbmono(100.0, 50.0, 50.0,gray,ierr); write(*,*)'Pink ',gray end program demo_rgbmono</p>
 <p>Results:</p>

@@ -16,7 +16,7 @@ subroutine, private \mbox{\hyperlink{namespacem__color_ad6e8505eef5add299c4475d2
 subroutine, public \mbox{\hyperlink{namespacem__color_aca19999686fc20d79da580c6a643dc35}{rgbmono}} (rr, rg, rb, ri, status)
 \begin{DoxyCompactList}\small\item\em \subsubsection*{N\+A\+ME}
 
-R\+G\+B\+M\+O\+N\+O(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts R\+GB colors to a reasonable grayscale intensity. (L\+I\+C\+E\+N\+SE\+:PD) \end{DoxyCompactList}\item 
+R\+G\+B\+M\+O\+N\+O(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts R\+GB colors to a reasonable grayscale intensity (L\+I\+C\+E\+N\+SE\+:PD) \end{DoxyCompactList}\item 
 real function, private \mbox{\hyperlink{namespacem__color_a3e97e24dba7b820f685f13eaa64a6caa}{rgbval}} (clr1, clr2, h)
 \item 
 subroutine, private \mbox{\hyperlink{namespacem__color_a40e6c91da216384eded2157cdaf86eba}{hlsrgb}} (H, L, S, R, G, B, status)
@@ -30,11 +30,11 @@ subroutine, private \mbox{\hyperlink{namespacem__color_a386d004a1392b7e01ff66f16
 subroutine, public \mbox{\hyperlink{namespacem__color_acad72628ee0b77cf87f40cd46734fb18}{closest\+\_\+color\+\_\+name}} (r, g, b, closestname)
 \begin{DoxyCompactList}\small\item\em \subsubsection*{N\+A\+ME}
 
-closest\+\_\+color\+\_\+name(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the closest name for the given R\+GB values. (L\+I\+C\+E\+N\+SE\+:PD) \subsubsection*{S\+Y\+N\+O\+P\+S\+IS}\end{DoxyCompactList}\item 
+closest\+\_\+color\+\_\+name(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the closest name for the given R\+GB values. (L\+I\+C\+E\+N\+SE\+:PD) \end{DoxyCompactList}\item 
 subroutine, public \mbox{\hyperlink{namespacem__color_a84a36043d278bc56a7148483a862dec8}{color\+\_\+name2rgb}} (name, r, g, b, echoname)
 \begin{DoxyCompactList}\small\item\em \subsubsection*{N\+A\+ME}
 
-C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+G\+B(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the R\+GB values in the range 0 to 100 for a given known color name. (L\+I\+C\+E\+N\+SE\+:PD) \subsubsection*{S\+Y\+N\+O\+P\+S\+IS}\end{DoxyCompactList}\item 
+C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+G\+B(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the R\+GB values in the range 0 to 100 for a given known color name. (L\+I\+C\+E\+N\+SE\+:PD) \end{DoxyCompactList}\item 
 elemental pure character(len(str)) function \mbox{\hyperlink{namespacem__color_a704e93b42d777a827ec557c92d2dd7dc}{lower}} (str)
 \end{DoxyCompactItemize}
 
@@ -216,60 +216,52 @@ Public Domain
 
 \subsubsection*{N\+A\+ME}
 
-closest\+\_\+color\+\_\+name(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the closest name for the given R\+GB values. (L\+I\+C\+E\+N\+SE\+:PD) \subsubsection*{S\+Y\+N\+O\+P\+S\+IS}
+closest\+\_\+color\+\_\+name(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the closest name for the given R\+GB values. (L\+I\+C\+E\+N\+SE\+:PD) 
 
-subroutine closest\+\_\+color\+\_\+name(r,g,b,closestname)
+\subsubsection*{S\+Y\+N\+O\+P\+S\+IS}
 
-real,intent(in) \+:\+: r,g,b character(len=20),intent(out) \+:\+: closestname \subsubsection*{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}
+\begin{DoxyVerb}subroutine closest_color_name(r,g,b,closestname)
 
-\begin{DoxyVerb} closest_color_name() returns the closest name for the given RGB values.
- Most X11 Windows color names are supported.
+ real,intent(in)               :: r,g,b
+ character(len=20),intent(out) :: closestname
 \end{DoxyVerb}
 
+
+\subsubsection*{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}
+
+\mbox{\hyperlink{namespacem__color_acad72628ee0b77cf87f40cd46734fb18}{closest\+\_\+color\+\_\+name()}} returns the closest name for the given R\+GB values. Most X11 Windows color names are supported.
 
 \subsubsection*{O\+P\+T\+I\+O\+NS}
 
-\begin{DoxyVerb} R   red component, range of 0 to 100
- G   green component, range of 0 to 100
- B   blue component, range of 0 to 100
-\end{DoxyVerb}
-
+R red component, range of 0 to 100 G green component, range of 0 to 100 B blue component, range of 0 to 100
 
 \subsubsection*{R\+E\+T\+U\+R\+NS}
 
-\begin{DoxyVerb} CLOSESTNAME   name of color found closest to given RGB value</li>
-\end{DoxyVerb}
-
+C\+L\+O\+S\+E\+S\+T\+N\+A\+ME name of color found closest to given R\+GB value
 
 \subsubsection*{E\+X\+A\+M\+P\+LE}
 
-\begin{DoxyVerb}Sample program
+Sample program
 
-    program demo_closest_color_name
-    use M_color, only : closest_color_name
-    character(len=100) :: string ! at least 20 characters
-    string=' '
+program demo\+\_\+closest\+\_\+color\+\_\+name use M\+\_\+color, only \+: closest\+\_\+color\+\_\+name character(len=100) \+:\+: string ! at least 20 characters string=\textquotesingle{} \textquotesingle{}
 
-    call closest_color_name(100.0,  0.0,  0.0,string)
-    write(*,*)trim(string)
+call closest\+\_\+color\+\_\+name(100.\+0, 0.\+0, 0.\+0,string) write($\ast$,$\ast$)trim(string)
 
-    call closest_color_name(  0.0,100.0,  0.0,string)
-    write(*,*)trim(string)
+call closest\+\_\+color\+\_\+name( 0.\+0,100.\+0, 0.\+0,string) write($\ast$,$\ast$)trim(string)
 
-    call closest_color_name(  0.0,  0.0,100.0,string)
-    write(*,*)trim(string)
+call closest\+\_\+color\+\_\+name( 0.\+0, 0.\+0,100.\+0,string) write($\ast$,$\ast$)trim(string)
 
-    end program demo_closest_color_name
+end program demo\+\_\+closest\+\_\+color\+\_\+name
 
-Results:
+Results\+:
 
-    red
-    green
-    blue
-\end{DoxyVerb}
- \subsubsection*{A\+U\+T\+H\+OR}
+red green blue
 
-John S. Urban \subsubsection*{L\+I\+C\+E\+N\+SE}
+\subsubsection*{A\+U\+T\+H\+OR}
+
+John S. Urban
+
+\subsubsection*{L\+I\+C\+E\+N\+SE}
 
 Public Domain 
 
@@ -347,19 +339,21 @@ Public Domain
 
 \subsubsection*{N\+A\+ME}
 
-C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+G\+B(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the R\+GB values in the range 0 to 100 for a given known color name. (L\+I\+C\+E\+N\+SE\+:PD) \subsubsection*{S\+Y\+N\+O\+P\+S\+IS}
+C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+G\+B(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} returns the R\+GB values in the range 0 to 100 for a given known color name. (L\+I\+C\+E\+N\+SE\+:PD) 
 
-subroutine color\+\_\+name2rgb(name,r,g,b,echoname)
+\subsubsection*{S\+Y\+N\+O\+P\+S\+IS}
 
-character(len=20),intent(in) \+:\+: name real,intent(out) \+:\+: r,g,b character(len=20),intent(out) \+:\+: echoname
+\begin{DoxyVerb}subroutine color_name2rgb(name,r,g,b,echoname)
+
+ character(len=20),intent(in)   :: name
+ real,intent(out)               :: r,g,b
+ character(len=20),intent(out)  :: echoname
+\end{DoxyVerb}
+
 
 \subsubsection*{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}
 
-\begin{DoxyVerb} COLOR_NAME2RGB() returns the RGB values in the range 0 to 100 for a given known color name.
- Most X11 Windows color names are supported. If the name is not found, ECHONAME is set to
- "Unknown".
-\end{DoxyVerb}
-
+C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+G\+B() returns the R\+GB values in the range 0 to 100 for a given known color name. Most X11 Windows color names are supported. If the name is not found, E\+C\+H\+O\+N\+A\+ME is set to \char`\"{}\+Unknown\char`\"{}.
 
 \subsubsection*{E\+X\+A\+M\+P\+LE}
 
@@ -389,9 +383,13 @@ character(len=20),intent(in) \+:\+: name real,intent(out) \+:\+: r,g,b character
  !write(*,*)'Number of colors found is ',i-1
  end program demo_color_name2rgb
 \end{DoxyVerb}
- \subsubsection*{A\+U\+T\+H\+OR}
 
-John S. Urban \subsubsection*{L\+I\+C\+E\+N\+SE}
+
+\subsubsection*{A\+U\+T\+H\+OR}
+
+John S. Urban
+
+\subsubsection*{L\+I\+C\+E\+N\+SE}
 
 Public Domain 
 
@@ -1119,7 +1117,7 @@ name }&\textbf{ Hex      }&\textbf{ (R,G,B)        }&\textbf{ (H,S,V)
 
 \subsubsection*{N\+A\+ME}
 
-R\+G\+B\+M\+O\+N\+O(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts R\+GB colors to a reasonable grayscale intensity. (L\+I\+C\+E\+N\+SE\+:PD) 
+R\+G\+B\+M\+O\+N\+O(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts R\+GB colors to a reasonable grayscale intensity (L\+I\+C\+E\+N\+SE\+:PD) 
 
 \subsubsection*{S\+Y\+N\+O\+P\+S\+IS}
 
@@ -1135,22 +1133,17 @@ R\+G\+B\+M\+O\+N\+O(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts R\+GB colors t
 
 \subsubsection*{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}
 
-\begin{DoxyVerb}RGBMONO(3f) converts RGB colors to a reasonable grayscale intensity.
-This can be used to produce monochrome images from color images.
-Intensity is calculated from the specified Red, Green, Blue intensities
-as 0.30*R + 0.59*G + 0.11*B, as in U.S. color television systems,
-NTSC encoding. Note that most devices do not have an infinite range
-of monochrome intensities available.
-\end{DoxyVerb}
- \subsubsection*{O\+P\+T\+I\+O\+NS}
+R\+G\+B\+M\+O\+N\+O(3f) converts R\+GB colors to a reasonable grayscale intensity. This can be used to produce monochrome images from color images. Intensity is calculated from the specified Red, Green, Blue intensities as 0.\+30$\ast$R + 0.\+59$\ast$G + 0.\+11$\ast$B, as in U.\+S. color television systems, N\+T\+SC encoding. Note that most devices do not have an infinite range of monochrome intensities available.
 
-\begin{DoxyVerb} RR      red component of the input color in the range 0 to 100
- RG      green component of the input color in the range 0 to 100
- RB      blue component of the input color in the range 0 to 100
-\end{DoxyVerb}
- \subsubsection*{R\+E\+T\+U\+R\+NS}
+\subsubsection*{O\+P\+T\+I\+O\+NS}
 
-RI grayscale intensity calculated in the range 0 to 100 status zero (0) if no error occurred, otherwise result is out of bounds \subsubsection*{E\+X\+A\+M\+P\+L\+ES}
+RR red component of the input color in the range 0 to 100 RG green component of the input color in the range 0 to 100 RB blue component of the input color in the range 0 to 100
+
+\subsubsection*{R\+E\+T\+U\+R\+NS}
+
+RI grayscale intensity calculated in the range 0 to 100 status zero (0) if no error occurred, otherwise result is out of bounds
+
+\subsubsection*{E\+X\+A\+M\+P\+L\+ES}
 
 Sample\+:
 

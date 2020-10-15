@@ -857,11 +857,11 @@ end subroutine rgbcmy
 !===================================================================================================================================
 !>
 !!##NAME
-!!    RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale intensity.
+!!    RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale
+!!    intensity
 !!    (LICENSE:PD)
 !!
 !!##SYNOPSIS
-!!
 !!
 !!    subroutine rgbmono</a>(rr,rg,rb,ri,status)
 !!
@@ -872,21 +872,23 @@ end subroutine rgbcmy
 !!     integer           :: status
 !!
 !!##DESCRIPTION
-!!
 !!    RGBMONO(3f) converts RGB colors to a reasonable grayscale intensity.
 !!    This can be used to produce monochrome images from color images.
 !!    Intensity is calculated from the specified Red, Green, Blue intensities
 !!    as 0.30*R + 0.59*G + 0.11*B, as in U.S. color television systems,
 !!    NTSC encoding. Note that most devices do not have an infinite range
 !!    of monochrome intensities available.
-!!##OPTIONS
 !!
+!!##OPTIONS
 !!     RR      red component of the input color in the range 0 to 100
 !!     RG      green component of the input color in the range 0 to 100
 !!     RB      blue component of the input color in the range 0 to 100
+!!
 !!##RETURNS
 !!     RI      grayscale intensity calculated in the range 0 to 100
-!!     status  zero (0) if no error occurred, otherwise result is out of bounds
+!!     status  zero (0) if no error occurred, otherwise result is out
+!!             of bounds
+!!
 !!##EXAMPLES
 !!
 !!   Sample:
@@ -1330,57 +1332,59 @@ end subroutine rgbyiq
 !===================================================================================================================================
 !>
 !!##NAME
-!!     closest_color_name(3f) - [M_color] returns the closest name for the given RGB values.
-!!     (LICENSE:PD)
+!!    closest_color_name(3f) - [M_color] returns the closest name for the
+!!    given RGB values.
+!!    (LICENSE:PD)
+!!
 !!##SYNOPSIS
 !!
 !!    subroutine closest_color_name(r,g,b,closestname)
 !!
 !!     real,intent(in)               :: r,g,b
 !!     character(len=20),intent(out) :: closestname
-!!##DESCRIPTION
 !!
-!!     closest_color_name() returns the closest name for the given RGB values.
-!!     Most X11 Windows color names are supported.
+!!##DESCRIPTION
+!!    closest_color_name() returns the closest name for the given RGB values.
+!!    Most X11 Windows color names are supported.
 !!
 !!##OPTIONS
-!!
-!!     R   red component, range of 0 to 100
-!!     G   green component, range of 0 to 100
-!!     B   blue component, range of 0 to 100
+!!    R   red component, range of 0 to 100
+!!    G   green component, range of 0 to 100
+!!    B   blue component, range of 0 to 100
 !!
 !!##RETURNS
-!!
-!!     CLOSESTNAME   name of color found closest to given RGB value</li>
+!!    CLOSESTNAME   name of color found closest to given RGB value</li>
 !!
 !!##EXAMPLE
 !!
 !!
-!!    Sample program
+!!   Sample program
 !!
-!!        program demo_closest_color_name
-!!        use M_color, only : closest_color_name
-!!        character(len=100) :: string ! at least 20 characters
-!!        string=' '
+!!    program demo_closest_color_name
+!!    use M_color, only : closest_color_name
+!!    character(len=100) :: string ! at least 20 characters
+!!       string=' '
 !!
-!!        call closest_color_name(100.0,  0.0,  0.0,string)
-!!        write(*,*)trim(string)
+!!       call closest_color_name(100.0,  0.0,  0.0,string)
+!!       write(*,*)trim(string)
 !!
-!!        call closest_color_name(  0.0,100.0,  0.0,string)
-!!        write(*,*)trim(string)
+!!       call closest_color_name(  0.0,100.0,  0.0,string)
+!!       write(*,*)trim(string)
 !!
-!!        call closest_color_name(  0.0,  0.0,100.0,string)
-!!        write(*,*)trim(string)
+!!       call closest_color_name(  0.0,  0.0,100.0,string)
+!!       write(*,*)trim(string)
 !!
-!!        end program demo_closest_color_name
+!!    end program demo_closest_color_name
 !!
-!!    Results:
+!!   Results:
 !!
-!!        red
-!!        green
-!!        blue
+!!    red
+!!    green
+!!    blue
+!!
 !!##AUTHOR
 !!    John S. Urban
+!!
 !!##LICENSE
 !!    Public Domain
 SUBROUTINE closest_color_name(r,g,b,closestname)
@@ -1413,10 +1417,11 @@ end SUBROUTINE closest_color_name
 !===================================================================================================================================
 !>
 !!##NAME
-!!     COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name.
-!!     (LICENSE:PD)
-!!##SYNOPSIS
+!!    COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to
+!!    100 for a given known color name.
+!!    (LICENSE:PD)
 !!
+!!##SYNOPSIS
 !!
 !!    subroutine color_name2rgb(name,r,g,b,echoname)
 !!
@@ -1425,13 +1430,11 @@ end SUBROUTINE closest_color_name
 !!     character(len=20),intent(out)  :: echoname
 !!
 !!##DESCRIPTION
-!!
-!!     COLOR_NAME2RGB() returns the RGB values in the range 0 to 100 for a given known color name.
-!!     Most X11 Windows color names are supported. If the name is not found, ECHONAME is set to
-!!     "Unknown".
+!!    COLOR_NAME2RGB() returns the RGB values in the range 0 to 100
+!!    for a given known color name.  Most X11 Windows color names are
+!!    supported. If the name is not found, ECHONAME is set to "Unknown".
 !!
 !!##EXAMPLE
-!!
 !!
 !!    A sample program:
 !!
@@ -1458,8 +1461,10 @@ end SUBROUTINE closest_color_name
 !!     enddo TRYALL
 !!     !write(*,*)'Number of colors found is ',i-1
 !!     end program demo_color_name2rgb
+!!
 !!##AUTHOR
 !!    John S. Urban
+!!
 !!##LICENSE
 !!    Public Domain
 subroutine color_name2rgb(name,r,g,b,echoname)

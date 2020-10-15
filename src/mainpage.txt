@@ -1,9 +1,9 @@
 'mainpage.txt
 /**
-     @mainpage M_color Fortran Library
+         @mainpage M_color Fortran Library
 
-     @section Introduction
+         @section Introduction
       Basic color conversion routines
 
-     @image html ../docs/images/swirl.gif
+         @image html swirl.gif
 */'
