@@ -95,12 +95,11 @@ a.existingWikiWord[title]{ //border: 1px dashed #BBB; }
   other user-callable color-related procedures:
 </p>
 
-<pre>
-
-   <a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-   <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-   <a href="rgbmono.3m_color.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
-</pre>
+<a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:&nbsp;&nbsp;given RGB values, try to find closest named color
+   <br/>
+<a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:&nbsp;&nbsp;given a color name, return RGB color values in range 0 to 100
+   <br/>
+<a href="rgbmono.3m_color.html">RGBMONO</a>:&nbsp;&nbsp;convert RGB colors to a reasonable grayscale
 
 <h3> 2*N Design of the module</h3>
 
@@ -117,12 +116,11 @@ a.existingWikiWord[title]{ //border: 1px dashed #BBB; }
 
 <p>
    This allows conversions between all color models with only 2*N
-   routines.  That is, to go from model A to model B the module would
+   routines. That is, to go from model A to model B the module would
    internally make two calls:
 </p>
 
 <pre>
-
     call modelA2rgb(...)
     call rgb2modelB(...)
 </pre>
@@ -212,12 +210,18 @@ a.existingWikiWord[title]{ //border: 1px dashed #BBB; }
 
    subroutine rgbhls(r,g,b,h,l,s,status)
 
-    real, intent(in)  :: r ! red component as a value of 0 to 100
-    real, intent(in)  :: g ! green component as a value of 0 to 100
-    real, intent(in)  :: b ! blue component as a value of 0 to 100
-    real, intent(out) :: h ! hue value in the range of 0 to 360 degrees
-    real, intent(out) :: l ! lightness as a percent value from 0 to 100
-    real, intent(out) :: s ! saturation as a percent from 0 to 100
+    ! red component as a value of 0 to 100
+    real, intent(in)  :: r
+    ! green component as a value of 0 to 100
+    real, intent(in)  :: g
+    ! blue component as a value of 0 to 100
+    real, intent(in)  :: b
+    ! hue value in the range of 0 to 360 degrees
+    real, intent(out) :: h
+    ! lightness as a percent value from 0 to 100
+    real, intent(out) :: l
+    ! saturation as a percent from 0 to 100
+    real, intent(out) :: s
     integer           :: status
    </pre>
 </dd>
@@ -269,12 +273,18 @@ and saturation have a range of 0-100.
    <pre>
    subroutine rgbhvs(r,g,b,h,v,s,status)
 
-    real, intent(in)  :: r ! the red component as a value of 0 to 100.
-    real, intent(in)  :: g ! the green component as a value of 0 to 100.
-    real, intent(in)  :: b ! the blue component as a value of 0 to 100.
-    real, intent(out) :: h ! the hue value in the range of 0 to 360 degrees
-    real, intent(out) :: v ! the "value" as a percent value from 0 to 100.
-    real, intent(out) :: s ! the saturation as a percent from 0 to 100.
+    ! the red component as a value of 0 to 100.
+    real, intent(in)  :: r
+    ! the green component as a value of 0 to 100.
+    real, intent(in)  :: g
+    ! the blue component as a value of 0 to 100.
+    real, intent(in)  :: b
+    ! the hue value in the range of 0 to 360 degrees
+    real, intent(out) :: h
+    ! the "value" as a percent value from 0 to 100.
+    real, intent(out) :: v
+    ! the saturation as a percent from 0 to 100.
+    real, intent(out) :: s
     integer           :: status
    <pre>
 </dd>
@@ -333,12 +343,18 @@ for a color given in red, green, &amp; blue components values.
    <pre>
    subroutine cmyrgb(c,m,y,r,g,b,status)
 
-    real, intent(in)  :: c ! cyan component as a value in the range of 0 to 100
-    real, intent(in)  :: m ! magenta component as a value in the range of 0 to 100
-    real, intent(in)  :: y ! yellow component as a value in the range of 0 to 100
-    real, intent(out) :: r ! red component as a value in the range of 0 to 100
-    real, intent(out) :: g ! green component as a value in the range of 0 to 100
-    real, intent(out) :: b ! blue component as a value in the range of 0 to 100
+    ! cyan component as a value in the range of 0 to 100
+    real, intent(in)  :: c
+    ! magenta component as a value in the range of 0 to 100
+    real, intent(in)  :: m
+    ! yellow component as a value in the range of 0 to 100
+    real, intent(in)  :: y
+    ! red component as a value in the range of 0 to 100
+    real, intent(out) :: r
+    ! green component as a value in the range of 0 to 100
+    real, intent(out) :: g
+    ! blue component as a value in the range of 0 to 100
+    real, intent(out) :: b
     integer           :: status
    </pre>
 </dd>
@@ -374,12 +390,18 @@ for a color given in red, green, &amp; blue components values.
    <pre>
    subroutine rgbcmy(r,g,b,c,m,y,status)
 
-    real, intent(in)  :: r ! the red component as a value in the range of 0 to 100
-    real, intent(in)  :: g ! the green component as a value in the range of 0 to 100
-    real, intent(in)  :: b ! the blue component as a value in the range of 0 to 100
-    real, intent(out) :: c ! the cyan component as a value in the range of 0 to 100
-    real, intent(out) :: m ! the magenta component as a value in the range of 0 to 100
-    real, intent(out) :: y ! the yellow component as a value in the range of 0 to 100
+    ! the red component as a value in the range of 0 to 100
+    real, intent(in)  :: r
+    ! the green component as a value in the range of 0 to 100
+    real, intent(in)  :: g
+    ! the blue component as a value in the range of 0 to 100
+    real, intent(in)  :: b
+    ! the cyan component as a value in the range of 0 to 100
+    real, intent(out) :: c
+    ! the magenta component as a value in the range of 0 to 100
+    real, intent(out) :: m
+    ! the yellow component as a value in the range of 0 to 100
+    real, intent(out) :: y
     integer           :: status
    </pre>
 </dd>
@@ -465,12 +487,18 @@ Table ...
    <pre>
    subroutine hlsrgb</a> (h,l,s,r,g,b,status)
 
-    real, intent(in)  :: h ! hue value in the range of 0 to 360 degrees
-    real, intent(in)  :: l ! lightness as a percent value from 0 to 100.
-    real, intent(in)  :: s ! saturation as a percent from 0 to 100.
-    real, intent(out) :: r ! red component as a value of 0 to 100.
-    real, intent(out) :: g ! green component as a value of 0 to 100.
-    real, intent(out) :: b ! blue component as a value of 0 to 100.
+    ! hue value in the range of 0 to 360 degrees
+    real, intent(in)  :: h
+    ! lightness as a percent value from 0 to 100.
+    real, intent(in)  :: l
+    ! saturation as a percent from 0 to 100.
+    real, intent(in)  :: s
+    ! red component as a value of 0 to 100.
+    real, intent(out) :: r
+    ! green component as a value of 0 to 100.
+    real, intent(out) :: g
+    ! blue component as a value of 0 to 100.
+    real, intent(out) :: b
     integer           :: status
    </pre>
 </dd>
@@ -506,12 +534,18 @@ Table ...
    <pre>
    subroutine hvsrgb</a>(h,v,s,r,g,b,status)
 
-    real, intent(in)  :: h ! H is the hue value in the range of 0 to 360 degrees
-    real, intent(in)  :: v ! V is the "value" as a percent value from 0 to 100.
-    real, intent(in)  :: s ! S is the saturation as a percent from 0 to 100.
-    real, intent(out) :: r ! R is the red component as a value of 0 to 100.
-    real, intent(out) :: g ! G is the green component as a value of 0 to 100.
-    real, intent(out) :: b ! B is the blue component as a value of 0 to 100.
+    ! H is the hue value in the range of 0 to 360 degrees
+    real, intent(in)  :: h
+    ! V is the "value" as a percent value from 0 to 100.
+    real, intent(in)  :: v
+    ! S is the saturation as a percent from 0 to 100.
+    real, intent(in)  :: s
+    ! R is the red component as a value of 0 to 100.
+    real, intent(out) :: r
+    ! G is the green component as a value of 0 to 100.
+    real, intent(out) :: g
+    ! B is the blue component as a value of 0 to 100.
+    real, intent(out) :: b
     integer           :: status
    </pre>
 </dd>

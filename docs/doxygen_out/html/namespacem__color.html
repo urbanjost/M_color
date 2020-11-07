@@ -145,10 +145,10 @@ YIQ - Broadcast TV color system </li>
 <p></p>
 <p>In addition to the reversible color model conversions there are a few other user-callable color-related procedures: </p>
 <p></p>
-<pre></pre><pre>    <a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-    <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-    <a href="rgbmono.3m_color.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
- </pre><h3>2*N Design of the module</h3>
+<p><a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:&#160;&#160;given RGB values, try to find closest named color <br />
+ <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:&#160;&#160;given a color name, return RGB color values in range 0 to 100 <br />
+ <a href="rgbmono.3m_color.html">RGBMONO</a>:&#160;&#160;convert RGB colors to a reasonable grayscale</p>
+<h3>2*N Design of the module</h3>
 <p></p>
 <p></p>
 <p>The rest of the library is composed of PRIVATE procedures. For each color model supported the general idea of the module is that there are two routines for each color model: </p>
@@ -162,7 +162,8 @@ The other converts from RGB to that model  </li>
 <p></p>
 <p>This allows conversions between all color models with only 2*N routines. That is, to go from model A to model B the module would internally make two calls: </p>
 <p></p>
-<pre></pre><pre>     call modelA2rgb(...)
+<pre>
+     call modelA2rgb(...)
      call rgb2modelB(...)
  </pre><p></p>
 <p>The resulting internal routines that result are: </p>
@@ -375,12 +376,18 @@ Here is the call graph for this function:</div>
 </dd>
 <dt>SYNOPSIS </dt>
 <dd><pre>
-    subroutine cmyrgb(c,m,y,r,g,b,status)</pre><pre>     real, intent(in)  :: c ! cyan component as a value in the range of 0 to 100
-     real, intent(in)  :: m ! magenta component as a value in the range of 0 to 100
-     real, intent(in)  :: y ! yellow component as a value in the range of 0 to 100
-     real, intent(out) :: r ! red component as a value in the range of 0 to 100
-     real, intent(out) :: g ! green component as a value in the range of 0 to 100
-     real, intent(out) :: b ! blue component as a value in the range of 0 to 100
+    subroutine cmyrgb(c,m,y,r,g,b,status)</pre><pre>     ! cyan component as a value in the range of 0 to 100
+     real, intent(in)  :: c
+     ! magenta component as a value in the range of 0 to 100
+     real, intent(in)  :: m
+     ! yellow component as a value in the range of 0 to 100
+     real, intent(in)  :: y
+     ! red component as a value in the range of 0 to 100
+     real, intent(out) :: r
+     ! green component as a value in the range of 0 to 100
+     real, intent(out) :: g
+     ! blue component as a value in the range of 0 to 100
+     real, intent(out) :: b
      integer           :: status
     </pre> <p class="enddd"></p>
 </dd>
@@ -590,12 +597,18 @@ Here is the caller graph for this function:</div>
 </dd>
 <dt>SYNOPSIS </dt>
 <dd><pre>
-    subroutine hlsrgb (h,l,s,r,g,b,status)</pre><pre>     real, intent(in)  :: h ! hue value in the range of 0 to 360 degrees
-     real, intent(in)  :: l ! lightness as a percent value from 0 to 100.
-     real, intent(in)  :: s ! saturation as a percent from 0 to 100.
-     real, intent(out) :: r ! red component as a value of 0 to 100.
-     real, intent(out) :: g ! green component as a value of 0 to 100.
-     real, intent(out) :: b ! blue component as a value of 0 to 100.
+    subroutine hlsrgb (h,l,s,r,g,b,status)</pre><pre>     ! hue value in the range of 0 to 360 degrees
+     real, intent(in)  :: h
+     ! lightness as a percent value from 0 to 100.
+     real, intent(in)  :: l
+     ! saturation as a percent from 0 to 100.
+     real, intent(in)  :: s
+     ! red component as a value of 0 to 100.
+     real, intent(out) :: r
+     ! green component as a value of 0 to 100.
+     real, intent(out) :: g
+     ! blue component as a value of 0 to 100.
+     real, intent(out) :: b
      integer           :: status
     </pre> <p class="enddd"></p>
 </dd>
@@ -721,39 +734,38 @@ Here is the caller graph for this function:</div>
 <p class="enddd"></p>
 </dd>
 <dt>SYNOPSIS </dt>
-<dd><pre></pre><pre>    subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)</pre><pre>     character(len=*),intent(in) :: modei  ! color model of input values
-     character(len=*),intent(in) :: modeo  ! color model of output values
-     real,intent(in)             :: clr1i,clr2i,clr3i
-     real,intent(out)            :: clr1o,clr2o,clr3o
-     integer,intent(out)         :: status
-    </pre> <p class="enddd"></p>
+<dd><pre>
+ subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)</pre><pre>  character(len=*),intent(in) :: modei  ! color model of input values
+  character(len=*),intent(in) :: modeo  ! color model of output values
+  real,intent(in)             :: clr1i,clr2i,clr3i
+  real,intent(out)            :: clr1o,clr2o,clr3o
+  integer,intent(out)         :: status
+ </pre> <p class="enddd"></p>
 </dd>
 <dt>DESCRIPTION </dt>
-<dd><p class="startdd">Basic color models ... <br />
-<br />
-</p>
-<blockquote class="doxtable">
-<a class="anchor" id=""></a>
+<dd></dd>
+<dt>Basic color models ..</dt>
+<dd><p class="startdd"></p>
+<p>Valid values for modei and modeo as well as the corresponding meanings for clr1*, clr2*, and clr3* are:</p>
 <table border="1">
-<caption><b>  valid&#160;values&#160;for&#160;modei&#160;and&#160;modeo&#160;as&#160;well&#160;as&#160;the&#160;corresponding&#160; meanings&#160;for&#160;clr1*,&#160;clr2*,&#160;and&#160;clr3*&#160;are:  </b></caption>
 <tr>
-<th>model  </th><th>clr1  </th><th>clr2  </th><th>clr3   </th></tr>
+<th>model</th><th>clr1 </th><th>clr2 </th><th>clr3  </th></tr>
 <tr>
-<td>hls  </td><td>hue  </td><td>lightness  </td><td>saturation   </td></tr>
+<td>hls </td><td>hue </td><td>lightness </td><td>saturation </td></tr>
 <tr>
-<td>hsl  </td><td>hue  </td><td>saturation  </td><td>lightness   </td></tr>
+<td>hsl </td><td>hue </td><td>saturation</td><td>lightness  </td></tr>
 <tr>
-<td>hvs  </td><td>hue  </td><td>value  </td><td>saturation   </td></tr>
+<td>hvs </td><td>hue </td><td>value </td><td>saturation </td></tr>
 <tr>
-<td>hsv  </td><td>hue  </td><td>saturation  </td><td>value   </td></tr>
+<td>hsv </td><td>hue </td><td>saturation</td><td>value  </td></tr>
 <tr>
-<td>rgb  </td><td>red  </td><td>green  </td><td>blue   </td></tr>
+<td>rgb </td><td>red </td><td>green </td><td>blue  </td></tr>
 <tr>
-<td>cmy  </td><td>cyan  </td><td>magenta  </td><td>yellow   </td></tr>
+<td>cmy </td><td>cyan </td><td>magenta </td><td>yellow  </td></tr>
 <tr>
-<td>yiq  </td><td>luma(gray&#160;scale)  </td><td>orange-blue&#160;chrominance  </td><td>purple-green&#160;chrominance   </td></tr>
+<td>yiq </td><td>luma grayscale </td><td>orange-bluechrominance </td><td>purple-greenchrominance  </td></tr>
 </table>
-</blockquote>
+<p></p>
 <ul>
 <li>
 lightness, value, saturation, red, green, blue, cyan, magenta, and yellow range from 0 to 100, </li>
@@ -969,12 +981,18 @@ Here is the caller graph for this function:</div>
 </dd>
 <dt>SYNOPSIS </dt>
 <dd><pre>
-    subroutine hvsrgb(h,v,s,r,g,b,status)</pre><pre>     real, intent(in)  :: h ! H is the hue value in the range of 0 to 360 degrees
-     real, intent(in)  :: v ! V is the "value" as a percent value from 0 to 100.
-     real, intent(in)  :: s ! S is the saturation as a percent from 0 to 100.
-     real, intent(out) :: r ! R is the red component as a value of 0 to 100.
-     real, intent(out) :: g ! G is the green component as a value of 0 to 100.
-     real, intent(out) :: b ! B is the blue component as a value of 0 to 100.
+    subroutine hvsrgb(h,v,s,r,g,b,status)</pre><pre>     ! H is the hue value in the range of 0 to 360 degrees
+     real, intent(in)  :: h
+     ! V is the "value" as a percent value from 0 to 100.
+     real, intent(in)  :: v
+     ! S is the saturation as a percent from 0 to 100.
+     real, intent(in)  :: s
+     ! R is the red component as a value of 0 to 100.
+     real, intent(out) :: r
+     ! G is the green component as a value of 0 to 100.
+     real, intent(out) :: g
+     ! B is the blue component as a value of 0 to 100.
+     real, intent(out) :: b
      integer           :: status
     </pre> <p class="enddd"></p>
 </dd>
@@ -1135,12 +1153,18 @@ Here is the caller graph for this function:</div>
 </dd>
 <dt>SYNOPSIS </dt>
 <dd><pre>
-    subroutine rgbcmy(r,g,b,c,m,y,status)</pre><pre>     real, intent(in)  :: r ! the red component as a value in the range of 0 to 100
-     real, intent(in)  :: g ! the green component as a value in the range of 0 to 100
-     real, intent(in)  :: b ! the blue component as a value in the range of 0 to 100
-     real, intent(out) :: c ! the cyan component as a value in the range of 0 to 100
-     real, intent(out) :: m ! the magenta component as a value in the range of 0 to 100
-     real, intent(out) :: y ! the yellow component as a value in the range of 0 to 100
+    subroutine rgbcmy(r,g,b,c,m,y,status)</pre><pre>     ! the red component as a value in the range of 0 to 100
+     real, intent(in)  :: r
+     ! the green component as a value in the range of 0 to 100
+     real, intent(in)  :: g
+     ! the blue component as a value in the range of 0 to 100
+     real, intent(in)  :: b
+     ! the cyan component as a value in the range of 0 to 100
+     real, intent(out) :: c
+     ! the magenta component as a value in the range of 0 to 100
+     real, intent(out) :: m
+     ! the yellow component as a value in the range of 0 to 100
+     real, intent(out) :: y
      integer           :: status
     </pre> <p class="enddd"></p>
 </dd>
@@ -1270,12 +1294,18 @@ Here is the caller graph for this function:</div>
 <p class="enddd"></p>
 </dd>
 <dt>SYNOPSIS </dt>
-<dd><pre></pre><pre>    subroutine rgbhls(r,g,b,h,l,s,status)</pre><pre>     real, intent(in)  :: r ! red component as a value of 0 to 100
-     real, intent(in)  :: g ! green component as a value of 0 to 100
-     real, intent(in)  :: b ! blue component as a value of 0 to 100
-     real, intent(out) :: h ! hue value in the range of 0 to 360 degrees
-     real, intent(out) :: l ! lightness as a percent value from 0 to 100
-     real, intent(out) :: s ! saturation as a percent from 0 to 100
+<dd><pre></pre><pre>    subroutine rgbhls(r,g,b,h,l,s,status)</pre><pre>     ! red component as a value of 0 to 100
+     real, intent(in)  :: r
+     ! green component as a value of 0 to 100
+     real, intent(in)  :: g
+     ! blue component as a value of 0 to 100
+     real, intent(in)  :: b
+     ! hue value in the range of 0 to 360 degrees
+     real, intent(out) :: h
+     ! lightness as a percent value from 0 to 100
+     real, intent(out) :: l
+     ! saturation as a percent from 0 to 100
+     real, intent(out) :: s
      integer           :: status
     </pre> <p class="enddd"></p>
 </dd>
@@ -1408,12 +1438,18 @@ Here is the caller graph for this function:</div>
 </dd>
 <dt>SYNOPSIS </dt>
 <dd><pre>
-    subroutine rgbhvs(r,g,b,h,v,s,status)</pre><pre>     real, intent(in)  :: r ! the red component as a value of 0 to 100.
-     real, intent(in)  :: g ! the green component as a value of 0 to 100.
-     real, intent(in)  :: b ! the blue component as a value of 0 to 100.
-     real, intent(out) :: h ! the hue value in the range of 0 to 360 degrees
-     real, intent(out) :: v ! the "value" as a percent value from 0 to 100.
-     real, intent(out) :: s ! the saturation as a percent from 0 to 100.
+    subroutine rgbhvs(r,g,b,h,v,s,status)</pre><pre>     ! the red component as a value of 0 to 100.
+     real, intent(in)  :: r
+     ! the green component as a value of 0 to 100.
+     real, intent(in)  :: g
+     ! the blue component as a value of 0 to 100.
+     real, intent(in)  :: b
+     ! the hue value in the range of 0 to 360 degrees
+     real, intent(out) :: h
+     ! the "value" as a percent value from 0 to 100.
+     real, intent(out) :: v
+     ! the saturation as a percent from 0 to 100.
+     real, intent(out) :: s
      integer           :: status
     <pre>
  </pre></pre><pre><pre> </pre></pre></dd>

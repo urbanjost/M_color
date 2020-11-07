@@ -53,12 +53,11 @@
 !!   other user-callable color-related procedures:
 !! </p>
 !!
-!! <pre>
-!!
-!!    <a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:  given RGB values, try to find closest named color
-!!    <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:  given a color name, return RGB color values in range 0 to 100
-!!    <a href="rgbmono.3m_color.html">RGBMONO</a>:  convert RGB colors to a reasonable grayscale
-!! </pre>
+!! <a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:&nbsp;&nbsp;given RGB values, try to find closest named color
+!!    <br/>
+!! <a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:&nbsp;&nbsp;given a color name, return RGB color values in range 0 to 100
+!!    <br/>
+!! <a href="rgbmono.3m_color.html">RGBMONO</a>:&nbsp;&nbsp;convert RGB colors to a reasonable grayscale
 !!
 !! <h3> 2*N Design of the module</h3>
 !!
@@ -75,12 +74,11 @@
 !!
 !! <p>
 !!    This allows conversions between all color models with only 2*N
-!!    routines.  That is, to go from model A to model B the module would
+!!    routines. That is, to go from model A to model B the module would
 !!    internally make two calls:
 !! </p>
 !!
 !! <pre>
-!!
 !!     call modelA2rgb(...)
 !!     call rgb2modelB(...)
 !! </pre>
@@ -188,46 +186,41 @@ contains
 !>
 !! <dl>
 !! <dt> <a name="HUE">NAME</a> </dt><dd>
-!!    HUE(3f) - [M_color] converts a color's components from one color model to another.
+!!    HUE(3f) - [M_color] converts a color's components from one color model
+!!    to another.
 !!    (LICENSE:PD)
 !! </dd>
 !!
 !! <dt> SYNOPSIS </dt><dd>
-!!    <pre>
+!! <pre>
+!! subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)
 !!
-!!    subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)
-!!
-!!     character(len=*),intent(in) :: modei  ! color model of input values
-!!     character(len=*),intent(in) :: modeo  ! color model of output values
-!!     real,intent(in)             :: clr1i,clr2i,clr3i
-!!     real,intent(out)            :: clr1o,clr2o,clr3o
-!!     integer,intent(out)         :: status
-!!    </pre>
+!!  character(len=*),intent(in) :: modei  ! color model of input values
+!!  character(len=*),intent(in) :: modeo  ! color model of output values
+!!  real,intent(in)             :: clr1i,clr2i,clr3i
+!!  real,intent(out)            :: clr1o,clr2o,clr3o
+!!  integer,intent(out)         :: status
+!! </pre>
 !! </dd>
 !! <!-- ======================================================================= -->
 !! <dt> DESCRIPTION  </dt><dd>
-!! Basic color models ...
-!! <br/><br/>
+!! </dd>
+!! <dt> Basic color models ..</dt><dd>
+!! <p>
+!! Valid values for modei and modeo as well as the corresponding
+!! meanings for clr1*, clr2*, and clr3* are:
 !!
-!!
-!! <blockquote>
-!! <table border="1" >
-!!    <caption> <b>
-!! <hr>
-!! valid&nbsp;values&nbsp;for&nbsp;modei&nbsp;and&nbsp;modeo&nbsp;as&nbsp;well&nbsp;as&nbsp;the&nbsp;corresponding&nbsp;
-!! meanings&nbsp;for&nbsp;clr1*,&nbsp;clr2*,&nbsp;and&nbsp;clr3*&nbsp;are:
-!! <hr>
-!!    </b></caption>
-!!    <tr> <th> model </th> <th> clr1             </th> <th> clr2                    </th> <th> clr3                     </th> </tr>
-!!    <tr> <td> hls   </td> <td> hue              </td> <td> lightness               </td> <td> saturation               </td> </tr>
-!!    <tr> <td> hsl   </td> <td> hue              </td> <td> saturation              </td> <td> lightness                </td> </tr>
-!!    <tr> <td> hvs   </td> <td> hue              </td> <td> value                   </td> <td> saturation               </td> </tr>
-!!    <tr> <td> hsv   </td> <td> hue              </td> <td> saturation              </td> <td> value                    </td> </tr>
-!!    <tr> <td> rgb   </td> <td> red              </td> <td> green                   </td> <td> blue                     </td> </tr>
-!!    <tr> <td> cmy   </td> <td> cyan             </td> <td> magenta                 </td> <td> yellow                   </td> </tr>
-!!    <tr> <td> yiq   </td> <td> luma(gray&nbsp;scale) </td> <td> orange-blue&nbsp;chrominance </td> <td> purple-green&nbsp;chrominance </td> </tr>
+!! <table border="1">
+!! <tr><th>model</th><th> clr1 </th><th> clr2      </th><th> clr3      </th></tr>
+!! <tr><td>hls  </td><td> hue  </td><td> lightness </td><td> saturation</td></tr>
+!! <tr><td>hsl  </td><td> hue  </td><td> saturation</td><td> lightness </td></tr>
+!! <tr><td>hvs  </td><td> hue  </td><td> value     </td><td> saturation</td></tr>
+!! <tr><td>hsv  </td><td> hue  </td><td> saturation</td><td> value     </td></tr>
+!! <tr><td>rgb  </td><td> red  </td><td> green     </td><td> blue      </td></tr>
+!! <tr><td>cmy  </td><td> cyan </td><td> magenta   </td><td> yellow    </td></tr>
+!! <tr><td>yiq  </td><td> luma</br> grayscale </td><td> orange-blue</br>chrominance </td><td> purple-green</br>chrominance </td></tr>
 !! </table>
-!! </blockquote>
+!! </p>
 !!
 !! <ul>
 !!    <li>  lightness, value, saturation, red, green, blue, cyan, magenta, and yellow range from 0 to 100,
@@ -488,12 +481,18 @@ end subroutine hue
 !!
 !!    subroutine rgbhls(r,g,b,h,l,s,status)
 !!
-!!     real, intent(in)  :: r ! red component as a value of 0 to 100
-!!     real, intent(in)  :: g ! green component as a value of 0 to 100
-!!     real, intent(in)  :: b ! blue component as a value of 0 to 100
-!!     real, intent(out) :: h ! hue value in the range of 0 to 360 degrees
-!!     real, intent(out) :: l ! lightness as a percent value from 0 to 100
-!!     real, intent(out) :: s ! saturation as a percent from 0 to 100
+!!     ! red component as a value of 0 to 100
+!!     real, intent(in)  :: r
+!!     ! green component as a value of 0 to 100
+!!     real, intent(in)  :: g
+!!     ! blue component as a value of 0 to 100
+!!     real, intent(in)  :: b
+!!     ! hue value in the range of 0 to 360 degrees
+!!     real, intent(out) :: h
+!!     ! lightness as a percent value from 0 to 100
+!!     real, intent(out) :: l
+!!     ! saturation as a percent from 0 to 100
+!!     real, intent(out) :: s
 !!     integer           :: status
 !!    </pre>
 !! </dd>
@@ -605,12 +604,18 @@ end subroutine rgbhls
 !!    <pre>
 !!    subroutine rgbhvs(r,g,b,h,v,s,status)
 !!
-!!     real, intent(in)  :: r ! the red component as a value of 0 to 100.
-!!     real, intent(in)  :: g ! the green component as a value of 0 to 100.
-!!     real, intent(in)  :: b ! the blue component as a value of 0 to 100.
-!!     real, intent(out) :: h ! the hue value in the range of 0 to 360 degrees
-!!     real, intent(out) :: v ! the "value" as a percent value from 0 to 100.
-!!     real, intent(out) :: s ! the saturation as a percent from 0 to 100.
+!!     ! the red component as a value of 0 to 100.
+!!     real, intent(in)  :: r
+!!     ! the green component as a value of 0 to 100.
+!!     real, intent(in)  :: g
+!!     ! the blue component as a value of 0 to 100.
+!!     real, intent(in)  :: b
+!!     ! the hue value in the range of 0 to 360 degrees
+!!     real, intent(out) :: h
+!!     ! the "value" as a percent value from 0 to 100.
+!!     real, intent(out) :: v
+!!     ! the saturation as a percent from 0 to 100.
+!!     real, intent(out) :: s
 !!     integer           :: status
 !!    <pre>
 !! </dd>
@@ -731,12 +736,18 @@ end subroutine rgbhvs
 !!    <pre>
 !!    subroutine cmyrgb(c,m,y,r,g,b,status)
 !!
-!!     real, intent(in)  :: c ! cyan component as a value in the range of 0 to 100
-!!     real, intent(in)  :: m ! magenta component as a value in the range of 0 to 100
-!!     real, intent(in)  :: y ! yellow component as a value in the range of 0 to 100
-!!     real, intent(out) :: r ! red component as a value in the range of 0 to 100
-!!     real, intent(out) :: g ! green component as a value in the range of 0 to 100
-!!     real, intent(out) :: b ! blue component as a value in the range of 0 to 100
+!!     ! cyan component as a value in the range of 0 to 100
+!!     real, intent(in)  :: c
+!!     ! magenta component as a value in the range of 0 to 100
+!!     real, intent(in)  :: m
+!!     ! yellow component as a value in the range of 0 to 100
+!!     real, intent(in)  :: y
+!!     ! red component as a value in the range of 0 to 100
+!!     real, intent(out) :: r
+!!     ! green component as a value in the range of 0 to 100
+!!     real, intent(out) :: g
+!!     ! blue component as a value in the range of 0 to 100
+!!     real, intent(out) :: b
 !!     integer           :: status
 !!    </pre>
 !! </dd>
@@ -792,12 +803,18 @@ end subroutine cmyrgb
 !!    <pre>
 !!    subroutine rgbcmy(r,g,b,c,m,y,status)
 !!
-!!     real, intent(in)  :: r ! the red component as a value in the range of 0 to 100
-!!     real, intent(in)  :: g ! the green component as a value in the range of 0 to 100
-!!     real, intent(in)  :: b ! the blue component as a value in the range of 0 to 100
-!!     real, intent(out) :: c ! the cyan component as a value in the range of 0 to 100
-!!     real, intent(out) :: m ! the magenta component as a value in the range of 0 to 100
-!!     real, intent(out) :: y ! the yellow component as a value in the range of 0 to 100
+!!     ! the red component as a value in the range of 0 to 100
+!!     real, intent(in)  :: r
+!!     ! the green component as a value in the range of 0 to 100
+!!     real, intent(in)  :: g
+!!     ! the blue component as a value in the range of 0 to 100
+!!     real, intent(in)  :: b
+!!     ! the cyan component as a value in the range of 0 to 100
+!!     real, intent(out) :: c
+!!     ! the magenta component as a value in the range of 0 to 100
+!!     real, intent(out) :: m
+!!     ! the yellow component as a value in the range of 0 to 100
+!!     real, intent(out) :: y
 !!     integer           :: status
 !!    </pre>
 !! </dd>
@@ -1036,12 +1053,18 @@ end function rgbval
 !!    <pre>
 !!    subroutine hlsrgb</a> (h,l,s,r,g,b,status)
 !!
-!!     real, intent(in)  :: h ! hue value in the range of 0 to 360 degrees
-!!     real, intent(in)  :: l ! lightness as a percent value from 0 to 100.
-!!     real, intent(in)  :: s ! saturation as a percent from 0 to 100.
-!!     real, intent(out) :: r ! red component as a value of 0 to 100.
-!!     real, intent(out) :: g ! green component as a value of 0 to 100.
-!!     real, intent(out) :: b ! blue component as a value of 0 to 100.
+!!     ! hue value in the range of 0 to 360 degrees
+!!     real, intent(in)  :: h
+!!     ! lightness as a percent value from 0 to 100.
+!!     real, intent(in)  :: l
+!!     ! saturation as a percent from 0 to 100.
+!!     real, intent(in)  :: s
+!!     ! red component as a value of 0 to 100.
+!!     real, intent(out) :: r
+!!     ! green component as a value of 0 to 100.
+!!     real, intent(out) :: g
+!!     ! blue component as a value of 0 to 100.
+!!     real, intent(out) :: b
 !!     integer           :: status
 !!    </pre>
 !! </dd>
@@ -1115,12 +1138,18 @@ end subroutine hlsrgb
 !!    <pre>
 !!    subroutine hvsrgb</a>(h,v,s,r,g,b,status)
 !!
-!!     real, intent(in)  :: h ! H is the hue value in the range of 0 to 360 degrees
-!!     real, intent(in)  :: v ! V is the "value" as a percent value from 0 to 100.
-!!     real, intent(in)  :: s ! S is the saturation as a percent from 0 to 100.
-!!     real, intent(out) :: r ! R is the red component as a value of 0 to 100.
-!!     real, intent(out) :: g ! G is the green component as a value of 0 to 100.
-!!     real, intent(out) :: b ! B is the blue component as a value of 0 to 100.
+!!     ! H is the hue value in the range of 0 to 360 degrees
+!!     real, intent(in)  :: h
+!!     ! V is the "value" as a percent value from 0 to 100.
+!!     real, intent(in)  :: v
+!!     ! S is the saturation as a percent from 0 to 100.
+!!     real, intent(in)  :: s
+!!     ! R is the red component as a value of 0 to 100.
+!!     real, intent(out) :: r
+!!     ! G is the green component as a value of 0 to 100.
+!!     real, intent(out) :: g
+!!     ! B is the blue component as a value of 0 to 100.
+!!     real, intent(out) :: b
 !!     integer           :: status
 !!    </pre>
 !! </dd>
@@ -1431,7 +1460,7 @@ end SUBROUTINE closest_color_name
 !!
 !!##DESCRIPTION
 !!    COLOR_NAME2RGB() returns the RGB values in the range 0 to 100
-!!    for a given known color name.  Most X11 Windows color names are
+!!    for a given known color name. Most X11 Windows color names are
 !!    supported. If the name is not found, ECHONAME is set to "Unknown".
 !!
 !!##EXAMPLE

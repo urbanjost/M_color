@@ -6,8 +6,8 @@ PROGFILES = \
  ../test/demos/color_name2rgb/color_name2rgb.f90 \
  ../test/demos/hue/hue.f90 \
  ../test/demos/rgbmono/rgbmono.f90 \
- ../test/test_suite/test_suite_M_color.f90 \
 $(NULL)
+# ../test/test_suite/test_suite_M_color.f90 \
 
 CPROGFILES = 
 

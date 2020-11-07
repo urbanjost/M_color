@@ -1,3 +1,4 @@
+# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
 name = "M_color"
 version = "0.1.0"
 license = "Public Domain"
@@ -6,27 +7,34 @@ maintainer = "urbanjost@comcast.net"
 copyright = "2020 John S. Urban"
 description = "conversions between common color models "
 
-[[executable]]
+[library]
+source-dir="src"
+[dependencies]
+M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }
+
+[[test]]
 name="color_name2rgb"
 source-dir="test/demos/color_name2rgb"
 main="color_name2rgb.f90"
 
-[[executable]]
+[[test]]
 name="closest_color_name"
 source-dir="test/demos/closest_color_name"
 main="closest_color_name.f90"
 
-[[executable]]
+[[test]]
 name="hue"
 source-dir="test/demos/hue"
 main="hue.f90"
 
-[[executable]]
+[[test]]
 name="rgbmono"
 source-dir="test/demos/rgbmono"
 main="rgbmono.f90"
 
-#[[test]]
-#name="runTests"
-#source-dir="test/test_suite"
-#main="test_suite_M_color.f90"
+[[test]]
+name="runTests"
+source-dir="test/test_suite"
+main="test_suite_M_color.f90"
+[test.dependencies]
+M_msg          = { git = "https://github.com/urbanjost/M_msg.git" }

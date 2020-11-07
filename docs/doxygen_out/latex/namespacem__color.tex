@@ -98,16 +98,9 @@ In addition to the reversible color model conversions there are a few other user
 
 
 
-
-\begin{DoxyPre}\end{DoxyPre}
-
-
-
-\begin{DoxyPre}    \href{closest_color_name.3m_color.html}{\tt CLOSEST\_COLOR\_NAME}:  given RGB values, try to find closest named color
-    \href{color_name2rgb.3m_color.html}{\tt COLOR\_NAME2RGB}:  given a color name, return RGB color values in range 0 to 100
-    \href{rgbmono.3m_color.html}{\tt RGBMONO}:  convert RGB colors to a reasonable grayscale
- \end{DoxyPre}
-
+\href{closest_color_name.3m_color.html}{\tt C\+L\+O\+S\+E\+S\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+N\+A\+ME}\+:~~given R\+GB values, try to find closest named color ~\newline
+ \href{color_name2rgb.3m_color.html}{\tt C\+O\+L\+O\+R\+\_\+\+N\+A\+M\+E2\+R\+GB}\+:~~given a color name, return R\+GB color values in range 0 to 100 ~\newline
+ \href{rgbmono.3m_color.html}{\tt R\+G\+B\+M\+O\+NO}\+:~~convert R\+GB colors to a reasonable grayscale
 
 \paragraph*{2$\ast$N Design of the module}
 
@@ -132,11 +125,8 @@ This allows conversions between all color models with only 2$\ast$N routines. Th
 
 
 
-\begin{DoxyPre}\end{DoxyPre}
-
-
-
-\begin{DoxyPre}     call modelA2rgb(...)
+\begin{DoxyPre}
+     call modelA2rgb(...)
      call rgb2modelB(...)
  \end{DoxyPre}
 
@@ -267,7 +257,8 @@ Public Domain
 
 References color\+\_\+name2rgb().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -292,12 +283,18 @@ N\+A\+ME ]cmyrgb(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} calculates the cyan, mage
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: c ! cyan component as a value in the range of 0 to 100
-     real, intent(in)  :: m ! magenta component as a value in the range of 0 to 100
-     real, intent(in)  :: y ! yellow component as a value in the range of 0 to 100
-     real, intent(out) :: r ! red component as a value in the range of 0 to 100
-     real, intent(out) :: g ! green component as a value in the range of 0 to 100
-     real, intent(out) :: b ! blue component as a value in the range of 0 to 100
+\begin{DoxyPre}     ! cyan component as a value in the range of 0 to 100
+     real, intent(in)  :: c
+     ! magenta component as a value in the range of 0 to 100
+     real, intent(in)  :: m
+     ! yellow component as a value in the range of 0 to 100
+     real, intent(in)  :: y
+     ! red component as a value in the range of 0 to 100
+     real, intent(out) :: r
+     ! green component as a value in the range of 0 to 100
+     real, intent(out) :: g
+     ! blue component as a value in the range of 0 to 100
+     real, intent(out) :: b
      integer           :: status
     \end{DoxyPre}
  
@@ -322,7 +319,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -395,14 +393,16 @@ Public Domain
 
 References lower().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=345pt]{namespacem__color_a84a36043d278bc56a7148483a862dec8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -427,12 +427,18 @@ N\+A\+ME ]H\+L\+S\+R\+G\+B(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} calculates the 
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: h ! hue value in the range of 0 to 360 degrees
-     real, intent(in)  :: l ! lightness as a percent value from 0 to 100.
-     real, intent(in)  :: s ! saturation as a percent from 0 to 100.
-     real, intent(out) :: r ! red component as a value of 0 to 100.
-     real, intent(out) :: g ! green component as a value of 0 to 100.
-     real, intent(out) :: b ! blue component as a value of 0 to 100.
+\begin{DoxyPre}     ! hue value in the range of 0 to 360 degrees
+     real, intent(in)  :: h
+     ! lightness as a percent value from 0 to 100.
+     real, intent(in)  :: l
+     ! saturation as a percent from 0 to 100.
+     real, intent(in)  :: s
+     ! red component as a value of 0 to 100.
+     real, intent(out) :: r
+     ! green component as a value of 0 to 100.
+     real, intent(out) :: g
+     ! blue component as a value of 0 to 100.
+     real, intent(out) :: b
      integer           :: status
     \end{DoxyPre}
  
@@ -462,14 +468,16 @@ Public Domain
 
 References hue(), and rgbval().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a40e6c91da216384eded2157cdaf86eba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -489,49 +497,45 @@ N\+A\+ME ]H\+U\+E(3f) -\/ \mbox{[}M\+\_\+color\mbox{]} converts a color\textquot
 
 
 \item[S\+Y\+N\+O\+P\+S\+IS ]
-\begin{DoxyPre}\end{DoxyPre}
+\begin{DoxyPre}
+ subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)\end{DoxyPre}
 
 
 
-\begin{DoxyPre}    subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)\end{DoxyPre}
-
-
-
-\begin{DoxyPre}     character(len=*),intent(in) :: modei  ! color model of input values
-     character(len=*),intent(in) :: modeo  ! color model of output values
-     real,intent(in)             :: clr1i,clr2i,clr3i
-     real,intent(out)            :: clr1o,clr2o,clr3o
-     integer,intent(out)         :: status
-    \end{DoxyPre}
+\begin{DoxyPre}  character(len=*),intent(in) :: modei  ! color model of input values
+  character(len=*),intent(in) :: modeo  ! color model of output values
+  real,intent(in)             :: clr1i,clr2i,clr3i
+  real,intent(out)            :: clr1o,clr2o,clr3o
+  integer,intent(out)         :: status
+ \end{DoxyPre}
  
 
 
-\item[D\+E\+S\+C\+R\+I\+P\+T\+I\+ON ]Basic color models ... ~\newline
-~\newline
+\item[D\+E\+S\+C\+R\+I\+P\+T\+I\+ON ]
+\item[Basic color models ..]
 
-
-\begin{quote}
+Valid values for modei and modeo as well as the corresponding meanings for clr1$\ast$, clr2$\ast$, and clr3$\ast$ are\+:
 
 \tabulinesep=1mm
 \begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
-\caption{{\bfseries   valid~values~for~modei~and~modeo~as~well~as~the~corresponding~ meanings~for~clr1$\ast$,~clr2$\ast$,~and~clr3$\ast$~are\+:  }}\label{_}\\
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ model  }&\textbf{ clr1  }&\textbf{ clr2  }&\textbf{ clr3   }\\\cline{1-4}
+\rowcolor{\tableheadbgcolor}\textbf{ model}&\textbf{ clr1 }&\textbf{ clr2 }&\textbf{ clr3  }\\\cline{1-4}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ model  }&\textbf{ clr1  }&\textbf{ clr2  }&\textbf{ clr3   }\\\cline{1-4}
+\rowcolor{\tableheadbgcolor}\textbf{ model}&\textbf{ clr1 }&\textbf{ clr2 }&\textbf{ clr3  }\\\cline{1-4}
 \endhead
-hls  &hue  &lightness  &saturation   \\\cline{1-4}
-hsl  &hue  &saturation  &lightness   \\\cline{1-4}
-hvs  &hue  &value  &saturation   \\\cline{1-4}
-hsv  &hue  &saturation  &value   \\\cline{1-4}
-rgb  &red  &green  &blue   \\\cline{1-4}
-cmy  &cyan  &magenta  &yellow   \\\cline{1-4}
-yiq  &luma(gray~scale)  &orange-\/blue~chrominance  &purple-\/green~chrominance   \\\cline{1-4}
+hls &hue &lightness &saturation \\\cline{1-4}
+hsl &hue &saturation&lightness  \\\cline{1-4}
+hvs &hue &value &saturation \\\cline{1-4}
+hsv &hue &saturation&value  \\\cline{1-4}
+rgb &red &green &blue  \\\cline{1-4}
+cmy &cyan &magenta &yellow  \\\cline{1-4}
+yiq &luma grayscale &orange-\/bluechrominance &purple-\/greenchrominance  \\\cline{1-4}
 \end{longtabu}
-\end{quote}
+
+
 
 
 
@@ -679,14 +683,16 @@ Public Domain
 
 References cmyrgb(), hlsrgb(), hvsrgb(), lower(), rgbcmy(), rgbhls(), rgbhvs(), rgbyiq(), and yiqrgb().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a56dd07bbf1378ccc78a230d171f9d429_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -711,12 +717,18 @@ N\+A\+ME ]H\+V\+S\+R\+G\+B(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} calculates the 
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: h ! H is the hue value in the range of 0 to 360 degrees
-     real, intent(in)  :: v ! V is the "value" as a percent value from 0 to 100.
-     real, intent(in)  :: s ! S is the saturation as a percent from 0 to 100.
-     real, intent(out) :: r ! R is the red component as a value of 0 to 100.
-     real, intent(out) :: g ! G is the green component as a value of 0 to 100.
-     real, intent(out) :: b ! B is the blue component as a value of 0 to 100.
+\begin{DoxyPre}     ! H is the hue value in the range of 0 to 360 degrees
+     real, intent(in)  :: h
+     ! V is the "value" as a percent value from 0 to 100.
+     real, intent(in)  :: v
+     ! S is the saturation as a percent from 0 to 100.
+     real, intent(in)  :: s
+     ! R is the red component as a value of 0 to 100.
+     real, intent(out) :: r
+     ! G is the green component as a value of 0 to 100.
+     real, intent(out) :: g
+     ! B is the blue component as a value of 0 to 100.
+     real, intent(out) :: b
      integer           :: status
     \end{DoxyPre}
  
@@ -746,14 +758,16 @@ Public Domain
 
 References hue().
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a334ec90d94bbfb9a4c08c5f9efdb8c47_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -766,7 +780,8 @@ Here is the caller graph for this function\+:\nopagebreak
 \subsubsection{\texorpdfstring{lower()}{lower()}}
 {\footnotesize\ttfamily elemental pure character(len(str)) function m\+\_\+color\+::lower (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -791,12 +806,18 @@ N\+A\+ME ]rgbcmy(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} calculates the cyan, mage
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: r ! the red component as a value in the range of 0 to 100
-     real, intent(in)  :: g ! the green component as a value in the range of 0 to 100
-     real, intent(in)  :: b ! the blue component as a value in the range of 0 to 100
-     real, intent(out) :: c ! the cyan component as a value in the range of 0 to 100
-     real, intent(out) :: m ! the magenta component as a value in the range of 0 to 100
-     real, intent(out) :: y ! the yellow component as a value in the range of 0 to 100
+\begin{DoxyPre}     ! the red component as a value in the range of 0 to 100
+     real, intent(in)  :: r
+     ! the green component as a value in the range of 0 to 100
+     real, intent(in)  :: g
+     ! the blue component as a value in the range of 0 to 100
+     real, intent(in)  :: b
+     ! the cyan component as a value in the range of 0 to 100
+     real, intent(out) :: c
+     ! the magenta component as a value in the range of 0 to 100
+     real, intent(out) :: m
+     ! the yellow component as a value in the range of 0 to 100
+     real, intent(out) :: y
      integer           :: status
     \end{DoxyPre}
  
@@ -850,7 +871,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -878,12 +900,18 @@ N\+A\+ME ]R\+G\+B\+H\+L\+S(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} Given red, gree
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: r ! red component as a value of 0 to 100
-     real, intent(in)  :: g ! green component as a value of 0 to 100
-     real, intent(in)  :: b ! blue component as a value of 0 to 100
-     real, intent(out) :: h ! hue value in the range of 0 to 360 degrees
-     real, intent(out) :: l ! lightness as a percent value from 0 to 100
-     real, intent(out) :: s ! saturation as a percent from 0 to 100
+\begin{DoxyPre}     ! red component as a value of 0 to 100
+     real, intent(in)  :: r
+     ! green component as a value of 0 to 100
+     real, intent(in)  :: g
+     ! blue component as a value of 0 to 100
+     real, intent(in)  :: b
+     ! hue value in the range of 0 to 360 degrees
+     real, intent(out) :: h
+     ! lightness as a percent value from 0 to 100
+     real, intent(out) :: l
+     ! saturation as a percent from 0 to 100
+     real, intent(out) :: s
      integer           :: status
     \end{DoxyPre}
  
@@ -935,7 +963,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -960,12 +989,18 @@ N\+A\+ME ]R\+G\+B\+H\+V\+S(3fp) -\/ \mbox{[}M\+\_\+color\mbox{]} calculates the 
 
 
 
-\begin{DoxyPre}     real, intent(in)  :: r ! the red component as a value of 0 to 100.
-     real, intent(in)  :: g ! the green component as a value of 0 to 100.
-     real, intent(in)  :: b ! the blue component as a value of 0 to 100.
-     real, intent(out) :: h ! the hue value in the range of 0 to 360 degrees
-     real, intent(out) :: v ! the "value" as a percent value from 0 to 100.
-     real, intent(out) :: s ! the saturation as a percent from 0 to 100.
+\begin{DoxyPre}     ! the red component as a value of 0 to 100.
+     real, intent(in)  :: r
+     ! the green component as a value of 0 to 100.
+     real, intent(in)  :: g
+     ! the blue component as a value of 0 to 100.
+     real, intent(in)  :: b
+     ! the hue value in the range of 0 to 360 degrees
+     real, intent(out) :: h
+     ! the "value" as a percent value from 0 to 100.
+     real, intent(out) :: v
+     ! the saturation as a percent from 0 to 100.
+     real, intent(out) :: s
      integer           :: status
     
 \begin{DoxyPre}
@@ -1100,7 +1135,8 @@ name }&\textbf{ Hex      }&\textbf{ (R,G,B)        }&\textbf{ (H,S,V)
 \begin{DoxyPre} \end{DoxyPre}
 \end{DoxyPre}
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1203,7 +1239,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1252,7 +1289,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1305,7 +1343,8 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
