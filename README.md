@@ -18,8 +18,19 @@ documents as well as in a
 ## DOWNLOAD
     git clone https://github.com/urbanjost/M_color.git
     cd M_color/src
-    # change Makefile if not using gfortran(1) 
-    make
+    # change Makefile if not using one of the listed compilers
+     
+    # for gfortran
+    make clean
+    make F90=gfortran gfortran
+     
+    # for ifort
+    make clean
+    make F90=ifort ifort
+
+    # for nvfortran
+    make clean
+    make F90=nvfortran nvfortran
 
 This will compile the M_color module and build all the example programs
 from the document pages in the test/demos/ sub-directory.

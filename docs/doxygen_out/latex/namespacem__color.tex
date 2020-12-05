@@ -155,6 +155,23 @@ The resulting internal routines that result are\+:
 
 
 \end{DoxyItemize}
+\item[E\+X\+A\+M\+P\+LE ]
+
+Sample program\+: 
+
+$<$xmp$>$ program demo\+\_\+\+M\+\_\+color use M\+\_\+color, only \+: hue use M\+\_\+color, only \+: closest\+\_\+color\+\_\+name use M\+\_\+color, only \+: color\+\_\+name2rgb use M\+\_\+color, only \+: rgbmono implicit none character(len=100) \+:\+: string ! at least 20 characters character(len=20) \+:\+: name character(len=20) \+:\+: echoname real \+:\+: red,green,blue real \+:\+: gray integer \+:\+: ierr ! find the names of colors given R\+GB values write($\ast$,$\ast$)\textquotesingle{}Find names given values\textquotesingle{}
+
+call closest\+\_\+color\+\_\+name( 100.\+0, 0.\+0, 0.\+0, string) write($\ast$,$\ast$)trim(string)
+
+call closest\+\_\+color\+\_\+name( 0.\+0, 100.\+0, 0.\+0, string) write($\ast$,$\ast$)trim(string)
+
+call closest\+\_\+color\+\_\+name( 0.\+0, 0.\+0, 100.\+0, string) write($\ast$,$\ast$)trim(string)
+
+! list colors known to colorname2rgb(3f) \& corresponding R\+GB values write($\ast$,$\ast$)\textquotesingle{}given names find R\+GB values\textquotesingle{} ! get the R\+GB values and English name of the color call color\+\_\+name2rgb(\textquotesingle{}R\+ED\textquotesingle{},red,green,blue,echoname) ! display the English name and R\+GB values for the name write($\ast$,$\ast$)echoname,int(\mbox{[}red,green,blue\mbox{]})
+
+write($\ast$,$\ast$)\textquotesingle{}Do some conversions between R\+GB, H\+LS, and H\+LS\textquotesingle{} write($\ast$,$\ast$)\textquotesingle{}and check them against expected values\textquotesingle{} ! N\+A\+ME R\+GB(0-\/255) H\+LS(0-\/100) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}red\textquotesingle{}, \mbox{[}100, 0, 0 \mbox{]}, \mbox{[}0, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}orange\textquotesingle{}, \mbox{[}100, 65, 0 \mbox{]}, \mbox{[}39, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}yellow\textquotesingle{}, \mbox{[}100, 100, 0 \mbox{]}, \mbox{[}60, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}green\textquotesingle{}, \mbox{[}0, 100, 0 \mbox{]}, \mbox{[}120, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}cyan\textquotesingle{}, \mbox{[}0, 100, 100\mbox{]}, \mbox{[}180, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}blue\textquotesingle{}, \mbox{[}0, 0, 100\mbox{]}, \mbox{[}240, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}magenta\textquotesingle{}, \mbox{[}100, 0, 100\mbox{]}, \mbox{[}300, 50, 100\mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}black\textquotesingle{}, \mbox{[}0, 0, 0 \mbox{]}, \mbox{[}0, 0, 0 \mbox{]}) call chk(\textquotesingle{}hls\textquotesingle{},\textquotesingle{}white\textquotesingle{}, \mbox{[}100, 100, 100\mbox{]}, \mbox{[}0, 100, 0 \mbox{]}) ! N\+A\+ME R\+GB(0-\/255) H\+SV(0-\/100) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}red\textquotesingle{}, \mbox{[}100, 0, 0 \mbox{]}, \mbox{[}0, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}yellow\textquotesingle{}, \mbox{[}100, 100, 0 \mbox{]}, \mbox{[}60, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}green\textquotesingle{}, \mbox{[}0, 100, 0 \mbox{]}, \mbox{[}120, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}cyan\textquotesingle{}, \mbox{[}0, 100, 100\mbox{]}, \mbox{[}180, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}blue\textquotesingle{}, \mbox{[}0, 0, 100\mbox{]}, \mbox{[}240, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}magenta\textquotesingle{}, \mbox{[}100, 0, 100\mbox{]}, \mbox{[}300, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}white\textquotesingle{}, \mbox{[}100, 100, 100\mbox{]}, \mbox{[}0, 0, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}black\textquotesingle{}, \mbox{[}0, 0, 0 \mbox{]}, \mbox{[}0, 0, 0 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}gray50\textquotesingle{}, \mbox{[}50, 50, 50 \mbox{]}, \mbox{[}0, 0, 50 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}silver\textquotesingle{}, \mbox{[}75, 75, 75 \mbox{]}, \mbox{[}0, 0, 75 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}red4\textquotesingle{}, \mbox{[}55, 0, 0 \mbox{]}, \mbox{[}0, 100, 55 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}olive\textquotesingle{}, \mbox{[}50, 50, 0 \mbox{]}, \mbox{[}60, 100, 50 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}lime\textquotesingle{}, \mbox{[}0, 100, 0 \mbox{]}, \mbox{[}120, 100, 100\mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}teal\textquotesingle{}, \mbox{[}0, 50, 50 \mbox{]}, \mbox{[}180, 100, 50 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}navy\textquotesingle{}, \mbox{[}0, 0, 50 \mbox{]}, \mbox{[}240, 100, 50 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}purple\textquotesingle{}, \mbox{[}63, 13, 94 \mbox{]}, \mbox{[}277, 87, 94 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}magenta4\textquotesingle{},\mbox{[}55, 0, 55 \mbox{]}, \mbox{[}300, 100, 55 \mbox{]}) call chk(\textquotesingle{}hsv\textquotesingle{},\textquotesingle{}maroon\textquotesingle{}, \mbox{[}69, 19, 38 \mbox{]}, \mbox{[}338, 73, 69 \mbox{]})
+
+write($\ast$,$\ast$)\textquotesingle{}Get some grayscale values from R\+GB color values\textquotesingle{} call rgbmono(100.\+0, 0.\+0, 0.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}red \textquotesingle{},gray call rgbmono( 0.\+0,100.\+0, 0.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}green \textquotesingle{},gray call rgbmono( 0.\+0, 0.\+0,100.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}blue \textquotesingle{},gray call rgbmono(100.\+0,100.\+0, 0.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Yellow \textquotesingle{},gray call rgbmono( 0.\+0,100.\+0,100.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Cyan \textquotesingle{},gray call rgbmono(100.\+0, 0.\+0,100.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Magenta \textquotesingle{},gray call rgbmono(100.\+0,100.\+0,100.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}White \textquotesingle{},gray call rgbmono( 00.\+0, 0.\+0, 0.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Black \textquotesingle{},gray call rgbmono( 50.\+0, 0.\+0, 0.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Maroon \textquotesingle{},gray call rgbmono(100.\+0, 50.\+0, 50.\+0,gray,ierr); write($\ast$,$\ast$)\textquotesingle{}Pink \textquotesingle{},gray contains subroutine chk(modelout,name,rgb,other) ! given a color convert to M\+O\+D\+E\+L\+O\+UT and compare to expected values character(len=$\ast$),intent(in) \+:\+: name integer,intent(in) \+:\+: rgb(3), other(3) character(len=$\ast$),intent(in) \+:\+: modelout real \+:\+: val1,val2,val3 integer \+:\+: status ! convert R\+GB values to M\+O\+D\+E\+L\+O\+UT values call hue(\textquotesingle{}rgb\textquotesingle{},R\+E\+A\+L(rgb(1)),R\+E\+A\+L(rgb(2)),R\+E\+A\+L(rgb(3)),\& \& modelout,val1,val2,val3,status) ! left-\/justify name to 10 characters or more write($\ast$,\textquotesingle{}(a,1x)\textquotesingle{},advance=\textquotesingle{}no\textquotesingle{}) \& \& \mbox{[} character(len=max(10,len\+\_\+trim(name))) \+:\+:\textquotesingle{} \textquotesingle{}//trim(name)\mbox{]} write($\ast$,\textquotesingle{}(a,1x,3(i3,1x))\textquotesingle{},advance=\textquotesingle{}no\textquotesingle{}) \& \& modelout//\textquotesingle{} E\+X\+P\+E\+C\+T\+ED\textquotesingle{},other write($\ast$,\textquotesingle{}(a,1x,3(i3,1x))\textquotesingle{},advance=\textquotesingle{}no\textquotesingle{}) \& \& \textquotesingle{}G\+OT\textquotesingle{},int(\mbox{[}val1+0.5,val2+0.5,val3+0.5\mbox{]}) write($\ast$,\textquotesingle{}(a,i0)\textquotesingle{})\textquotesingle{}S\+T\+A\+T\+US \textquotesingle{},status end subroutine chk end program demo\+\_\+\+M\+\_\+color $<$/xmp$>$ 
 
 
 \item[S\+EE A\+L\+SO  ]
@@ -257,8 +274,7 @@ Public Domain
 
 References color\+\_\+name2rgb().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -319,8 +335,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -393,16 +408,14 @@ Public Domain
 
 References lower().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=345pt]{namespacem__color_a84a36043d278bc56a7148483a862dec8_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -468,16 +481,14 @@ Public Domain
 
 References hue(), and rgbval().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a40e6c91da216384eded2157cdaf86eba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -587,24 +598,27 @@ The S\+T\+A\+T\+US variable can signal the following conditions\+:
        call chk('hls','magenta', [100, 0,   100], [300, 50,  100])
        call chk('hls','black',   [0,   0,   0  ], [0,   0,   0  ])
        call chk('hls','white',   [100, 100, 100], [0,   100, 0  ])
-       call chk('hsv','black',   [0,   0,   0  ], [0,   0,   0  ])
        !               NAME        RGB(0-255)           HSV(0-100)
-       call chk('hsv','gray50',  [50,  50,  50 ], [0,   0,   50 ])
-       call chk('hsv','silver',  [75,  75,  75 ], [0,   0,   75 ])
-       call chk('hsv','white',   [100, 100, 100], [0,   0,   100])
-       call chk('hsv','red4',    [55,  0,   0  ], [0,   100, 55 ])
        call chk('hsv','red',     [100, 0,   0  ], [0,   100, 100])
-       call chk('hsv','olive',   [50,  50,  0  ], [60,  100, 50 ])
        call chk('hsv','yellow',  [100, 100, 0  ], [60,  100, 100])
        call chk('hsv','green',   [0,   100, 0  ], [120, 100, 100])
+       call chk('hsv','cyan',    [0,   100, 100], [180, 100, 100])
+       call chk('hsv','blue',    [0,   0,   100], [240, 100, 100])
+       call chk('hsv','magenta', [100, 0,   100], [300, 100, 100])
+       call chk('hsv','black',   [0,   0,   0  ], [0,   0,   0  ])
+       call chk('hsv','white',   [100, 100, 100], [0,   0,   100])\end{DoxyPre}
+
+
+
+\begin{DoxyPre}       call chk('hsv','gray50',  [50,  50,  50 ], [0,   0,   50 ])
+       call chk('hsv','silver',  [75,  75,  75 ], [0,   0,   75 ])
+       call chk('hsv','red4',    [55,  0,   0  ], [0,   100, 55 ])
+       call chk('hsv','olive',   [50,  50,  0  ], [60,  100, 50 ])
        call chk('hsv','lime',    [0,   100, 0  ], [120, 100, 100])
        call chk('hsv','teal',    [0,   50,  50 ], [180, 100, 50 ])
-       call chk('hsv','cyan',    [0,   100, 100], [180, 100, 100])
        call chk('hsv','navy',    [0,   0,   50 ], [240, 100, 50 ])
-       call chk('hsv','blue',    [0,   0,   100], [240, 100, 100])
        call chk('hsv','purple',  [63,  13,  94 ], [277, 87,  94 ])
        call chk('hsv','magenta4',[55,  0,   55 ], [300, 100, 55 ])
-       call chk('hsv','magenta', [100, 0,   100], [300, 100, 100])
        call chk('hsv','maroon',  [69,  19,  38 ], [338, 73,  69 ])
     contains
     subroutine chk(modelout,name,rgb,other)
@@ -683,16 +697,14 @@ Public Domain
 
 References cmyrgb(), hlsrgb(), hvsrgb(), lower(), rgbcmy(), rgbhls(), rgbhvs(), rgbyiq(), and yiqrgb().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a56dd07bbf1378ccc78a230d171f9d429_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -758,16 +770,14 @@ Public Domain
 
 References hue().
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacem__color_a334ec90d94bbfb9a4c08c5f9efdb8c47_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -780,8 +790,7 @@ Here is the caller graph for this function\+:
 \subsubsection{\texorpdfstring{lower()}{lower()}}
 {\footnotesize\ttfamily elemental pure character(len(str)) function m\+\_\+color\+::lower (\begin{DoxyParamCaption}\item[{character($\ast$), intent(in)}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -871,8 +880,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -963,8 +971,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1135,8 +1142,7 @@ name }&\textbf{ Hex      }&\textbf{ (R,G,B)        }&\textbf{ (H,S,V)
 \begin{DoxyPre} \end{DoxyPre}
 \end{DoxyPre}
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1239,8 +1245,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1289,8 +1294,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1343,8 +1347,7 @@ Public Domain
 
 
 
-\end{DoxyDescription}Here is the caller graph for this function\+:
-\nopagebreak
+\end{DoxyDescription}Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
