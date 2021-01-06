@@ -3,9 +3,9 @@
 !! <!-- ======================================================================= -->
 !! <dt> <a name="M_COLOR">NAME</a></dt> <dd>
 !! <!--
-!! <em>M_color(3fm)</em>&nbsp;-&nbsp;[M_color]&nbsp;a&nbsp;Fortran&nbsp;module&nbsp;that&nbsp;lets&nbsp;you&nbsp;convert&nbsp;between&nbsp;common&nbsp;color&nbsp;models
+!! <em>M_color(3)</em>&nbsp;-&nbsp;[M_color]&nbsp;a&nbsp;Fortran&nbsp;module&nbsp;that&nbsp;lets&nbsp;you&nbsp;convert&nbsp;between&nbsp;common&nbsp;color&nbsp;models
 !! -->
-!! <em>M_color(3fm)</em> - [M_color] a Fortran module that lets you convert between common color models
+!! <em>M_color(3)</em> - [M_color] a Fortran module that lets you convert between common color models
 !! (LICENSE:PD)
 !! </dd>
 !! <!-- ======================================================================= -->

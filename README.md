@@ -33,7 +33,7 @@ documents as well as in a
     make F90=nvfortran nvfortran
 
 This will compile the M_color module and build all the example programs
-from the document pages in the test/demos/ sub-directory.
+from the document pages in the examples/ sub-directory.
 
 ## SUPPORTS FPM
 #### (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )
@@ -44,7 +44,6 @@ fpm ( as described at [Fortran Package Manager](https://github.com/fortran-lang/
 ```bash
      git clone https://github.com/urbanjost/M_color.git
      cd M_color
-     fpm build
      fpm test
 ```
 
