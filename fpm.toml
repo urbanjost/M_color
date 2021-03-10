@@ -6,6 +6,9 @@ author = "John S. Urban"
 maintainer = "urbanjost@comcast.net"
 copyright = "2020 John S. Urban"
 description = "conversions between common color models "
+categories = ["Color Conversion"]
+keywords = ["fortran", "hue", "color", "RGB", "HLS"]
+homepage = "https://github.com/urbanjost/M_color.git"
 
 [[test]]
 name="runTests"

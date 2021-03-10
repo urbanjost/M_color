@@ -35,7 +35,7 @@ documents as well as in a
 This will compile the M_color module and build all the example programs
 from the document pages in the examples/ sub-directory.
 
-## SUPPORTS FPM
+## SUPPORTS FPM ![fpm](docs/images/fpm_logo.gif)
 #### (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )
 
 Alternatively, download the github repository and build it with 
