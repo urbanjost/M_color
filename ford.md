@@ -4,13 +4,13 @@ src_dir: src
          example
          test
 output_dir: docs/fpm-ford
-project: easy
+project: M_color
 summary: easy project
-project_github: https://github.com/johndoe/easy
+project_github: https://github.com/urbanjost/M_color
 project_download:
-author: John Doe
-author_email: johndoe@gmail.com
-github: https://github.com/johndoe/easy
+author: John S. Urban
+author_email: urbanjost@gmail.com
+github: https://github.com/urbanjost/M_color
 media_dir: docs/images
 exclude_dir: archive
              FODDER
