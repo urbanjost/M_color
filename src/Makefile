@@ -25,37 +25,37 @@ LDFLAGS :=
 # You can either ignore it, or disable the "may be used uninitialized"
 # warnings with -Wno-maybe-uninitialized or compile with optimizations
 # (-O1 and more).
-gfortran: F90=gfortran 
+gfortran: FC=gfortran 
 gfortran: F90FLAGS := -g -O -Wall -std=f2018 -Wextra -Wno-maybe-uninitialized -Wno-uninitialized
 gfortran: all
-	@echo built with $(F90)
+	@echo built with $(FC)
 
-nvfortran: F90=nvfortran
+nvfortran: FC=nvfortran
 nvfortran: F90FLAGS := -Minform=inform -Mbackslash -traceback
 nvfortran: all
-	@echo built with $(F90)
+	@echo built with $(FC)
 
-ifort: F90=ifort
+ifort: FC=ifort
 ifort: F90FLAGS := -warn all -traceback
 ifort: all
-	@echo built with $(F90)
+	@echo built with $(FC)
 
-nagfor: F90=nagfor
+nagfor: FC=nagfor
 nagfor: F90FLAGS := -C all
 nagfor: all
-	@echo built with $(F90)
+	@echo built with $(FC)
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 all: $(PROG) $(CPROG)
 	@echo "That's all Folks!"
 $(PROG): $(OBJS)
-	-$(F90) $(LDFLAGS) $@.f90 -o $@ $(OBJS) $(LIBS)
+	-$(FC) $(LDFLAGS) $@.f90 -o $@ $(OBJS) $(LIBS)
 clean:
 	rm -f $(PROG) $(CPROG) $(OBJS) *.mod
 .SUFFIXES: $(SUFFIXES) .f90 .F90
 .f90.o:
-	$(F90) $(F90FLAGS) -c $<
+	$(FC) $(F90FLAGS) -c $<
 .F90.o:
-	$(F90) $(F90FLAGS) -c $<
+	$(FC) $(F90FLAGS) -c $<
 .PHONY: help
 help:
 	: all     '-- build M_color module'
@@ -63,15 +63,23 @@ help:
 	: man     '-- show all manpages as text'
 	: clean   '-- clean directory of object files and executables'
 	: doxygen '-- run doxygen(1) if you have it'
+	: ford    '-- run ford(1) if you have it'
 	: help    '-- display this text'
+
 .PHONY: run
 run: $(PROG)
 	# run everything
 	echo $? |xargs -n 1|xargs -iXX time XX
+
 .PHONY: doxygen
 doxygen: 
 	mkdir -p ../docs/doxygen_out/
 	doxygen dox.in
+
+.PHONY: ford
+ford: 
+	cd ..; ford ford.md   
+
 .PHONY: man
 man:
 	@mandb ../man 1>&2

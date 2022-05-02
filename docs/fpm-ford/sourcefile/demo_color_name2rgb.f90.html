@@ -261,29 +261,29 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a>           <span class="k">program </span><span class="n">demo_color_name2rgb</span>
-<a name="ln-2"></a>           <span class="k">use </span><span class="n">M_color</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">hue</span><span class="p">,</span> <span class="n">color_name2rgb</span>
-<a name="ln-3"></a>           <span class="k">implicit none</span>
-<a name="ln-4"></a>           <span class="c">!</span>
-<a name="ln-5"></a>           <span class="c">! list colors known to colorname2rgb(3f) &amp; corresponding RGB values</span>
-<a name="ln-6"></a>           <span class="c">!</span>
-<a name="ln-7"></a>           <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">name</span>
-<a name="ln-8"></a>           <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">echoname</span>
-<a name="ln-9"></a>           <span class="kt">real</span>              <span class="kd">::</span> <span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span>
-<a name="ln-10"></a>           <span class="kt">integer</span>           <span class="kd">::</span> <span class="n">i</span>
-<a name="ln-11"></a>           <span class="n">TRYALL</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span>
-<a name="ln-12"></a>              <span class="c">! weird little thing where the color names have aliases</span>
-<a name="ln-13"></a>              <span class="c">! that are numeric strings</span>
-<a name="ln-14"></a>              <span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="s1">&#39;(i0)&#39;</span><span class="p">)</span><span class="n">i</span>
-<a name="ln-15"></a>              <span class="c">! get the RGB values and English name of the color</span>
-<a name="ln-16"></a>              <span class="k">call </span><span class="n">color_name2rgb</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">,</span><span class="n">echoname</span><span class="p">)</span>
-<a name="ln-17"></a>              <span class="c">! the last color name is &quot;Unknown&quot; so the loop should exit</span>
-<a name="ln-18"></a>              <span class="k">if</span><span class="p">(</span><span class="n">echoname</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;Unknown&#39;</span><span class="p">)</span><span class="k">exit </span><span class="n">TRYALL</span>
-<a name="ln-19"></a>              <span class="c">! display the English name and RGB values for the name</span>
-<a name="ln-20"></a>              <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="n">echoname</span><span class="p">,</span><span class="nb">int</span><span class="p">([</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">])</span>
-<a name="ln-21"></a>           <span class="k">enddo </span><span class="n">TRYALL</span>
-<a name="ln-22"></a>           <span class="c">!write(*,*)&#39;Number of colors found is &#39;,i-1</span>
-<a name="ln-23"></a>           <span class="k">end program </span><span class="n">demo_color_name2rgb</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a>      <span class="k">program </span><span class="n">demo_color_name2rgb</span>
+<a name="ln-2"></a>      <span class="k">use </span><span class="n">M_color</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">hue</span><span class="p">,</span> <span class="n">color_name2rgb</span>
+<a name="ln-3"></a>      <span class="k">implicit none</span>
+<a name="ln-4"></a>      <span class="c">!</span>
+<a name="ln-5"></a>      <span class="c">! list colors known to colorname2rgb(3f) &amp; corresponding RGB values</span>
+<a name="ln-6"></a>      <span class="c">!</span>
+<a name="ln-7"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">name</span>
+<a name="ln-8"></a>      <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="kd">::</span> <span class="n">echoname</span>
+<a name="ln-9"></a>      <span class="kt">real</span>              <span class="kd">::</span> <span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span>
+<a name="ln-10"></a>      <span class="kt">integer</span>           <span class="kd">::</span> <span class="n">i</span>
+<a name="ln-11"></a>      <span class="n">TRYALL</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span>
+<a name="ln-12"></a>         <span class="c">! weird little thing where the color names have aliases</span>
+<a name="ln-13"></a>         <span class="c">! that are numeric strings</span>
+<a name="ln-14"></a>         <span class="k">write</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="s1">&#39;(i0)&#39;</span><span class="p">)</span><span class="n">i</span>
+<a name="ln-15"></a>         <span class="c">! get the RGB values and English name of the color</span>
+<a name="ln-16"></a>         <span class="k">call </span><span class="n">color_name2rgb</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">,</span><span class="n">echoname</span><span class="p">)</span>
+<a name="ln-17"></a>         <span class="c">! the last color name is &quot;Unknown&quot; so the loop should exit</span>
+<a name="ln-18"></a>         <span class="k">if</span><span class="p">(</span><span class="n">echoname</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="s1">&#39;Unknown&#39;</span><span class="p">)</span><span class="k">exit </span><span class="n">TRYALL</span>
+<a name="ln-19"></a>         <span class="c">! display the English name and RGB values for the name</span>
+<a name="ln-20"></a>         <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="n">echoname</span><span class="p">,</span><span class="nb">int</span><span class="p">([</span><span class="n">red</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span><span class="p">])</span>
+<a name="ln-21"></a>      <span class="k">enddo </span><span class="n">TRYALL</span>
+<a name="ln-22"></a>      <span class="c">!write(*,*)&#39;Number of colors found is &#39;,i-1</span>
+<a name="ln-23"></a>      <span class="k">end program </span><span class="n">demo_color_name2rgb</span>
 </pre></div>
 
     </section>
@@ -296,13 +296,13 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+        <div class="col-xs-6 col-md-4"><p>&copy; 2022 
                                           </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-09-18 05:45  
+             on 2022-05-02 01:35  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> M_color was developed by John S. Urban</p></div>
