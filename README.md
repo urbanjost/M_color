@@ -1,11 +1,11 @@
 # M_color.f90 and associated files
 ![M-color](docs/images/hls_small.gif)
 
-## NAME
+## Name
 
 M_color - Fortran module for converting between color models
 
-## DESCRIPTION
+## Description
 The M_color Fortran module is described in the 
 [M_color overview](md/M_color.3.md "top document for M_color.f90").
 which also comes in the distribution as man-pages and as individual 
@@ -16,7 +16,7 @@ documents as well as in a
 
 A [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes, and issues. 
 
-## DOWNLOAD
+## Download
     git clone https://github.com/urbanjost/M_color.git
     cd M_color/src
     # change Makefile if not using one of the listed compilers
