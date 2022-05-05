@@ -12,8 +12,9 @@ which also comes in the distribution as man-pages and as individual
 [HTML](https://urbanjost.github.io/M_color/man3.html "HTML index for M_color.f90")
 documents as well as in a 
 [single HTML document](https://urbanjost.github.io/M_color/BOOK_M_color.html)
-(requires javascript)
+(requires javascript). 
 
+A [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes, and issues. 
 
 ## DOWNLOAD
     git clone https://github.com/urbanjost/M_color.git
@@ -35,7 +36,7 @@ documents as well as in a
 This will compile the M_color module and build all the example programs
 from the document pages in the examples/ sub-directory.
 
-## SUPPORTS FPM ![fpm](docs/images/fpm_logo.gif)
+## Supports FPM ![fpm](docs/images/fpm_logo.gif)
 #### (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )
 
 Alternatively, download the github repository and build it with 
@@ -53,7 +54,7 @@ or just list it as a dependency in your fpm.toml project file.
      [dependencies]
      M_color        = { git = "https://github.com/urbanjost/M_color.git" }
 ```
-### DEVELOPER (__experimental__)
+### Developer Documentation(__experimental__)
 
  - The code was run through [ford(1)](https://politicalphysicist.github.io/ford-fortran-documentation.html)
    to produce a [developers' document](https://urbanjost.github.io/M_color/fpm-ford/index.html).
