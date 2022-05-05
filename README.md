@@ -53,3 +53,8 @@ or just list it as a dependency in your fpm.toml project file.
      [dependencies]
      M_color        = { git = "https://github.com/urbanjost/M_color.git" }
 ```
+### DEVELOPER (__experimental__)
+
+ - The code was run through [ford(1)](https://politicalphysicist.github.io/ford-fortran-documentation.html)
+   to produce a [developers' document](https://urbanjost.github.io/M_color/fpm-ford/index.html).
+ - [github action status](docs/STATUS.md)
