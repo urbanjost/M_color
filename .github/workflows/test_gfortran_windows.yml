@@ -28,18 +28,19 @@ jobs:
 
     - name: Install fpm
       run: |
-           echo $PATH %PATH%
-           pwd
-           uname -a
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
            gfortran fpm.F90 -o fpm
 
     - name: Display environment
       run: |
+        echo PATH %PATH%
+        echo PATH $PATH
+        pwd
+        uname -a
         #make -k -p -fNOTTHERE
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
-        .\fpm --version
+        fpm --version
         gfortran --version
 
     - name: tests MSWindows (debug)
