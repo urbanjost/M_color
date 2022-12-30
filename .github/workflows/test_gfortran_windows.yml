@@ -30,13 +30,14 @@ jobs:
       run: |
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
            gfortran fpm.F90 -o fpm
+           fpm.exe --version
            dir
+           echo PATH $PATH %PATH%
 
     - name: Display environment
       run: |
         echo PATH %PATH%
         echo PATH $PATH
-        path
         pwd
         uname -a
         #make -k -p -fNOTTHERE
