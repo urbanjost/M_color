@@ -40,6 +40,7 @@ jobs:
 
     - name: Display environment
       run: |
+        set PATH=%PATH%;%CD%
         echo PATH %PATH%
         echo PATH $PATH
         pwd
@@ -47,7 +48,7 @@ jobs:
         #make -k -p -fNOTTHERE
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
-        #fpm --version
+        fpm --version
         gfortran --version
 
     - name: tests MSWindows (debug)
