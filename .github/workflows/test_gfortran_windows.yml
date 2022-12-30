@@ -47,12 +47,12 @@ jobs:
 
     - name: tests MSWindows (debug)
       run: |
-              fpm test --profile debug -flag "-D _WIN32"
+              fpm test --profile debug -flag "-static -D _WIN32" --verbose 2>&1
       shell: cmd
 
     - name: tests MSWindows (release)
       run: |
-              fpm test --profile release -flag "-D _WIN32"
+              fpm test --profile release -flag "-static -D _WIN32" --verbose 2>&1
       shell: cmd
 
     - name: cleanup MSWindows
