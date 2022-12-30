@@ -30,7 +30,11 @@ jobs:
       run: |
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
            gfortran fpm.F90 -o fpm
-           fpm.exe --version
+           #setx
+           #fpm
+           #./fpm
+           #.\fpm
+           start fpm.exe --version
            dir
            echo PATH $PATH %PATH%
 
@@ -47,10 +51,10 @@ jobs:
         gfortran --version
 
     - name: tests MSWindows (debug)
-      run: fpm test --profile debug -flag "-D _WIN32"
+      run: start fpm test --profile debug -flag "-D _WIN32"
 
     - name: tests MSWindows (release)
-      run: fpm test --profile release -flag "-D _WIN32"
+      run: start fpm test --profile release -flag "-D _WIN32"
 
 #    - name: Run demo programs (fpm run)
 #      run: fpm run --profile release
