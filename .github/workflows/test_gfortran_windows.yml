@@ -42,7 +42,7 @@ jobs:
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
         `pwd`/fpm --version
-	which gfortran
+        which gfortran
 
     - name: tests MSWindows (debug)
       run: fpm test --profile debug -flag "-D _WIN32"
