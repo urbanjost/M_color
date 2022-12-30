@@ -41,17 +41,21 @@ jobs:
         #make -k -p -fNOTTHERE
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
-        `pwd`/fpm --version
-        which gfortran
+        fpm --version
+        gfortran --version
+      shell: cmd
 
     - name: tests MSWindows (debug)
       run: fpm test --profile debug -flag "-D _WIN32"
+      shell: cmd
 
     - name: tests MSWindows (release)
       run: fpm test --profile release -flag "-D _WIN32"
+      shell: cmd
 
     - name: cleanup MSWindows
       run: dir
+      shell: cmd
 
 #setx
 #path
