@@ -29,7 +29,7 @@ jobs:
     - name: Install fpm
       run: |
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
-           gfortran fpm.F90 -o fpm
+           gfortran fpm.F90 -o fpm -D_WIN32
            dir
       shell: cmd
 
@@ -46,11 +46,13 @@ jobs:
       shell: cmd
 
     - name: tests MSWindows (debug)
-      run: fpm test --profile debug -flag "-D _WIN32"
+      run: |
+              fpm test --profile debug -flag "-D _WIN32"
       shell: cmd
 
     - name: tests MSWindows (release)
-      run: fpm test --profile release -flag "-D _WIN32"
+      run: |
+              fpm test --profile release -flag "-D _WIN32"
       shell: cmd
 
     - name: cleanup MSWindows
