@@ -28,7 +28,7 @@ jobs:
 
     - name: Install fpm
       run: |
-           echo $PATH
+           echo $PATH %PATH%
            pwd
            uname -a
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
@@ -39,14 +39,14 @@ jobs:
         #make -k -p -fNOTTHERE
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
+        .\fpm --version
         gfortran --version
-        ./fpm --version
 
     - name: tests MSWindows (debug)
-      run: ./fpm test --profile debug -flag "-D _WIN32"
+      run: .\fpm test --profile debug -flag "-D _WIN32"
 
     - name: tests MSWindows (release)
-      run: ./fpm test --profile release -flag "-D _WIN32"
+      run: .\fpm test --profile release -flag "-D _WIN32"
 
 #    - name: Run demo programs (fpm run)
 #      run: fpm run --profile release
