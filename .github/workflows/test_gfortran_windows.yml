@@ -31,17 +31,17 @@ jobs:
            curl https://raw.githubusercontent.com/urbanjost/index/main/bootstrap/fpm.F90 --output fpm.F90
            gfortran fpm.F90 -o fpm
            dir
+      shell: cmd
 
     - name: Display environment
       run: |
         echo PATH %PATH%
-        echo PATH $PATH
         pwd
         uname -a
-        #make -k -p -fNOTTHERE
         echo "end" > foo.f90
         gfortran -cpp -E -dM foo.f90
         fpm --version
+        fpm build --verbose
         gfortran --version
       shell: cmd
 
@@ -67,3 +67,4 @@ jobs:
 #set PATH=%PATH%;%CD%
 #    - name: Run demo programs (fpm run)
 #      run: fpm run --profile release
+#make -k -p -fNOTTHERE
