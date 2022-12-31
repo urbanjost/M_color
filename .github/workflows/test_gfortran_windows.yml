@@ -59,14 +59,5 @@ jobs:
       run: dir
       shell: cmd
 
-#setx
-#path
-#fpm
-#./fpm
-#.\fpm
-#start fpm.exe --version
-#echo PATH $PATH %PATH%
 #set PATH=%PATH%;%CD%
-#    - name: Run demo programs (fpm run)
-#      run: fpm run --profile release
 #make -k -p -fNOTTHERE
