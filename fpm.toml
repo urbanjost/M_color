@@ -14,9 +14,9 @@ homepage = "https://github.com/urbanjost/M_color.git"
 
 # new
 # force module naming rules to avoid collisions with other packages
-#module-naming = true
+module-naming = true
 # traditional where user can use any module name
-module-naming = false
+#module-naming = false
 
 [install]
 library=true
@@ -26,4 +26,4 @@ name="runTests"
 source-dir="test"
 main="test_suite_M_color.f90"
 [test.dependencies]
-M_msg = { git = "https://github.com/urbanjost/M_msg.git" }
+M_framework = { git = "https://github.com/urbanjost/M_framework.git" }
