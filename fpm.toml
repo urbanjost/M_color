@@ -1,4 +1,4 @@
-# TOML file for fpm as described at https://github.com/fortran-lang/fpm/blob/master/manifest-reference.md
+# TOML file for fpm as described at https://fpm.fortran-lang.org/en/spec/manifest.html
 name = "M_color"
 version = "0.1.0"
 license = "Public Domain"
@@ -9,6 +9,17 @@ description = "conversions between common color models "
 categories = ["Color Conversion"]
 keywords = ["fortran", "hue", "color", "RGB", "HLS"]
 homepage = "https://github.com/urbanjost/M_color.git"
+
+[build]
+
+# new
+# force module naming rules to avoid collisions with other packages
+#module-naming = true
+# traditional where user can use any module name
+module-naming = false
+
+[install]
+library=true
 
 [[test]]
 name="runTests"

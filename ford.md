@@ -5,7 +5,7 @@ src_dir: src
          test
 output_dir: docs/fpm-ford
 project: M_color
-summary: easy project
+summary: procedures for color conversion and color models
 project_github: https://github.com/urbanjost/M_color
 project_download:
 author: John S. Urban
