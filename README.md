@@ -1,5 +1,4 @@
-
-[![M_color](docs/images/hls_small.gif)](https://urbanjost.github.io/M_io/index.html)
+[![M_color](docs/images/swirl_small.gif)](https://urbanjost.github.io/M_io/index.html)
 
 ## Name
 
@@ -62,3 +61,7 @@ or just list it as a dependency in your fpm.toml project file.
  - The code was run through [ford(1)](https://politicalphysicist.github.io/ford-fortran-documentation.html)
    to produce a [developers' document](https://urbanjost.github.io/M_color/fpm-ford/index.html).
  - [github action status](docs/STATUS.md)
+
+---
+
+[![M_color](docs/images/hls_small.gif)](https://urbanjost.github.io/M_io/index.html)
