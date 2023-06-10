@@ -1,4 +1,4 @@
-[![M_color](docs/images/swirl_small.gif)](https://urbanjost.github.io/M_io/index.html)
+[![M_color](docs/images/swirl_small.gif)](https://urbanjost.github.io/M_color/index.html)
 
 ## Name
 
@@ -64,4 +64,4 @@ or just list it as a dependency in your fpm.toml project file.
 
 ---
 
-[![M_color](docs/images/hls_small.gif)](https://urbanjost.github.io/M_io/index.html)
+[![M_color](docs/images/hls_small.gif)](https://urbanjost.github.io/M_color/fpm-ford/index.html)
