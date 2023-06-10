@@ -1,5 +1,5 @@
-# M_color.f90 and associated files
-![M-color](docs/images/hls_small.gif)
+
+[![M_color](docs/images/hls_small.gif)](https://urbanjost.github.io/M_io/index.html)
 
 ## Name
 
