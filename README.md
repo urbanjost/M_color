@@ -63,8 +63,9 @@ or just list it as a dependency in your fpm.toml project file.
  - [github action status](docs/STATUS.md)
 
 ---
+<?
 <p align="center">
 <a href="https://urbanjost.github.io/M_color/fpm-ford/index.html">
-  <img width="300" height="300" src="https://urbanjost.github.io/M_color/images/hls_gif.gif">
+  <img width="300" height="300" src="https://urbanjost.github.io/M_color/images/hls.gif">
 </a>
 </p>
