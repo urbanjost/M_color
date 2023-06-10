@@ -7,7 +7,7 @@ output_dir: docs/fpm-ford
 project: M_color
 summary: procedures for color conversion and color models
 project_github: https://github.com/urbanjost/M_color
-project_download:
+project_download: https://github.com/urbanjost/M_color/archive/refs/heads/master.zip
 author: John S. Urban
 author_email: urbanjost@gmail.com
 github: https://github.com/urbanjost/M_color
