@@ -64,8 +64,6 @@ or just list it as a dependency in your fpm.toml project file.
 
 ---
 <?
-<p align="center">
-<a href="https://urbanjost.github.io/M_color/fpm-ford/index.html">
-  <img width="300" height="300" src="https://urbanjost.github.io/M_color/images/hls.gif">
+<a align="center" href="https://urbanjost.github.io/M_color/fpm-ford/index.html">
+  <img width="460" height="460" src="https://urbanjost.github.io/M_color/images/hls.gif">
 </a>
-</p>
