@@ -8,13 +8,14 @@ M_color - Fortran module for converting between color models
 **M_color** is a collection of procedures primarily for converting between different
 color models.
 
-The M_color Fortran module is described in detail in the 
-[M_color overview](md/M_color.3.md "top document for M_color.f90").
-which also comes in the distribution as man-pages and as individual 
+The M_color Fortran module is described in detail in individual 
 [HTML](https://urbanjost.github.io/M_color/man3.html "HTML index for M_color.f90")
 documents as well as in a 
 [single HTML document](https://urbanjost.github.io/M_color/BOOK_M_color.html)
 (requires javascript). 
+
+The distribution contains this information as man-pages as well for use
+on systems with the man(1) command.
 
 A [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes and issues. 
 
@@ -68,5 +69,5 @@ or just list it as a dependency in your fpm.toml project file.
 ---
 <?
 <a align="center" href="https://urbanjost.github.io/M_color/fpm-ford/index.html">
-  <img width="460" height="460" src="https://urbanjost.github.io/M_color/images/hls.gif">
+  <img align="center" width="460" height="460" src="https://urbanjost.github.io/M_color/images/hls.gif">
 </a>
