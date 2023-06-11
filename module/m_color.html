@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="procedures for color conversion and color models">
+      <meta name="description" content="procedures for color conversion and color models">
     <meta name="author" content="John S. Urban" >
     <link rel="icon" href="../favicon.png">
 
@@ -14,16 +14,16 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
-    <script src="../js/svg-pan-zoom.min.js"></script>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
 
   </head>
 
@@ -45,40 +45,48 @@
           <ul class="nav navbar-nav">
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../lists/files.html">Source Files</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/programs.html">Programs</a></li>
-       
-            </ul>
-        
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
+              </ul>
             </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/programs.html">Programs</a>
+              </li>
           </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
-        </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
   <div class="row">
-    <h1>M_color 
-    <small>Module</small>
-    
+    <h1>M_color
+      <small>Module</small>
+      
     </h1>
       <div class="row" id="info-bar">
     <div class="col-lg-12">
@@ -110,10 +118,10 @@
   </script>
 
   </div>
-  
+
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-      <div id="sidebar">
+        <div id="sidebar">
       <h3>Contents</h3>
   
   
@@ -154,272 +162,208 @@
   </div>
 
     </div>
-    
+
     <div class="col-md-9" id='text'>
-    <dl>
-<!-- ======================================================================= -->
-<dt> <a name="M_COLOR">NAME</a></dt> <dd>
-<!--
-<em>M_color(3)</em>&nbsp;-&nbsp;[M_color]&nbsp;a&nbsp;Fortran&nbsp;module&nbsp;that&nbsp;lets&nbsp;you&nbsp;convert&nbsp;between&nbsp;common&nbsp;color&nbsp;models
--->
-<em>M_color(3)</em> - [M_color::INTRO] a Fortran module that lets you convert between common color models
-(LICENSE:PD)
-</dd>
-<!-- ======================================================================= -->
-<dt> SYNOPSIS </dt><dd>
-<pre>
+      <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code>M_color(3) - [M_color::INTRO] a Fortran module that lets you
+convert between common color models (LICENSE:PD)
+</code></pre></div>
 
-   use M_color, only : &amp;
+<h2 id="synopsis">SYNOPSIS</h2>
+<div class="codehilite"><pre><span></span><code>use M_color, only : &amp;
 
-      &amp; <a href="hue.3m_color.html">hue</a>, &amp;
-      &amp; <a href="closest_color_name.3m_color.html">closest_color_name</a>, &amp;
-      &amp; <a href="color_name2rgb.3m_color.html">color_name2rgb</a>, &amp;
-      &amp; <a href="rgbmono.3m_color.html">rgbmono</a>
-</pre>
-</dd>
-<!-- ======================================================================= -->
-<dt> DESCRIPTION</dt>  <dd>
+   &amp; hue, &amp;
+   &amp; closest_color_name, &amp;
+   &amp; color_name2rgb, &amp;
+   &amp; rgbmono
+</code></pre></div>
 
-<h1> <img src="images/swirl.gif" height="140" width="140" > Fortran color module M_color</h1>
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">Highly</span><span class="w"> </span><span class="n">accurate</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">conversions</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">tricky</span><span class="w"> </span><span class="n">business</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">color</span><span class="w"></span>
+<span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">complex</span><span class="w"> </span><span class="n">topic</span><span class="p">;</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">simplified</span><span class="w"> </span><span class="n">translations</span><span class="w"> </span><span class="ow">between</span><span class="w"> </span><span class="n">common</span><span class="w"></span>
+<span class="n">color</span><span class="w"> </span><span class="n">models</span><span class="w"> </span><span class="k">found</span><span class="w"> </span><span class="n">here</span><span class="w"> </span><span class="k">work</span><span class="w"> </span><span class="n">quite</span><span class="w"> </span><span class="n">well</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">basic</span><span class="w"> </span><span class="n">conversions</span><span class="p">.</span><span class="w"></span>
 
-<p>
-  Highly accurate color conversions are a tricky business, and color
-  is a complex topic; but these simplified conversions between common
-  color models work quite well for basic conversions.
-</p>
+<span class="n">Typically</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">routine</span><span class="w"> </span><span class="k">called</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">HUE</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">).</span><span class="w"> </span><span class="n">HUE</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="n">single</span><span class="w"> </span><span class="k">routine</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">interfaces</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="n">low</span><span class="o">-</span><span class="k">level</span><span class="w"></span>
+<span class="n">color</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="n">routines</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nf">convert</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">color</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">components</span><span class="w"> </span><span class="k">from</span><span class="w"></span>
+<span class="n">one</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">another</span><span class="p">.</span><span class="w"> </span><span class="n">HUE</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="n">converts</span><span class="w"> </span><span class="ow">between</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+<span class="n">following</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="nl">models</span><span class="p">:</span><span class="w"></span>
 
-<p>
-   Typically the only user routine called is
-   <a href="hue.3m_color.html">HUE(3f)</a>.
-   HUE(3f) is a single routine that interfaces to all the private
-   low-level color conversion routines to convert a color's components
-   from one color model to another. HUE(3f) converts between the
-   following color models:
-</p>
+<span class="nl">RGB</span><span class="p">:</span><span class="w">  </span><span class="n">Red</span><span class="p">,</span><span class="w"> </span><span class="n">Green</span><span class="p">,</span><span class="w"> </span><span class="n">Blue</span><span class="w"> </span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">monitors</span><span class="p">)</span><span class="w"></span>
+<span class="nl">HLS</span><span class="p">:</span><span class="w">  </span><span class="n">Hue</span><span class="p">,</span><span class="w"> </span><span class="n">Lightness</span><span class="p">,</span><span class="w"> </span><span class="n">Saturation</span><span class="w"></span>
+<span class="nl">CMY</span><span class="p">:</span><span class="w">  </span><span class="n">Cyan</span><span class="p">,</span><span class="w"> </span><span class="n">Magenta</span><span class="p">,</span><span class="w"> </span><span class="n">Yellow</span><span class="w"> </span><span class="p">(</span><span class="n">pigment</span><span class="o">-</span><span class="n">based</span><span class="w"> </span><span class="n">printing</span><span class="w"> </span><span class="n">devices</span><span class="p">)</span><span class="w"></span>
+<span class="nl">HSV</span><span class="p">:</span><span class="w">  </span><span class="n">Hue</span><span class="p">,</span><span class="w"> </span><span class="n">Saturation</span><span class="p">,</span><span class="w"> </span><span class="k">Value</span><span class="w"></span>
+<span class="nl">YIQ</span><span class="p">:</span><span class="w">  </span><span class="n">Broadcast</span><span class="w"> </span><span class="n">TV</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="k">system</span><span class="w"></span>
 
-<ul>
-   <li>  RGB - Red, Green, Blue (color TV monitors)
-   <li>  HLS - Hue, Lightness, Saturation
-   <li>  CMY - Cyan, Magenta, Yellow (pigment-based printing devices)
-   <li>  HSV - Hue, Saturation, Value
-   <li>  YIQ - Broadcast TV color system
-</ul>
+<span class="ow">In</span><span class="w"> </span><span class="n">addition</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">those</span><span class="w"> </span><span class="n">reversible</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">conversions</span><span class="w"> </span><span class="n">there</span><span class="w"></span>
+<span class="k">are</span><span class="err">:</span><span class="w"></span>
 
-<p>
-  In addition to the reversible color model conversions there are a few
-  other user-callable color-related procedures:
-</p>
+<span class="n">CLOSEST_COLOR_NAME</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="n">given</span><span class="w"> </span><span class="n">RGB</span><span class="w"> </span><span class="k">values</span><span class="p">,</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">closest</span><span class="w"></span>
+<span class="n">named</span><span class="w"> </span><span class="n">color</span><span class="w"></span>
 
-<a href="closest_color_name.3m_color.html">CLOSEST_COLOR_NAME</a>:&nbsp;&nbsp;given RGB values, try to find closest named color
-   <br/>
-<a href="color_name2rgb.3m_color.html">COLOR_NAME2RGB</a>:&nbsp;&nbsp;given a color name, return RGB color values in range 0 to 100
-   <br/>
-<a href="rgbmono.3m_color.html">RGBMONO</a>:&nbsp;&nbsp;convert RGB colors to a reasonable grayscale
+<span class="n">COLOR_NAME2RGB</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="n">given</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">RGB</span><span class="w"> </span><span class="n">color</span><span class="w"></span>
+<span class="k">values</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
 
-<h3> 2*N Design of the module</h3>
+<span class="n">RGBMONO</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="err">:</span><span class="w">  </span><span class="nf">convert</span><span class="w"> </span><span class="n">RGB</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">reasonable</span><span class="w"> </span><span class="n">grayscale</span><span class="w"></span>
+<span class="p">(</span><span class="n">non</span><span class="o">-</span><span class="n">reversible</span><span class="p">)</span><span class="w"></span>
 
-<p>
-   The rest of the library is composed of PRIVATE procedures.
-   For each color model supported the general idea of the module is
-   that there are two routines for each color model:
-</p>
+<span class="n">DESIGN</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">THE</span><span class="w"> </span><span class="k">MODULE</span><span class="w"></span>
 
-<ul>
-   <li> One converts that model to the RGB model   </li>
-   <li> The other converts from RGB to that model   </li>
-</ul>
+<span class="n">The</span><span class="w"> </span><span class="n">rest</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">composed</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">PRIVATE</span><span class="w"> </span><span class="n">procedures</span><span class="p">.</span><span class="w"> </span><span class="n">Internally</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">supported</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">general</span><span class="w"> </span><span class="n">idea</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">that</span><span class="w"></span>
+<span class="n">there</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">routines</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="nl">model</span><span class="p">:</span><span class="w"></span>
 
-<p>
-   This allows conversions between all color models with only 2*N
-   routines. That is, to go from model A to model B the module would
-   internally make two calls:
-</p>
+<span class="o">+</span><span class="w"> </span><span class="n">One</span><span class="w"> </span><span class="n">converts</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">RGB</span><span class="w"> </span><span class="n">model</span><span class="w"></span>
+<span class="o">+</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">converts</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">RGB</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">model</span><span class="w"></span>
 
-<pre>
-    call modelA2rgb(...)
-    call rgb2modelB(...)
-</pre>
+<span class="n">This</span><span class="w"> </span><span class="n">allows</span><span class="w"> </span><span class="n">conversions</span><span class="w"> </span><span class="ow">between</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">models</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="w"></span>
+<span class="n">routines</span><span class="p">.</span><span class="w"> </span><span class="n">That</span><span class="w"> </span><span class="k">is</span><span class="p">,</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">module</span><span class="w"></span>
+<span class="n">would</span><span class="w"> </span><span class="n">internally</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="nl">calls</span><span class="p">:</span><span class="w"></span>
 
-<p>
-   The resulting internal routines are:
-</p>
+<span class="w">    </span><span class="k">call</span><span class="w"> </span><span class="n">modelA2rgb</span><span class="p">(...)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call</span><span class="w"> </span><span class="n">rgb2modelB</span><span class="p">(...)</span><span class="w"></span>
 
-<ul>
-   <li><a href="#HLSRGB">HLSRGB</a> given hue, lightness, saturation calculate red, green, and blue components
-      <ul>
-         <li><a href="#RGBVAL">RGBVAL</a> ensure a value is in the appropriate range and quadrant
-         </li>
-      </ul>
-   </li>
-   <li><a href="#HVSRGB">HVSRGB</a> given hue, saturation, value calculate red, green, and blue components
-   </li>
-   <li><a href="#CMYRGB">CMYRGB</a> given cyan, magenta, yellow components calculate red, green, blue components
-   </li>
-   <li><a href="#YIQRGB">YIQRGB</a> given luma(gray scale), orange-blue chrominance, and  purple-green chrominance
-                                    components calculate red, green, and blue components
-   </li>
+<span class="n">The</span><span class="w"> </span><span class="n">resulting</span><span class="w"> </span><span class="n">internal</span><span class="w"> </span><span class="n">routines</span><span class="w"> </span><span class="k">are</span><span class="err">:</span><span class="w"></span>
 
-   <li><a href="#RGBHVS">RGBHVS</a> given red, green, blue values calculate hue, value, and saturation components
-   </li>
-   <li><a href="#RGBHLS">RGBHLS</a> given red, green, blue values calculate hue, lightness, and saturation components
-   </li>
-   <li><a href="#RGBCMY">RGBCMY</a> given red, green, blue values calculate cyan, magenta, yellow components
-   </li>
-   <li><a href="#RGBYIQ">RGBYIQ</a> given red, green, blue values calculate luma(gray scale), orange-blue chrominance,
-                                    and purple-green chrominance components
-   </li>
+<span class="nl">HLSRGB</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">hue</span><span class="p">,</span><span class="w"> </span><span class="n">lightness</span><span class="p">,</span><span class="w"> </span><span class="n">saturation</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"></span>
+<span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="w">   </span><span class="o">+</span><span class="w"> </span><span class="n">RGBVAL</span><span class="w"> </span><span class="n">ensures</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">appropriate</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="ow">and</span><span class="w"></span>
+<span class="w">     </span><span class="n">quadrant</span><span class="w"></span>
+<span class="nl">HVSRGB</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">hue</span><span class="p">,</span><span class="w"> </span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"></span>
+<span class="ow">and</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">CMYRGB</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">cyan</span><span class="p">,</span><span class="w"> </span><span class="n">magenta</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="n">components</span><span class="w"> </span><span class="n">calculate</span><span class="w"></span>
+<span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">YIQRGB</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">luma</span><span class="p">(</span><span class="n">gray</span><span class="w"> </span><span class="n">scale</span><span class="p">),</span><span class="w"> </span><span class="n">orange</span><span class="o">-</span><span class="n">blue</span><span class="w"> </span><span class="n">chrominance</span><span class="p">,</span><span class="w"></span>
+<span class="ow">and</span><span class="w"> </span><span class="n">purple</span><span class="o">-</span><span class="n">green</span><span class="w"> </span><span class="n">chrominance</span><span class="w"> </span><span class="n">components</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"></span>
+<span class="ow">and</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">RGBHVS</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">hue</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="p">,</span><span class="w"></span>
+<span class="ow">and</span><span class="w"> </span><span class="n">saturation</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">RGBHLS</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">hue</span><span class="p">,</span><span class="w"></span>
+<span class="n">lightness</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">saturation</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">RGBCMY</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">cyan</span><span class="p">,</span><span class="w"></span>
+<span class="n">magenta</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="nl">RGBYIQ</span><span class="p">:</span><span class="w">   </span><span class="n">given</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">luma</span><span class="p">(</span><span class="n">gray</span><span class="w"></span>
+<span class="n">scale</span><span class="p">),</span><span class="w"> </span><span class="n">orange</span><span class="o">-</span><span class="n">blue</span><span class="w"> </span><span class="n">chrominance</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">purple</span><span class="o">-</span><span class="n">green</span><span class="w"> </span><span class="n">chrominance</span><span class="w"></span>
+<span class="n">components</span><span class="w"></span>
+</code></pre></div>
 
-</ul>
-</dd>
-<dt>EXAMPLE</dt> <dd>
-<p>
-   Sample program:
-</p>
-<xmp>
-   program demo_M_color
-   use M_color, only : hue
-   use M_color, only : closest_color_name
-   use M_color, only : color_name2rgb
-   use M_color, only : rgbmono
-   implicit none
-   character(len=100) :: string ! at least 20 characters
-   character(len=20)  :: name
-   character(len=20)  :: echoname
-   real               :: red,green,blue
-   real               :: gray
-   integer            :: ierr
-      ! find the names of colors given RGB values
-      write(*,*)'Find names given values'
+<h2 id="example">EXAMPLE</h2>
+<p>Sample program:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_M_color</span>
+<span class="nv">use</span> <span class="nv">M_color</span>, <span class="nv">only</span> : <span class="nv">hue</span>
+<span class="nv">use</span> <span class="nv">M_color</span>, <span class="nv">only</span> : <span class="nv">closest_color_name</span>
+<span class="nv">use</span> <span class="nv">M_color</span>, <span class="nv">only</span> : <span class="nv">color_name2rgb</span>
+<span class="nv">use</span> <span class="nv">M_color</span>, <span class="nv">only</span> : <span class="nv">rgbmono</span>
+<span class="nv">implicit</span> <span class="nv">none</span>
+<span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span><span class="mi">100</span><span class="ss">)</span> :: <span class="nv">string</span> <span class="o">!</span> <span class="nv">at</span> <span class="nv">least</span> <span class="mi">20</span> <span class="nv">characters</span>
+<span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span><span class="mi">20</span><span class="ss">)</span>  :: <span class="nv">name</span>
+<span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span><span class="mi">20</span><span class="ss">)</span>  :: <span class="nv">echoname</span>
+<span class="nv">real</span>               :: <span class="nv">red</span>,<span class="nv">green</span>,<span class="nv">blue</span>
+<span class="nv">real</span>               :: <span class="nv">gray</span>
+<span class="nv">integer</span>            :: <span class="nv">ierr</span>
+   <span class="o">!</span> <span class="nv">find</span> <span class="nv">the</span> <span class="nv">names</span> <span class="nv">of</span> <span class="nv">colors</span> <span class="nv">given</span> <span class="nv">RGB</span> <span class="nv">values</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">Find names given values</span><span class="s1">&#39;</span>
 
-      call closest_color_name( 100.0,   0.0,   0.0, string)
-      write(*,*)trim(string)
+   <span class="k">call</span> <span class="nl">closest_color_name</span><span class="ss">(</span> <span class="mi">100</span>.<span class="mi">0</span>,   <span class="mi">0</span>.<span class="mi">0</span>,   <span class="mi">0</span>.<span class="mi">0</span>, <span class="nv">string</span><span class="ss">)</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="nv">trim</span><span class="ss">(</span><span class="nv">string</span><span class="ss">)</span>
 
-      call closest_color_name(   0.0, 100.0,   0.0, string)
-      write(*,*)trim(string)
+   <span class="k">call</span> <span class="nl">closest_color_name</span><span class="ss">(</span>   <span class="mi">0</span>.<span class="mi">0</span>, <span class="mi">100</span>.<span class="mi">0</span>,   <span class="mi">0</span>.<span class="mi">0</span>, <span class="nv">string</span><span class="ss">)</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="nv">trim</span><span class="ss">(</span><span class="nv">string</span><span class="ss">)</span>
 
-      call closest_color_name(   0.0,   0.0, 100.0, string)
-      write(*,*)trim(string)
+   <span class="k">call</span> <span class="nl">closest_color_name</span><span class="ss">(</span>   <span class="mi">0</span>.<span class="mi">0</span>,   <span class="mi">0</span>.<span class="mi">0</span>, <span class="mi">100</span>.<span class="mi">0</span>, <span class="nv">string</span><span class="ss">)</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="nv">trim</span><span class="ss">(</span><span class="nv">string</span><span class="ss">)</span>
 
-      ! list colors known to colorname2rgb(3f) & corresponding RGB values
-      write(*,*)'given names find RGB values'
-      ! get the RGB values and English name of the color
-      call color_name2rgb('RED',red,green,blue,echoname)
-      ! display the English name and RGB values for the name
-      write(*,*)echoname,int([red,green,blue])
+   <span class="o">!</span> <span class="nv">list</span> <span class="nv">colors</span> <span class="nv">known</span> <span class="nv">to</span> <span class="nv">colorname2rgb</span><span class="ss">(</span><span class="mi">3</span><span class="nv">f</span><span class="ss">)</span> <span class="o">&amp;</span> <span class="nv">corresponding</span> <span class="nv">RGB</span> <span class="nv">values</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">given names find RGB values</span><span class="s1">&#39;</span>
+   <span class="o">!</span> <span class="nv">get</span> <span class="nv">the</span> <span class="nv">RGB</span> <span class="nv">values</span> <span class="nv">and</span> <span class="nv">English</span> <span class="nv">name</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">color</span>
+   <span class="k">call</span> <span class="nl">color_name2rgb</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">RED</span><span class="s1">&#39;</span>,<span class="nv">red</span>,<span class="nv">green</span>,<span class="nv">blue</span>,<span class="nv">echoname</span><span class="ss">)</span>
+   <span class="o">!</span> <span class="nv">display</span> <span class="nv">the</span> <span class="nv">English</span> <span class="nv">name</span> <span class="nv">and</span> <span class="nv">RGB</span> <span class="nv">values</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">name</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="nv">echoname</span>,<span class="nv">int</span><span class="ss">(</span>[<span class="nv">red</span>,<span class="nv">green</span>,<span class="nv">blue</span>]<span class="ss">)</span>
 
-      write(*,*)'Do some conversions between RGB, HLS, and HLS'
-      write(*,*)'and check them against expected values'
-      !               NAME        RGB(0-255)            HLS(0-100)
-      call chk('hls','red',     [100, 0,   0  ], [0,   50,  100])
-      call chk('hls','orange',  [100, 65,  0  ], [39,  50,  100])
-      call chk('hls','yellow',  [100, 100, 0  ], [60,  50,  100])
-      call chk('hls','green',   [0,   100, 0  ], [120, 50,  100])
-      call chk('hls','cyan',    [0,   100, 100], [180, 50,  100])
-      call chk('hls','blue',    [0,   0,   100], [240, 50,  100])
-      call chk('hls','magenta', [100, 0,   100], [300, 50,  100])
-      call chk('hls','black',   [0,   0,   0  ], [0,   0,   0  ])
-      call chk('hls','white',   [100, 100, 100], [0,   100, 0  ])
-      !               NAME        RGB(0-255)           HSV(0-100)
-      call chk('hsv','red',     [100, 0,   0  ], [0,   100, 100])
-      call chk('hsv','yellow',  [100, 100, 0  ], [60,  100, 100])
-      call chk('hsv','green',   [0,   100, 0  ], [120, 100, 100])
-      call chk('hsv','cyan',    [0,   100, 100], [180, 100, 100])
-      call chk('hsv','blue',    [0,   0,   100], [240, 100, 100])
-      call chk('hsv','magenta', [100, 0,   100], [300, 100, 100])
-      call chk('hsv','white',   [100, 100, 100], [0,   0,   100])
-      call chk('hsv','black',   [0,   0,   0  ], [0,   0,   0  ])
-      call chk('hsv','gray50',  [50,  50,  50 ], [0,   0,   50 ])
-      call chk('hsv','silver',  [75,  75,  75 ], [0,   0,   75 ])
-      call chk('hsv','red4',    [55,  0,   0  ], [0,   100, 55 ])
-      call chk('hsv','olive',   [50,  50,  0  ], [60,  100, 50 ])
-      call chk('hsv','lime',    [0,   100, 0  ], [120, 100, 100])
-      call chk('hsv','teal',    [0,   50,  50 ], [180, 100, 50 ])
-      call chk('hsv','navy',    [0,   0,   50 ], [240, 100, 50 ])
-      call chk('hsv','purple',  [63,  13,  94 ], [277, 87,  94 ])
-      call chk('hsv','magenta4',[55,  0,   55 ], [300, 100, 55 ])
-      call chk('hsv','maroon',  [69,  19,  38 ], [338, 73,  69 ])
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">Do some conversions between RGB, HLS, and HLS</span><span class="s1">&#39;</span>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">and check them against expected values</span><span class="s1">&#39;</span>
+   <span class="o">!</span>               <span class="nv">NAME</span>        <span class="nv">RGB</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="ss">)</span>            <span class="nv">HLS</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red</span><span class="s1">&#39;</span>,     [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">orange</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">65</span>,  <span class="mi">0</span>  ], [<span class="mi">39</span>,  <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">yellow</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">green</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">cyan</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">180</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">blue</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">240</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta</span><span class="s1">&#39;</span>, [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">300</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">black</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">white</span><span class="s1">&#39;</span>,   [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="o">!</span>               <span class="nv">NAME</span>        <span class="nv">RGB</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="ss">)</span>           <span class="nv">HSV</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red</span><span class="s1">&#39;</span>,     [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">yellow</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">green</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">cyan</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">180</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">blue</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">240</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta</span><span class="s1">&#39;</span>, [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">300</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">white</span><span class="s1">&#39;</span>,   [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">black</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">gray50</span><span class="s1">&#39;</span>,  [<span class="mi">50</span>,  <span class="mi">50</span>,  <span class="mi">50</span> ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">silver</span><span class="s1">&#39;</span>,  [<span class="mi">75</span>,  <span class="mi">75</span>,  <span class="mi">75</span> ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">75</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red4</span><span class="s1">&#39;</span>,    [<span class="mi">55</span>,  <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">55</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">olive</span><span class="s1">&#39;</span>,   [<span class="mi">50</span>,  <span class="mi">50</span>,  <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">lime</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">teal</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">50</span>,  <span class="mi">50</span> ], [<span class="mi">180</span>, <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">navy</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">50</span> ], [<span class="mi">240</span>, <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">purple</span><span class="s1">&#39;</span>,  [<span class="mi">63</span>,  <span class="mi">13</span>,  <span class="mi">94</span> ], [<span class="mi">277</span>, <span class="mi">87</span>,  <span class="mi">94</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta4</span><span class="s1">&#39;</span>,[<span class="mi">55</span>,  <span class="mi">0</span>,   <span class="mi">55</span> ], [<span class="mi">300</span>, <span class="mi">100</span>, <span class="mi">55</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">maroon</span><span class="s1">&#39;</span>,  [<span class="mi">69</span>,  <span class="mi">19</span>,  <span class="mi">38</span> ], [<span class="mi">338</span>, <span class="mi">73</span>,  <span class="mi">69</span> ]<span class="ss">)</span>
 
-      write(*,*)'Get some grayscale values from RGB color values'
-      call rgbmono(100.,  0.,  0.,gray,ierr);write(*,*)'red     ',gray
-      call rgbmono(  0.,100.,  0.,gray,ierr);write(*,*)'green   ',gray
-      call rgbmono(  0.,  0.,100.,gray,ierr);write(*,*)'blue    ',gray
-      call rgbmono(100.,100.,  0.,gray,ierr);write(*,*)'Yellow  ',gray
-      call rgbmono(  0.,100.,100.,gray,ierr);write(*,*)'Cyan    ',gray
-      call rgbmono(100.,  0.,100.,gray,ierr);write(*,*)'Magenta ',gray
-      call rgbmono(100.,100.,100.,gray,ierr);write(*,*)'White   ',gray
-      call rgbmono( 00.,  0.,  0.,gray,ierr);write(*,*)'Black   ',gray
-      call rgbmono( 50.,  0.,  0.,gray,ierr);write(*,*)'Maroon  ',gray
-      call rgbmono(100., 50., 50.,gray,ierr);write(*,*)'Pink    ',gray
-      contains
-      subroutine chk(modelout,name,rgb,other)
-      ! given a color convert to MODELOUT and compare to expected values
-      character(len=*),intent(in)   :: name
-      integer,intent(in)            :: rgb(3), other(3)
-      character(len=*),intent(in)   :: modelout
-      real                          :: val1,val2,val3
-      integer                       :: status
-         ! convert RGB values to MODELOUT values
-         call hue('rgb',REAL(rgb(1)),REAL(rgb(2)),REAL(rgb(3)),&
-         & modelout,val1,val2,val3,status)
-         ! left-justify name to 10 characters or more
-         write(*,'(a,1x)',advance='no') &
-         & [ character(len=max(10,len_trim(name))) ::' '//trim(name)]
-         write(*,'(a,1x,3(i3,1x))',advance='no') &
-         & modelout//' EXPECTED',other
-         write(*,'(a,1x,3(i3,1x))',advance='no') &
-         & 'GOT',int([val1+0.5,val2+0.5,val3+0.5])
-         write(*,'(a,i0)')'STATUS ',status
-      end subroutine chk
-   end program demo_M_color
-</xmp>
-</dd>
-<!-- ======================================================================= -->
-<dt> SEE ALSO </dt> <dd>
+   <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="o">*</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">Get some grayscale values from RGB color values</span><span class="s1">&#39;</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span><span class="mi">100</span>.,  <span class="mi">0</span>.,  <span class="mi">0</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;red     &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span>  <span class="mi">0</span>.,<span class="mi">100</span>.,  <span class="mi">0</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;green   &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span>  <span class="mi">0</span>.,  <span class="mi">0</span>.,<span class="mi">100</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;blue    &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span><span class="mi">100</span>.,<span class="mi">100</span>.,  <span class="mi">0</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Yellow  &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span>  <span class="mi">0</span>.,<span class="mi">100</span>.,<span class="mi">100</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Cyan    &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span><span class="mi">100</span>.,  <span class="mi">0</span>.,<span class="mi">100</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Magenta &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span><span class="mi">100</span>.,<span class="mi">100</span>.,<span class="mi">100</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;White   &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span> <span class="mi">00</span>.,  <span class="mi">0</span>.,  <span class="mi">0</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Black   &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span> <span class="mi">50</span>.,  <span class="mi">0</span>.,  <span class="mi">0</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Maroon  &#39;,gray</span>
+   <span class="k">call</span> <span class="nl">rgbmono</span><span class="ss">(</span><span class="mi">100</span>., <span class="mi">50</span>., <span class="mi">50</span>.,<span class="nv">gray</span>,<span class="nv">ierr</span><span class="ss">)</span><span class="c1">;write(*,*)&#39;Pink    &#39;,gray</span>
+   <span class="nv">contains</span>
+   <span class="nv">subroutine</span> <span class="nv">chk</span><span class="ss">(</span><span class="nv">modelout</span>,<span class="nv">name</span>,<span class="nv">rgb</span>,<span class="nv">other</span><span class="ss">)</span>
+   <span class="o">!</span> <span class="nv">given</span> <span class="nv">a</span> <span class="nv">color</span> <span class="nv">convert</span> <span class="nv">to</span> <span class="nv">MODELOUT</span> <span class="nv">and</span> <span class="nv">compare</span> <span class="nv">to</span> <span class="nv">expected</span> <span class="nv">values</span>
+   <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=*</span><span class="ss">)</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>   :: <span class="nv">name</span>
+   <span class="nv">integer</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>            :: <span class="nv">rgb</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>, <span class="nv">other</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>
+   <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=*</span><span class="ss">)</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>   :: <span class="nv">modelout</span>
+   <span class="nv">real</span>                          :: <span class="nv">val1</span>,<span class="nv">val2</span>,<span class="nv">val3</span>
+   <span class="nv">integer</span>                       :: <span class="nv">status</span>
+      <span class="o">!</span> <span class="nv">convert</span> <span class="nv">RGB</span> <span class="nv">values</span> <span class="nv">to</span> <span class="nv">MODELOUT</span> <span class="nv">values</span>
+      <span class="k">call</span> <span class="nl">hue</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">rgb</span><span class="s1">&#39;</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">1</span><span class="ss">))</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">2</span><span class="ss">))</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">3</span><span class="ss">))</span>,<span class="o">&amp;</span>
+      <span class="o">&amp;</span> <span class="nv">modelout</span>,<span class="nv">val1</span>,<span class="nv">val2</span>,<span class="nv">val3</span>,<span class="nv">status</span><span class="ss">)</span>
+      <span class="o">!</span> <span class="nv">left</span><span class="o">-</span><span class="nv">justify</span> <span class="nv">name</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">characters</span> <span class="nv">or</span> <span class="nv">more</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x)</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> [ <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span><span class="nv">max</span><span class="ss">(</span><span class="mi">10</span>,<span class="nv">len_trim</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)))</span> ::<span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">trim</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)</span>]
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x,3(i3,1x))</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> <span class="nv">modelout</span><span class="o">//</span><span class="s1">&#39;</span><span class="s"> EXPECTED</span><span class="s1">&#39;</span>,<span class="nv">other</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x,3(i3,1x))</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> <span class="s1">&#39;</span><span class="s">GOT</span><span class="s1">&#39;</span>,<span class="nv">int</span><span class="ss">(</span>[<span class="nv">val1</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>,<span class="nv">val2</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>,<span class="nv">val3</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>]<span class="ss">)</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,i0)</span><span class="s1">&#39;</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">STATUS </span><span class="s1">&#39;</span>,<span class="nv">status</span>
+   <span class="k">end</span> <span class="nv">subroutine</span> <span class="nv">chk</span>
+<span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_M_color</span>
+</code></pre></div>
 
-<p>
-   A simple interactive javascript-based
-   <a href="../../../public_html/javascript/color/iframe.html"> color selector</a>
-   lets you interactively select colors.
-</p>
+<h2 id="references">REFERENCES</h2>
+<div class="codehilite"><pre><span></span><code>The algorithms are based on chapter 17 of &quot;Fundamentals of
+Interactive Computer Graphics&quot;; J. D. Foley and A. Van Dam.
+</code></pre></div>
 
-<p>
-   The color wheel below was generated using a
-   <a href="BOOK_M_draw.html"> M_draw(3f) </a>
-   graphics library program
-   <a href="../test/demos/huegif.f90">(huegif.f90)</a>
-   that uses the M_color module.
-</p>
+<h2 id="author">AUTHOR</h2>
+<div class="codehilite"><pre><span></span><code>John S. Urban
+</code></pre></div>
 
-<center>
-   <img alt="HLS circle" src="images/hls.gif" width="50%" height="" />
-</center>
+<h2 id="license">LICENSE</h2>
+<div class="codehilite"><pre><span></span><code>Public Domain
+</code></pre></div>
+      
+      
+      <br>
 
-</dd>
-<!-- ======================================================================= -->
-<dt>REFERENCES</dt><dd>
-  The algorithms are based on chapter 17 of
-  "Fundamentals of Interactive Computer Graphics"; J. D. Foley and A. Van Dam.
-</dd>
-<!-- ======================================================================= -->
-<dt> AUTHOR </dt><dd>
-
-   John S. Urban
-
-</dd>
-<!-- ======================================================================= -->
-<dt> LICENSE </dt><dd>
-
-   Public Domain
-
-</dd>
-<!-- ======================================================================= -->
-</dl>
-    
-    
-    <br>
-
-    <section class="visible-xs visible-sm hidden-md">
-        <h3>Contents</h3>
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
   
   
   
@@ -456,19 +400,19 @@
   
 
 
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
 
 
-    
-    
 
-    
-    
 
-    <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-closest_color_name"></span><h3>public  subroutine <a href='../proc/closest_color_name.html'>closest_color_name</a>(r, g, b, closestname)  
 </h3></div>
     <div class="panel-body">
@@ -553,7 +497,7 @@
     </div>
   </div>
 
-      <div class="panel panel-default">
+              <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-color_name2rgb"></span><h3>public  subroutine <a href='../proc/color_name2rgb.html'>color_name2rgb</a>(name, r, g, b, echoname)  
 </h3></div>
     <div class="panel-body">
@@ -653,26 +597,12 @@
     </div>
   </div>
 
-      <div class="panel panel-default">
+              <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-hue"></span><h3>public  subroutine <a href='../proc/hue.html'>hue</a>(modei, clr1i, clr2i, clr3i, modeo, clr1o, clr2o, clr3o, status)  
 </h3></div>
     <div class="panel-body">
           
-  <p>
-Valid values for modei and modeo as well as the corresponding
-meanings for clr1*, clr2*, and clr3* are:
-
-<table border="1">
-<tr><th>model</th><th> clr1 </th><th> clr2      </th><th> clr3      </th></tr>
-<tr><td>hls  </td><td> hue  </td><td> lightness </td><td> saturation</td></tr>
-<tr><td>hsl  </td><td> hue  </td><td> saturation</td><td> lightness </td></tr>
-<tr><td>hvs  </td><td> hue  </td><td> value     </td><td> saturation</td></tr>
-<tr><td>hsv  </td><td> hue  </td><td> saturation</td><td> value     </td></tr>
-<tr><td>rgb  </td><td> red  </td><td> green     </td><td> blue      </td></tr>
-<tr><td>cmy  </td><td> cyan </td><td> magenta   </td><td> yellow    </td></tr>
-<tr><td>yiq  </td><td> luma</br> grayscale </td><td> orange-blue</br>chrominance </td><td> purple-green</br>chrominance </td></tr>
-</table>
-</p><a href="../proc/hue.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sample program</p><a href="../proc/hue.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -827,7 +757,7 @@ meanings for clr1*, clr2*, and clr3* are:
     </div>
   </div>
 
-      <div class="panel panel-default">
+              <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-rgbmono"></span><h3>public  subroutine <a href='../proc/rgbmono.html'>rgbmono</a>(rr, rg, rb, ri, status)  
 </h3></div>
     <div class="panel-body">
@@ -927,58 +857,58 @@ meanings for clr1*, clr2*, and clr3* are:
     </div>
   </div>
 
-    </section>
-    <br>
+        </section>
+        <br>
 
 
 
     </div>
   </div>
 
-    <hr>    
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>M_color was developed by John S. Urban<br>&copy; 2023 
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>M_color was developed by John S. Urban<br>&copy; 2023 
 </p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-06-11 01:51              </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-06-10 15:25            </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>
