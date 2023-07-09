@@ -7,20 +7,12 @@ M_color - Fortran module for converting between color models
 
 ## Description
 **M_color** is a collection of procedures primarily for converting between different
-color models.
+color models. Documentation includes man-pages and a number of example programs.
 
-The M_color Fortran module is described in detail in individual 
-[HTML](https://urbanjost.github.io/M_color/man3.html "HTML index for M_color.f90")
-documents as well as in a 
-[single HTML document](https://urbanjost.github.io/M_color/BOOK_M_color.html)
-(requires javascript). 
-
-The distribution contains this information as man-pages as well for use
-on systems with the man(1) command.
-
-A [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes and issues. 
-
-## Download
+---
+![gmake](docs/images/gnu.gif)
+---
+## Building the Module using make(1)
     git clone https://github.com/urbanjost/M_color.git
     cd M_color/src
     # change Makefile if not using one of the listed compilers
@@ -41,10 +33,10 @@ This will compile the M_color module and build all the example programs
 from the document pages in the examples/ sub-directory.
 
 ---
-![fpm](docs/images/fpm_logo.gif)
+![-](docs/images/fpm_logo.gif)
 ---
+## Build and Test with FPM
 
-## Supports FPM
 #### (registered at the [fpm(1) registry](https://github.com/fortran-lang/fpm-registry) )
 
 Alternatively, download the github repository and build it with 
@@ -61,6 +53,29 @@ or just list it as a dependency in your fpm.toml project file.
      [dependencies]
      M_color        = { git = "https://github.com/urbanjost/M_color.git" }
 ```
+---
+![docs](docs/images/docs.gif)
+---
+## Documentation
+
+### User
+   - A single page that uses javascript to combine all the HTML
+     descriptions of the man-pages is at 
+     [BOOK_M_color](https://urbanjost.github.io/M_color/BOOK_M_color.html).
+
+   - a simple index to the man-pages in HTML form for the
+   [routines](https://urbanjost.github.io/M_color/man3.html) 
+   and [programs](https://urbanjost.github.io/M_color/man1.html) 
+
+   - There are man-pages in the repository download in the docs/ directory
+     that may be installed on ULS (Unix-Like Systems).
+
+   - ![man-pages](docs/images/manpages.gif)
+      + [manpages.zip](https://urbanjost.github.io/M_color/manpages.zip)
+      + [manpages.tgz](https://urbanjost.github.io/M_color/manpages.tgz)
+
+   - [CHANGELOG](docs/CHANGELOG.md) provides a history of significant changes
+
 ### Developer Documentation
 
  - The code was run through [ford(1)](https://politicalphysicist.github.io/ford-fortran-documentation.html)
