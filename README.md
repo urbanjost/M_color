@@ -1,4 +1,5 @@
-[![M_color](docs/images/swirl_small.gif)](https://urbanjost.github.io/M_color/index.html)
+[![](docs/images/swirl_small.gif)](https://urbanjost.github.io/M_color/fpm-ford/index.html)
+# [M_color](https://urbanjost.github.io/M_color/man3.html)
 
 ## Name
 
