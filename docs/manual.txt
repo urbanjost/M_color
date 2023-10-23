@@ -1,0 +1,592 @@
+closest_color_name (3m_color) - [M_color] returns the closest name for the given RGB values. (LICENSE:PD)
+color_name2rgb (3m_color) - [M_color] returns the RGB values in the range 0 to 100 for a given known color name. (LICENSE:PD)
+hue (3m_color)	     - [M_color] converts a color's components from one color model to another. (LICENSE:PD)
+M_color (3m_color)   - [M_color::INTRO] a Fortran module that lets you convert between common color models (LICENSE:PD)
+rgbmono (3m_color)   - [M_color] converts RGB colors to a reasonable grayscale intensity (LICENSE:PD)
+color_name2rgb(3m_color)			      color_name2rgb(3m_color)
+
+
+
+NAME
+  COLOR_NAME2RGB(3f) - [M_color] returns the RGB values in the range 0 to 100
+  for a given known color name.  (LICENSE:PD)
+
+
+SYNOPSIS
+  subroutine color_name2rgb(name,r,g,b,echoname)
+
+      character(len=20),intent(in)   :: name
+      real,intent(out)		     :: r,g,b
+      character(len=20),intent(out)  :: echoname
+
+
+DESCRIPTION
+  COLOR_NAME2RGB(3f) returns the RGB values in the range 0 to 100 for a given
+  known color name. Most X11 Windows color names are supported. If the name is
+  not found ECHONAME is set to "Unknown".
+
+EXAMPLE
+  A sample program:
+
+      program demo_color_name2rgb
+      use M_color, only : hue, color_name2rgb
+      implicit none
+      !
+      ! list colors known to colorname2rgb(3f) & corresponding RGB values
+      !
+      character(len=20) :: name
+      character(len=20) :: echoname
+      real		:: red,green,blue
+      integer		:: i
+      TRYALL: do i=1,10000
+	 ! weird little thing where the color names have aliases
+	 ! that are numeric strings
+	 write(name,'(i0)')i
+	 ! get the RGB values and English name of the color
+	 call color_name2rgb(name,red,green,blue,echoname)
+	 ! the last color name is "Unknown" so the loop should exit
+	 if(echoname == 'Unknown')exit TRYALL
+	 ! display the English name and RGB values for the name
+	 write(*,*)echoname,int([red,green,blue])
+      enddo TRYALL
+      !write(*,*)'Number of colors found is ',i-1
+      end program demo_color_name2rgb
+
+
+AUTHOR
+  John S. Urban
+
+LICENSE
+  Public Domain
+
+
+
+			       October 02, 2023       color_name2rgb(3m_color)
+M_color(3m_color)					     M_color(3m_color)
+
+
+
+NAME
+  M_color(3) - [M_color::INTRO] a Fortran module that lets you convert between
+  common color models (LICENSE:PD)
+
+
+SYNOPSIS
+  use M_color, only : &
+
+	& hue, &
+	& closest_color_name, &
+	& color_name2rgb, &
+	& rgbmono
+
+
+DESCRIPTION
+  Highly accurate color conversions are a tricky business, and color is a
+  complex topic; but the simplified translations between common color models
+  found here work quite well for basic conversions.
+
+  Typically the only user routine called is HUE(3f). HUE(3f) is a single
+  routine that interfaces to all the private low-level color conversion
+  routines to convert a color's components from one color model to another.
+  HUE(3f) converts between the following color models:
+
+  RGB:
+    Red, Green, Blue (color TV monitors)
+
+  HLS:
+    Hue, Lightness, Saturation
+
+  CMY:
+    Cyan, Magenta, Yellow (pigment-based printing devices)
+
+  HSV:
+    Hue, Saturation, Value
+
+  YIQ:
+    Broadcast TV color system
+
+  In addition to those reversible color model conversions there are:
+
+  CLOSEST_COLOR_NAME(3f):
+    given RGB values, try to find closest named color
+
+  COLOR_NAME2RGB(3f):
+    given a standard color name, return RGB color values in range 0 to 100
+
+  RGBMONO(3f):
+    convert RGB colors to a reasonable grayscale (non-reversible)
+
+   DESIGN OF THE MODULE
+  The rest of the library is composed of PRIVATE procedures. Internally for
+  each color model supported the general idea of the module is that there are
+  two routines for each color model:
+
+  •  One converts that model to the RGB model
+
+  •  The other converts from RGB to that model
+
+  This allows conversions between all color models with only 2*N routines.
+  That is, to go from model A to model B the module would internally make two
+  calls:
+
+	 call modelA2rgb(...)
+	 call rgb2modelB(...)
+
+  The resulting internal routines are:
+
+  HLSRGB:
+    given hue, lightness, saturation calculate red, green, and blue components
+
+    •  RGBVAL ensures a value is in the appropriate range and quadrant
+
+  HVSRGB:
+    given hue, saturation, value calculate red, green, and blue components
+
+  CMYRGB:
+    given cyan, magenta, yellow components calculate red, green, blue
+    components
+
+  YIQRGB:
+    given luma(gray scale), orange-blue chrominance, and purple-green
+    chrominance components calculate red, green, and blue components
+
+  RGBHVS:
+    given red, green, blue values calculate hue, value, and saturation
+    components
+
+  RGBHLS:
+    given red, green, blue values calculate hue, lightness, and saturation
+    components
+
+  RGBCMY:
+    given red, green, blue values calculate cyan, magenta, yellow components
+
+  RGBYIQ:
+    given red, green, blue values calculate luma(gray scale), orange-blue
+    chrominance, and purple-green chrominance components
+
+EXAMPLE
+  Sample program:
+
+     program demo_M_color
+     use M_color, only : hue
+     use M_color, only : closest_color_name
+     use M_color, only : color_name2rgb
+     use M_color, only : rgbmono
+     implicit none
+     character(len=100) :: string ! at least 20 characters
+     character(len=20)	:: name
+     character(len=20)	:: echoname
+     real		:: red,green,blue
+     real		:: gray
+     integer		:: ierr
+	! find the names of colors given RGB values
+	write(*,*)'Find names given values'
+
+	call closest_color_name( 100.0,   0.0,	 0.0, string)
+	write(*,*)trim(string)
+
+	call closest_color_name(   0.0, 100.0,	 0.0, string)
+	write(*,*)trim(string)
+
+	call closest_color_name(   0.0,   0.0, 100.0, string)
+	write(*,*)trim(string)
+
+	! list colors known to colorname2rgb(3f) & corresponding RGB values
+	write(*,*)'given names find RGB values'
+	! get the RGB values and English name of the color
+	call color_name2rgb('RED',red,green,blue,echoname)
+	! display the English name and RGB values for the name
+	write(*,*)echoname,int([red,green,blue])
+
+	write(*,*)'Do some conversions between RGB, HLS, and HLS'
+	write(*,*)'and check them against expected values'
+	!		NAME	    RGB(0-255)		  HLS(0-100)
+	call chk('hls','red',	  [100, 0,   0	], [0,	 50,  100])
+	call chk('hls','orange',  [100, 65,  0	], [39,  50,  100])
+	call chk('hls','yellow',  [100, 100, 0	], [60,  50,  100])
+	call chk('hls','green',   [0,	100, 0	], [120, 50,  100])
+	call chk('hls','cyan',	  [0,	100, 100], [180, 50,  100])
+	call chk('hls','blue',	  [0,	0,   100], [240, 50,  100])
+	call chk('hls','magenta', [100, 0,   100], [300, 50,  100])
+	call chk('hls','black',   [0,	0,   0	], [0,	 0,   0  ])
+	call chk('hls','white',   [100, 100, 100], [0,	 100, 0  ])
+	!		NAME	    RGB(0-255)		 HSV(0-100)
+	call chk('hsv','red',	  [100, 0,   0	], [0,	 100, 100])
+	call chk('hsv','yellow',  [100, 100, 0	], [60,  100, 100])
+	call chk('hsv','green',   [0,	100, 0	], [120, 100, 100])
+	call chk('hsv','cyan',	  [0,	100, 100], [180, 100, 100])
+	call chk('hsv','blue',	  [0,	0,   100], [240, 100, 100])
+	call chk('hsv','magenta', [100, 0,   100], [300, 100, 100])
+	call chk('hsv','white',   [100, 100, 100], [0,	 0,   100])
+	call chk('hsv','black',   [0,	0,   0	], [0,	 0,   0  ])
+	call chk('hsv','gray50',  [50,	50,  50 ], [0,	 0,   50 ])
+	call chk('hsv','silver',  [75,	75,  75 ], [0,	 0,   75 ])
+	call chk('hsv','red4',	  [55,	0,   0	], [0,	 100, 55 ])
+	call chk('hsv','olive',   [50,	50,  0	], [60,  100, 50 ])
+	call chk('hsv','lime',	  [0,	100, 0	], [120, 100, 100])
+	call chk('hsv','teal',	  [0,	50,  50 ], [180, 100, 50 ])
+	call chk('hsv','navy',	  [0,	0,   50 ], [240, 100, 50 ])
+	call chk('hsv','purple',  [63,	13,  94 ], [277, 87,  94 ])
+	call chk('hsv','magenta4',[55,	0,   55 ], [300, 100, 55 ])
+	call chk('hsv','maroon',  [69,	19,  38 ], [338, 73,  69 ])
+
+	write(*,*)'Get some grayscale values from RGB color values'
+	call rgbmono(100.,  0.,  0.,gray,ierr);write(*,*)'red	  ',gray
+	call rgbmono(  0.,100.,  0.,gray,ierr);write(*,*)'green   ',gray
+	call rgbmono(  0.,  0.,100.,gray,ierr);write(*,*)'blue	  ',gray
+	call rgbmono(100.,100.,  0.,gray,ierr);write(*,*)'Yellow  ',gray
+	call rgbmono(  0.,100.,100.,gray,ierr);write(*,*)'Cyan	  ',gray
+	call rgbmono(100.,  0.,100.,gray,ierr);write(*,*)'Magenta ',gray
+	call rgbmono(100.,100.,100.,gray,ierr);write(*,*)'White   ',gray
+	call rgbmono( 00.,  0.,  0.,gray,ierr);write(*,*)'Black   ',gray
+	call rgbmono( 50.,  0.,  0.,gray,ierr);write(*,*)'Maroon  ',gray
+	call rgbmono(100., 50., 50.,gray,ierr);write(*,*)'Pink	  ',gray
+	contains
+	subroutine chk(modelout,name,rgb,other)
+	! given a color convert to MODELOUT and compare to expected values
+	character(len=*),intent(in)   :: name
+	integer,intent(in)	      :: rgb(3), other(3)
+	character(len=*),intent(in)   :: modelout
+	real			      :: val1,val2,val3
+	integer 		      :: status
+	   ! convert RGB values to MODELOUT values
+	   call hue('rgb',REAL(rgb(1)),REAL(rgb(2)),REAL(rgb(3)),&
+	   & modelout,val1,val2,val3,status)
+	   ! left-justify name to 10 characters or more
+	   write(*,'(a,1x)',advance='no') &
+	   & [ character(len=max(10,len_trim(name))) ::' '//trim(name)]
+	   write(*,'(a,1x,3(i3,1x))',advance='no') &
+	   & modelout//' EXPECTED',other
+	   write(*,'(a,1x,3(i3,1x))',advance='no') &
+	   & 'GOT',int([val1+0.5,val2+0.5,val3+0.5])
+	   write(*,'(a,i0)')'STATUS ',status
+	end subroutine chk
+     end program demo_M_color
+
+
+REFERENCES
+  The algorithms are based on chapter 17 of "Fundamentals of Interactive
+  Computer Graphics"; J. D. Foley and A. Van Dam.
+
+AUTHOR
+  John S. Urban
+
+LICENSE
+  Public Domain
+
+
+
+			       October 02, 2023 	     M_color(3m_color)
+rgbmono(3m_color)					     rgbmono(3m_color)
+
+
+
+NAME
+  RGBMONO(3f) - [M_color] converts RGB colors to a reasonable grayscale
+  intensity (LICENSE:PD)
+
+
+SYNOPSIS
+  subroutine rgbmono(rr,rg,rb,ri,status)
+
+      real, intent(in)	:: RR
+      real, intent(in)	:: RG
+      real, intent(in)	:: RB
+      real, intent(out) :: RI
+      integer		:: status
+
+
+DESCRIPTION
+  RGBMONO(3f) converts RGB colors to a reasonable grayscale intensity.	This
+  can be used to produce monochrome images from color images.  Intensity is
+  calculated from the specified Red, Green, Blue intensities as 0.30*R +
+  0.59*G + 0.11*B, as in U.S. color television systems, NTSC encoding. Note
+  that most devices do not have an infinite range of monochrome intensities
+  available.
+
+OPTIONS
+  RR
+    red component of the input color in the range 0 to 100
+
+  RG
+    green component of the input color in the range 0 to 100
+
+  RB
+    blue component of the input color in the range 0 to 100
+
+RETURNS
+  RI
+    grayscale intensity calculated in the range 0 to 100
+
+  status
+    zero (0) if no error occurred, otherwise result is out of bounds
+
+EXAMPLES
+  Sample:
+
+     program demo_rgbmono
+     use M_color, only : rgbmono
+     implicit none
+     real    :: gray
+     integer :: ierr
+     call rgbmono(100.0,  0.0,	0.0,gray,ierr); write(*,*)'red	   ',gray
+     call rgbmono(  0.0,100.0,	0.0,gray,ierr); write(*,*)'green   ',gray
+     call rgbmono(  0.0,  0.0,100.0,gray,ierr); write(*,*)'blue    ',gray
+     call rgbmono(100.0,100.0,	0.0,gray,ierr); write(*,*)'Yellow  ',gray
+     call rgbmono(  0.0,100.0,100.0,gray,ierr); write(*,*)'Cyan    ',gray
+     call rgbmono(100.0,  0.0,100.0,gray,ierr); write(*,*)'Magenta ',gray
+     call rgbmono(100.0,100.0,100.0,gray,ierr); write(*,*)'White   ',gray
+     call rgbmono( 00.0,  0.0,	0.0,gray,ierr); write(*,*)'Black   ',gray
+     call rgbmono( 50.0,  0.0,	0.0,gray,ierr); write(*,*)'Maroon  ',gray
+     call rgbmono(100.0, 50.0, 50.0,gray,ierr); write(*,*)'Pink    ',gray
+     end program demo_rgbmono
+
+  Results:
+
+      red	 30.0000019
+      green	 58.9999962
+      blue	 11.0000000
+      Yellow	 89.0000000
+      Cyan	 70.0000000
+      Magenta	 41.0000000
+      White	 100.000000
+      Black	 0.00000000
+      Maroon	 15.0000010
+      Pink	 65.0000000
+
+
+AUTHOR
+  John S. Urban
+
+LICENSE
+  Public Domain
+
+
+
+			       October 02, 2023 	     rgbmono(3m_color)
+hue(3m_color)							 hue(3m_color)
+
+
+
+NAME
+  HUE(3f) - [M_color] converts a color's components from one color model to
+  another. (LICENSE:PD)
+
+
+SYNOPSIS
+  subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)
+
+       character(len=*),intent(in) :: modei
+       character(len=*),intent(in) :: modeo
+       real,intent(in)		   :: clr1i,clr2i,clr3i
+       real,intent(out) 	   :: clr1o,clr2o,clr3o
+       integer,intent(out)	   :: status
+
+
+DESCRIPTION
+  HUE(3f) translates from the first model type to the second.
+
+  MODEI specifies the color model that applies to the input color components
+  CLR1I, CLR2I, and CLR3I.
+
+  MODEO specifies the color model desired for the output color components
+  CLR1O, CLR2O, and CLR3O.
+
+  At a minimum, this procedure equates the output color values to the input
+  color values.
+
+  Valid values for MODEI and MODEO as well as the corresponding meanings for
+  CLR1*, CLR2*, and CLR3* are:
+
+	| mode	| clr1		   | clr2	  | clr3
+	| ----- | ---------------- |--------------|---------------
+	| 'hls' | hue		   | lightness	  | saturation
+	| 'hsl' | hue		   | saturation   | lightness
+	| 'hvs' | hue		   | value	  | saturation
+	| 'hsv' | hue		   | saturation   | value
+	| 'rgb' | red		   | green	  | blue
+	| 'cmy' | cyan		   | magenta	  | yellow
+	| 'yiq' | luma(gray-scale) | orange-blue  | purple-green
+	|	|		   | chrominance  | chrominance
+
+	    + lightness, value, saturation, red, green, blue, cyan, magenta,
+	      and yellow range from 0 to 100,
+	    + hue ranges from 0 to 360 degrees,
+	    + y ranges from 0 to 100,
+	    + i ranges from -60 to 60,
+	    + q ranges from -52 to 52
+
+  The STATUS variable can signal the following conditions:
+
+       -1     modei = modeo, so no substantial conversion was done,
+	1     one of the input color values was outside the allowable range,
+	2     modei was invalid
+	3     modeo was invalid
+	999   unknown error
+
+
+EXAMPLE
+  Sample program
+
+     program demo_hue
+     use M_color, only : hue
+     implicit none
+	!		NAME	    RGB(0-255)		  HLS(0-100)
+	call chk('hls','red',	  [100, 0,   0	], [0,	 50,  100])
+	call chk('hls','orange',  [100, 65,  0	], [39,  50,  100])
+	call chk('hls','yellow',  [100, 100, 0	], [60,  50,  100])
+	call chk('hls','green',   [0,	100, 0	], [120, 50,  100])
+	call chk('hls','cyan',	  [0,	100, 100], [180, 50,  100])
+	call chk('hls','blue',	  [0,	0,   100], [240, 50,  100])
+	call chk('hls','magenta', [100, 0,   100], [300, 50,  100])
+	call chk('hls','black',   [0,	0,   0	], [0,	 0,   0  ])
+	call chk('hls','white',   [100, 100, 100], [0,	 100, 0  ])
+	!		NAME	    RGB(0-255)		 HSV(0-100)
+	call chk('hsv','red',	  [100, 0,   0	], [0,	 100, 100])
+	call chk('hsv','yellow',  [100, 100, 0	], [60,  100, 100])
+	call chk('hsv','green',   [0,	100, 0	], [120, 100, 100])
+	call chk('hsv','cyan',	  [0,	100, 100], [180, 100, 100])
+	call chk('hsv','blue',	  [0,	0,   100], [240, 100, 100])
+	call chk('hsv','magenta', [100, 0,   100], [300, 100, 100])
+	call chk('hsv','black',   [0,	0,   0	], [0,	 0,   0  ])
+	call chk('hsv','white',   [100, 100, 100], [0,	 0,   100])
+
+	call chk('hsv','gray50',  [50,	50,  50 ], [0,	 0,   50 ])
+	call chk('hsv','silver',  [75,	75,  75 ], [0,	 0,   75 ])
+	call chk('hsv','red4',	  [55,	0,   0	], [0,	 100, 55 ])
+	call chk('hsv','olive',   [50,	50,  0	], [60,  100, 50 ])
+	call chk('hsv','lime',	  [0,	100, 0	], [120, 100, 100])
+	call chk('hsv','teal',	  [0,	50,  50 ], [180, 100, 50 ])
+	call chk('hsv','navy',	  [0,	0,   50 ], [240, 100, 50 ])
+	call chk('hsv','purple',  [63,	13,  94 ], [277, 87,  94 ])
+	call chk('hsv','magenta4',[55,	0,   55 ], [300, 100, 55 ])
+	call chk('hsv','maroon',  [69,	19,  38 ], [338, 73,  69 ])
+     contains
+     subroutine chk(modelout,name,rgb,other)
+     ! given a color convert to MODELOUT and compare to expected values
+     character(len=*),intent(in)   :: name
+     integer,intent(in) 	   :: rgb(3), other(3)
+     character(len=*),intent(in)   :: modelout
+	real			   :: val1,val2,val3
+	integer 		   :: status
+	! convert RGB values to MODELOUT values
+	call hue('rgb',REAL(rgb(1)),REAL(rgb(2)),REAL(rgb(3)),&
+	& modelout,val1,val2,val3,status)
+	   ! left-justify name to 10 characters or more
+	   write(*,'(a,1x)',advance='no') &
+	   & [ character(len=max(10,len_trim(name))) ::' '//trim(name)]
+	   write(*,'(a,1x,3(i3,1x))',advance='no') &
+	   & modelout//' EXPECTED',other
+	   write(*,'(a,1x,3(i3,1x))',advance='no') &
+	   & 'GOT',int([val1+0.5,val2+0.5,val3+0.5])
+	   write(*,'(a,i0)')'STATUS ',status
+     end subroutine chk
+     end program demo_hue
+
+  Results:
+
+      red	hls EXPECTED   0  50 100 GOT   0  50 100 STATUS 0
+      orange	hls EXPECTED  39  50 100 GOT  39  50 100 STATUS 0
+      yellow	hls EXPECTED  60  50 100 GOT  60  50 100 STATUS 0
+      green	hls EXPECTED 120  50 100 GOT 120  50 100 STATUS 0
+      cyan	hls EXPECTED 180  50 100 GOT 180  50 100 STATUS 0
+      blue	hls EXPECTED 240  50 100 GOT 240  50 100 STATUS 0
+      magenta	hls EXPECTED 300  50 100 GOT 300  50 100 STATUS 0
+      black	hls EXPECTED   0   0   0 GOT   0   0   0 STATUS 0
+      white	hls EXPECTED   0 100   0 GOT   0 100   0 STATUS 0
+      black	hsv EXPECTED   0   0   0 GOT   0   0   0 STATUS 0
+      gray50	hsv EXPECTED   0   0  50 GOT   0   0  50 STATUS 0
+      silver	hsv EXPECTED   0   0  75 GOT   0   0  75 STATUS 0
+      white	hsv EXPECTED   0   0 100 GOT   0   0 100 STATUS 0
+      red4	hsv EXPECTED   0 100  55 GOT   0 100  55 STATUS 0
+      red	hsv EXPECTED   0 100 100 GOT   0 100 100 STATUS 0
+      olive	hsv EXPECTED  60 100  50 GOT  60 100  50 STATUS 0
+      yellow	hsv EXPECTED  60 100 100 GOT  60 100 100 STATUS 0
+      green	hsv EXPECTED 120 100 100 GOT 120 100 100 STATUS 0
+      lime	hsv EXPECTED 120 100 100 GOT 120 100 100 STATUS 0
+      teal	hsv EXPECTED 180 100  50 GOT 180 100  50 STATUS 0
+      cyan	hsv EXPECTED 180 100 100 GOT 180 100 100 STATUS 0
+      navy	hsv EXPECTED 240 100  50 GOT 240 100  50 STATUS 0
+      blue	hsv EXPECTED 240 100 100 GOT 240 100 100 STATUS 0
+      purple	hsv EXPECTED 277  87  94 GOT 277  86  94 STATUS 0
+      magenta4	hsv EXPECTED 300 100  55 GOT 300 100  55 STATUS 0
+      magenta	hsv EXPECTED 300 100 100 GOT 300 100 100 STATUS 0
+      maroon	hsv EXPECTED 338  73  69 GOT 337  72  69 STATUS 0
+
+
+AUTHOR
+  John S. Urban
+
+LICENSE
+  Public Domain
+
+
+
+			       October 02, 2023 		 hue(3m_color)
+closest_color_name(3m_color)			  closest_color_name(3m_color)
+
+
+
+NAME
+  closest_color_name(3f) - [M_color] returns the closest name for the given
+  RGB values.  (LICENSE:PD)
+
+
+SYNOPSIS
+  subroutine closest_color_name(r,g,b,closestname)
+
+      real,intent(in)		    :: r,g,b
+      character(len=20),intent(out) :: closestname
+
+
+DESCRIPTION
+  CLOSEST_COLOR_NAME(3f) returns the closest name for the given RGB values.
+  Most X11 Windows color names are supported.
+
+OPTIONS
+  R red component, range of 0 to 100
+
+  G green component, range of 0 to 100
+
+  B blue component, range of 0 to 100
+
+RETURNS
+  CLOSESTNAME
+    name of color found closest to given RGB value
+
+EXAMPLE
+  Sample program
+
+     program demo_closest_color_name
+     use M_color, only : closest_color_name
+     character(len=100) :: string ! at least 20 characters
+	string=' '
+
+	call closest_color_name(100.0,	0.0,  0.0,string)
+	write(*,*)trim(string)
+
+	call closest_color_name(  0.0,100.0,  0.0,string)
+	write(*,*)trim(string)
+
+	call closest_color_name(  0.0,	0.0,100.0,string)
+	write(*,*)trim(string)
+
+     end program demo_closest_color_name
+
+  Results:
+
+     red
+     green
+     blue
+
+
+AUTHOR
+  John S. Urban
+
+LICENSE
+  Public Domain
+
+
+
+			       October 02, 2023   closest_color_name(3m_color)

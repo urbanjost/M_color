@@ -87,3 +87,11 @@ or just list it as a dependency in your fpm.toml project file.
 <a align="center" href="https://urbanjost.github.io/M_color/fpm-ford/index.html">
   <img align="center" width="460" height="460" src="https://urbanjost.github.io/M_color/images/hls.gif">
 </a>
+### See also:
+#### Poskanzer PPM (Portable Pixel Map) packages:
+ - [M_pixel](https://github.com/urbanjost/M_pixel)
+ - [M_draw](https://github.com/urbanjost/M_draw)
+
+#### External:
+ - [cubehelix](https://people.phy.cam.ac.uk/dag9/CUBEHELIX/)
+ - [forcolormap](https://github.com/vmagnin/forcolormap)
