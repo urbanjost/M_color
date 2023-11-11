@@ -92,7 +92,6 @@
 !!    use M_color, only : rgbmono
 !!    implicit none
 !!    character(len=100) :: string ! at least 20 characters
-!!    character(len=20)  :: name
 !!    character(len=20)  :: echoname
 !!    real               :: red,green,blue
 !!    real               :: gray

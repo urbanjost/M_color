@@ -61,7 +61,7 @@ LICENSE
 
 
 
-			       October 02, 2023       color_name2rgb(3m_color)
+			       November 11, 2023      color_name2rgb(3m_color)
 M_color(3m_color)					     M_color(3m_color)
 
 
@@ -175,7 +175,6 @@ EXAMPLE
      use M_color, only : rgbmono
      implicit none
      character(len=100) :: string ! at least 20 characters
-     character(len=20)	:: name
      character(len=20)	:: echoname
      real		:: red,green,blue
      real		:: gray
@@ -277,7 +276,7 @@ LICENSE
 
 
 
-			       October 02, 2023 	     M_color(3m_color)
+			       November 11, 2023	     M_color(3m_color)
 rgbmono(3m_color)					     rgbmono(3m_color)
 
 
@@ -364,7 +363,7 @@ LICENSE
 
 
 
-			       October 02, 2023 	     rgbmono(3m_color)
+			       November 11, 2023	     rgbmono(3m_color)
 hue(3m_color)							 hue(3m_color)
 
 
@@ -523,7 +522,7 @@ LICENSE
 
 
 
-			       October 02, 2023 		 hue(3m_color)
+			       November 11, 2023		 hue(3m_color)
 closest_color_name(3m_color)			  closest_color_name(3m_color)
 
 
@@ -589,4 +588,4 @@ LICENSE
 
 
 
-			       October 02, 2023   closest_color_name(3m_color)
+			       November 11, 2023  closest_color_name(3m_color)

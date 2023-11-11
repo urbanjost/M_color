@@ -13,7 +13,7 @@ call test_closest_color_name()  ! given RGB values, try to find closest named co
 call test_color_name2rgb()      ! given a color name, return rgb color values in range 0 to 100
 call test_rgbmono()             ! convert RGB colors to a reasonable grayscale
 contains
-!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+!===================================================================================================================================
 subroutine test_rgbmono()
 real :: gray
 integer :: ierr
@@ -31,7 +31,7 @@ call unit_check_start('rgbmono')
 call unit_check_done('rgbmono')
 end subroutine test_rgbmono
 end subroutine test_suite_m_color
-!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+!===================================================================================================================================
 subroutine test_hue()
 real              :: c, m, y
 real              :: r, g, b
@@ -103,12 +103,12 @@ call unit_check_start('hue')
 call unit_check_done('hue')
 
 contains
-subroutine check_name(modelout,name,rgb,other)
+subroutine check_name(modelout,name,rgb,expected)
 
-! given a color convert to MODELOUT and compare to expected values
+! given a color in RGB convert to MODELOUT and compare to expected values
 
 character(len=*),intent(in)   :: name
-integer,intent(in)            :: rgb(3), other(3)
+integer,intent(in)            :: rgb(3), expected(3)
 character(len=*),intent(in)   :: modelout
    real                       :: r,g,b
    real                       :: val1,val2,val3
@@ -120,16 +120,19 @@ character(len=*),intent(in)   :: modelout
    ! convert RGB values to MODELOUT values
    call hue('rgb',r,g,b,modelout,val1,val2,val3,status)
    if(unit_check_level.gt.0)then
-      write(*,*)'EXPECTED '//modelout//' ====>',other
-      write(*,*)'RETURNED '//modelout//' ====>',int([val1+0.5,val2+0.5,val3+0.5])
-      write(*,*)'STATUS ==========>',status
+      write(*,*)'test_hue:MODELOUT  ====>',modelout
+      write(*,*)'test_hue:NAME      ====>',name
+      write(*,*)'test_hue:RGB       ====>',rgb
+      write(*,*)'test_hue:EXPECTED  ====>',expected
+      write(*,*)'test_hue:RETURNED  ====>',int([val1+0.5,val2+0.5,val3+0.5])
+      write(*,*)'test_hue:STATUS    ====>',status
    endif
-   call unit_check('hue', status.eq.0.and.all(abs(int([val1+0.5,val2+0.5,val3+0.5])-other).lt.2 ),'convert from rgb to '//modelout)
+   call unit_check('hue',status.eq.0.and.all(abs(int([val1+0.5,val2+0.5,val3+0.5])-expected).lt.2),'convert from rgb to '//modelout)
 
 end subroutine check_name
-!===================================================================================================================================
+
 end subroutine test_hue
-!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+!===================================================================================================================================
 subroutine test_closest_color_name()
 
 call unit_check_start('closest_color_name')
@@ -185,9 +188,9 @@ character(len=20)  :: closestname
       & rgb(3) .eq. int(b2+0.5)  ,msg='close enough for NAME: '//trim(name)//' CLOSESTNAME: '//trim(closestname) )
    endif
 end subroutine check_name
-!===================================================================================================================================
+
 end subroutine test_closest_color_name
-!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+!===================================================================================================================================
 subroutine test_color_name2rgb()
 
 call unit_check_start('color_name2rgb')
@@ -214,6 +217,7 @@ call unit_check_start('color_name2rgb')
 
 call unit_check_done('color_name2rgb')
 contains
+
 subroutine check_name(name,rgb)
 ! given a colorname look up RGB values, compare to expected values, check
 
