@@ -1,0 +1,599 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="procedures for color conversion and color models">
+    <meta name="author" content="John S. Urban" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>hue &ndash; M_color</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">M_color </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>hue
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 2.7% of total for procedures.">83 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/M_color.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/m_color.f90.html'>M_color.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/m_color.html'>M_color</a></li>
+            <li class="breadcrumb-item active" aria-current="page">hue</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/hue.html#src">hue</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine hue(modei, clr1i, clr2i, clr3i, modeo, clr1o, clr2o, clr3o, status)  
+</h2>
+    
+
+    <h2 id="name">NAME</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">HUE</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">[</span><span class="n">M_color</span><span class="o">]</span><span class="w"> </span><span class="n">converts</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">color</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">components</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">color</span><span class="w"></span>
+<span class="n">model</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">another</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="nl">LICENSE</span><span class="p">:</span><span class="n">PD</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="synopsis">SYNOPSIS</h2>
+<div class="codehilite"><pre><span></span><code> subroutine hue(modei,clr1i,clr2i,clr3i,modeo,clr1o,clr2o,clr3o,status)
+
+  character(len=*),intent(in) :: modei
+  character(len=*),intent(in) :: modeo
+  real,intent(in)             :: clr1i,clr2i,clr3i
+  real,intent(out)            :: clr1o,clr2o,clr3o
+  integer,intent(out)         :: status
+</code></pre></div>
+
+<h2 id="description">DESCRIPTION</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">HUE</span><span class="p">(</span><span class="mi">3</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="n">translates</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">second</span><span class="o">.</span><span class="w"></span>
+
+<span class="n">MODEI</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">applies</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">color</span><span class="w"></span>
+<span class="n">components</span><span class="w"> </span><span class="n">CLR1I</span><span class="p">,</span><span class="w"> </span><span class="n">CLR2I</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CLR3I</span><span class="o">.</span><span class="w"></span>
+
+<span class="n">MODEO</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">desired</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">components</span><span class="w"></span>
+<span class="n">CLR1O</span><span class="p">,</span><span class="w"> </span><span class="n">CLR2O</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CLR3O</span><span class="o">.</span><span class="w"></span>
+
+<span class="n">At</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">minimum</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">procedure</span><span class="w"> </span><span class="n">equates</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+<span class="n">input</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">values</span><span class="o">.</span><span class="w"></span>
+
+<span class="n">Valid</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MODEI</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">MODEO</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">well</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">meanings</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">CLR1</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">CLR2</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CLR3</span><span class="o">*</span><span class="w"> </span><span class="n">are</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">mode</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">clr1</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="n">clr2</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="n">clr3</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">----------------</span><span class="w"> </span><span class="o">|--------------|---------------</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;hls&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">hue</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">lightness</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">saturation</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;hsl&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">hue</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">saturation</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">lightness</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;hvs&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">hue</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">value</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">saturation</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;hsv&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">hue</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">saturation</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">value</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;rgb&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">red</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">green</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">blue</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;cmy&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cyan</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="n">magenta</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">yellow</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;yiq&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">luma</span><span class="p">(</span><span class="n">gray</span><span class="o">-</span><span class="n">scale</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">orange</span><span class="o">-</span><span class="n">blue</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">purple</span><span class="o">-</span><span class="n">green</span><span class="w"></span>
+<span class="w">   </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">                  </span><span class="o">|</span><span class="w"> </span><span class="n">chrominance</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">chrominance</span><span class="w"></span>
+
+<span class="w">       </span><span class="o">+</span><span class="w"> </span><span class="n">lightness</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">,</span><span class="w"> </span><span class="n">cyan</span><span class="p">,</span><span class="w"> </span><span class="n">magenta</span><span class="p">,</span><span class="w"></span>
+<span class="w">         </span><span class="ow">and</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="nb">range</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="o">+</span><span class="w"> </span><span class="n">hue</span><span class="w"> </span><span class="n">ranges</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">360</span><span class="w"> </span><span class="n">degrees</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="n">ranges</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">ranges</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">-</span><span class="mi">60</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"></span>
+<span class="w">       </span><span class="o">+</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="n">ranges</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">-</span><span class="mi">52</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">52</span><span class="w"></span>
+
+<span class="n">The</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">signal</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">conditions</span><span class="p">:</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">-</span><span class="mi">1</span><span class="w">     </span><span class="n">modei</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modeo</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">substantial</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">done</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="mi">1</span><span class="w">     </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">outside</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">allowable</span><span class="w"> </span><span class="nb">range</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="mi">2</span><span class="w">     </span><span class="n">modei</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">invalid</span><span class="w"></span>
+<span class="w">   </span><span class="mi">3</span><span class="w">     </span><span class="n">modeo</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="n">invalid</span><span class="w"></span>
+<span class="w">   </span><span class="mi">999</span><span class="w">   </span><span class="n">unknown</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="example">EXAMPLE</h2>
+<p>Sample program</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">program</span> <span class="nv">demo_hue</span>
+<span class="nv">use</span> <span class="nv">M_color</span>, <span class="nv">only</span> : <span class="nv">hue</span>
+<span class="nv">implicit</span> <span class="nv">none</span>
+   <span class="o">!</span>               <span class="nv">NAME</span>        <span class="nv">RGB</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="ss">)</span>            <span class="nv">HLS</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red</span><span class="s1">&#39;</span>,     [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">orange</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">65</span>,  <span class="mi">0</span>  ], [<span class="mi">39</span>,  <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">yellow</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">green</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">cyan</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">180</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">blue</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">240</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta</span><span class="s1">&#39;</span>, [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">300</span>, <span class="mi">50</span>,  <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">black</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hls</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">white</span><span class="s1">&#39;</span>,   [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="o">!</span>               <span class="nv">NAME</span>        <span class="nv">RGB</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">255</span><span class="ss">)</span>           <span class="nv">HSV</span><span class="ss">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">100</span><span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red</span><span class="s1">&#39;</span>,     [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">yellow</span><span class="s1">&#39;</span>,  [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">green</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">cyan</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">180</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">blue</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">240</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta</span><span class="s1">&#39;</span>, [<span class="mi">100</span>, <span class="mi">0</span>,   <span class="mi">100</span>], [<span class="mi">300</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">black</span><span class="s1">&#39;</span>,   [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">0</span>  ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">white</span><span class="s1">&#39;</span>,   [<span class="mi">100</span>, <span class="mi">100</span>, <span class="mi">100</span>], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">100</span>]<span class="ss">)</span>
+
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">gray50</span><span class="s1">&#39;</span>,  [<span class="mi">50</span>,  <span class="mi">50</span>,  <span class="mi">50</span> ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">silver</span><span class="s1">&#39;</span>,  [<span class="mi">75</span>,  <span class="mi">75</span>,  <span class="mi">75</span> ], [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">75</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">red4</span><span class="s1">&#39;</span>,    [<span class="mi">55</span>,  <span class="mi">0</span>,   <span class="mi">0</span>  ], [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">55</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">olive</span><span class="s1">&#39;</span>,   [<span class="mi">50</span>,  <span class="mi">50</span>,  <span class="mi">0</span>  ], [<span class="mi">60</span>,  <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">lime</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">100</span>, <span class="mi">0</span>  ], [<span class="mi">120</span>, <span class="mi">100</span>, <span class="mi">100</span>]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">teal</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">50</span>,  <span class="mi">50</span> ], [<span class="mi">180</span>, <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">navy</span><span class="s1">&#39;</span>,    [<span class="mi">0</span>,   <span class="mi">0</span>,   <span class="mi">50</span> ], [<span class="mi">240</span>, <span class="mi">100</span>, <span class="mi">50</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">purple</span><span class="s1">&#39;</span>,  [<span class="mi">63</span>,  <span class="mi">13</span>,  <span class="mi">94</span> ], [<span class="mi">277</span>, <span class="mi">87</span>,  <span class="mi">94</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">magenta4</span><span class="s1">&#39;</span>,[<span class="mi">55</span>,  <span class="mi">0</span>,   <span class="mi">55</span> ], [<span class="mi">300</span>, <span class="mi">100</span>, <span class="mi">55</span> ]<span class="ss">)</span>
+   <span class="k">call</span> <span class="nl">chk</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">hsv</span><span class="s1">&#39;</span>,<span class="s1">&#39;</span><span class="s">maroon</span><span class="s1">&#39;</span>,  [<span class="mi">69</span>,  <span class="mi">19</span>,  <span class="mi">38</span> ], [<span class="mi">338</span>, <span class="mi">73</span>,  <span class="mi">69</span> ]<span class="ss">)</span>
+<span class="nv">contains</span>
+<span class="nv">subroutine</span> <span class="nv">chk</span><span class="ss">(</span><span class="nv">modelout</span>,<span class="nv">name</span>,<span class="nv">rgb</span>,<span class="nv">other</span><span class="ss">)</span>
+<span class="o">!</span> <span class="nv">given</span> <span class="nv">a</span> <span class="nv">color</span> <span class="nv">convert</span> <span class="nv">to</span> <span class="nv">MODELOUT</span> <span class="nv">and</span> <span class="nv">compare</span> <span class="nv">to</span> <span class="nv">expected</span> <span class="nv">values</span>
+<span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=*</span><span class="ss">)</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>   :: <span class="nv">name</span>
+<span class="nv">integer</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>            :: <span class="nv">rgb</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>, <span class="nv">other</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span>
+<span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=*</span><span class="ss">)</span>,<span class="nv">intent</span><span class="ss">(</span><span class="nv">in</span><span class="ss">)</span>   :: <span class="nv">modelout</span>
+   <span class="nv">real</span>                       :: <span class="nv">val1</span>,<span class="nv">val2</span>,<span class="nv">val3</span>
+   <span class="nv">integer</span>                    :: <span class="nv">status</span>
+   <span class="o">!</span> <span class="nv">convert</span> <span class="nv">RGB</span> <span class="nv">values</span> <span class="nv">to</span> <span class="nv">MODELOUT</span> <span class="nv">values</span>
+   <span class="k">call</span> <span class="nl">hue</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">rgb</span><span class="s1">&#39;</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">1</span><span class="ss">))</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">2</span><span class="ss">))</span>,<span class="nv">REAL</span><span class="ss">(</span><span class="nv">rgb</span><span class="ss">(</span><span class="mi">3</span><span class="ss">))</span>,<span class="o">&amp;</span>
+   <span class="o">&amp;</span> <span class="nv">modelout</span>,<span class="nv">val1</span>,<span class="nv">val2</span>,<span class="nv">val3</span>,<span class="nv">status</span><span class="ss">)</span>
+      <span class="o">!</span> <span class="nv">left</span><span class="o">-</span><span class="nv">justify</span> <span class="nv">name</span> <span class="nv">to</span> <span class="mi">10</span> <span class="nv">characters</span> <span class="nv">or</span> <span class="nv">more</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x)</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> [ <span class="nv">character</span><span class="ss">(</span><span class="nv">len</span><span class="o">=</span><span class="nv">max</span><span class="ss">(</span><span class="mi">10</span>,<span class="nv">len_trim</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)))</span> ::<span class="s1">&#39;</span><span class="s"> </span><span class="s1">&#39;</span><span class="o">//</span><span class="nv">trim</span><span class="ss">(</span><span class="nv">name</span><span class="ss">)</span>]
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x,3(i3,1x))</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> <span class="nv">modelout</span><span class="o">//</span><span class="s1">&#39;</span><span class="s"> EXPECTED</span><span class="s1">&#39;</span>,<span class="nv">other</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,1x,3(i3,1x))</span><span class="s1">&#39;</span>,<span class="nv">advance</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">no</span><span class="s1">&#39;</span><span class="ss">)</span> <span class="o">&amp;</span>
+      <span class="o">&amp;</span> <span class="s1">&#39;</span><span class="s">GOT</span><span class="s1">&#39;</span>,<span class="nv">int</span><span class="ss">(</span>[<span class="nv">val1</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>,<span class="nv">val2</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>,<span class="nv">val3</span><span class="o">+</span><span class="mi">0</span>.<span class="mi">5</span>]<span class="ss">)</span>
+      <span class="nv">write</span><span class="ss">(</span><span class="o">*</span>,<span class="s1">&#39;</span><span class="s">(a,i0)</span><span class="s1">&#39;</span><span class="ss">)</span><span class="s1">&#39;</span><span class="s">STATUS </span><span class="s1">&#39;</span>,<span class="nv">status</span>
+<span class="k">end</span> <span class="nv">subroutine</span> <span class="nv">chk</span>
+<span class="k">end</span> <span class="nv">program</span> <span class="nv">demo_hue</span>
+</code></pre></div>
+
+<p>Results:</p>
+<div class="codehilite"><pre><span></span><code> red       hls EXPECTED   0  50 100 GOT   0  50 100 STATUS 0
+ orange    hls EXPECTED  39  50 100 GOT  39  50 100 STATUS 0
+ yellow    hls EXPECTED  60  50 100 GOT  60  50 100 STATUS 0
+ green     hls EXPECTED 120  50 100 GOT 120  50 100 STATUS 0
+ cyan      hls EXPECTED 180  50 100 GOT 180  50 100 STATUS 0
+ blue      hls EXPECTED 240  50 100 GOT 240  50 100 STATUS 0
+ magenta   hls EXPECTED 300  50 100 GOT 300  50 100 STATUS 0
+ black     hls EXPECTED   0   0   0 GOT   0   0   0 STATUS 0
+ white     hls EXPECTED   0 100   0 GOT   0 100   0 STATUS 0
+ black     hsv EXPECTED   0   0   0 GOT   0   0   0 STATUS 0
+ gray50    hsv EXPECTED   0   0  50 GOT   0   0  50 STATUS 0
+ silver    hsv EXPECTED   0   0  75 GOT   0   0  75 STATUS 0
+ white     hsv EXPECTED   0   0 100 GOT   0   0 100 STATUS 0
+ red4      hsv EXPECTED   0 100  55 GOT   0 100  55 STATUS 0
+ red       hsv EXPECTED   0 100 100 GOT   0 100 100 STATUS 0
+ olive     hsv EXPECTED  60 100  50 GOT  60 100  50 STATUS 0
+ yellow    hsv EXPECTED  60 100 100 GOT  60 100 100 STATUS 0
+ green     hsv EXPECTED 120 100 100 GOT 120 100 100 STATUS 0
+ lime      hsv EXPECTED 120 100 100 GOT 120 100 100 STATUS 0
+ teal      hsv EXPECTED 180 100  50 GOT 180 100  50 STATUS 0
+ cyan      hsv EXPECTED 180 100 100 GOT 180 100 100 STATUS 0
+ navy      hsv EXPECTED 240 100  50 GOT 240 100  50 STATUS 0
+ blue      hsv EXPECTED 240 100 100 GOT 240 100 100 STATUS 0
+ purple    hsv EXPECTED 277  87  94 GOT 277  86  94 STATUS 0
+ magenta4  hsv EXPECTED 300 100  55 GOT 300 100  55 STATUS 0
+ magenta   hsv EXPECTED 300 100 100 GOT 300 100 100 STATUS 0
+ maroon    hsv EXPECTED 338  73  69 GOT 337  72  69 STATUS 0
+</code></pre></div>
+
+<h2 id="author">AUTHOR</h2>
+<div class="codehilite"><pre><span></span><code>John S. Urban
+</code></pre></div>
+
+<h2 id="license">LICENSE</h2>
+<div class="codehilite"><pre><span></span><code>Public Domain
+</code></pre></div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-modei"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>modei</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr1i"></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr1i</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr2i"></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr2i</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr3i"></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr3i</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-modeo"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>modeo</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr1o"></span>
+              real,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr1o</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr2o"></span>
+              real,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr2o</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-clr3o"></span>
+              real,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>clr3o</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-status~2"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">hue</span><span class="p">(</span><span class="n">modei</span><span class="p">,</span><span class="n">clr1i</span><span class="p">,</span><span class="n">clr2i</span><span class="p">,</span><span class="n">clr3i</span><span class="p">,</span><span class="n">modeo</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">! ident_2=&quot;@(#) M_color hue(3f) convert color components from one color model to another&quot;</span>
+
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">modei</span><span class="w"></span>
+<span class="kt">real</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">clr1i</span><span class="p">,</span><span class="n">clr2i</span><span class="p">,</span><span class="n">clr3i</span><span class="w"></span>
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">modeo</span><span class="w"></span>
+<span class="kt">real</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="w"></span>
+<span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+
+<span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">input_color_model</span><span class="p">,</span><span class="n">output_color_model</span><span class="w"></span>
+<span class="kt">real</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="n">c3</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- initialize the status flag.</span>
+<span class="w">   </span><span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="c">!-- set the output colors equal to invalid values</span>
+<span class="w">   </span><span class="n">clr1o</span><span class="o">=-</span><span class="mi">9999</span><span class="mf">9.0</span><span class="w"></span>
+<span class="w">   </span><span class="n">clr2o</span><span class="o">=-</span><span class="mi">9999</span><span class="mf">9.0</span><span class="w"></span>
+<span class="w">   </span><span class="n">clr3o</span><span class="o">=-</span><span class="mi">9999</span><span class="mf">9.0</span><span class="w"></span>
+<span class="c">!-- ensure that the input character strings are lowercase</span>
+<span class="w">   </span><span class="n">input_color_model</span><span class="o">=</span><span class="n">lower</span><span class="p">(</span><span class="n">modei</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="n">output_color_model</span><span class="o">=</span><span class="n">lower</span><span class="p">(</span><span class="n">modeo</span><span class="p">)</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- check for a trivial instance where the input and output model names are the same</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">input_color_model</span><span class="w">  </span><span class="o">==</span><span class="w">  </span><span class="n">output_color_model</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">clr1o</span><span class="o">=</span><span class="n">clr1i</span><span class="w"></span>
+<span class="w">      </span><span class="n">clr2o</span><span class="o">=</span><span class="n">clr2i</span><span class="w"></span>
+<span class="w">      </span><span class="n">clr3o</span><span class="o">=</span><span class="n">clr3i</span><span class="w"></span>
+<span class="w">      </span><span class="n">status</span><span class="o">=-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">   endif</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- check for a transpose of terms, another trivial instance.</span>
+<span class="w">   </span><span class="k">SELECT CASE</span><span class="w"> </span><span class="p">(</span><span class="n">input_color_model</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hls&#39;</span><span class="p">,</span><span class="s1">&#39;hsl&#39;</span><span class="p">,</span><span class="s1">&#39;hvs&#39;</span><span class="p">,</span><span class="s1">&#39;hsv&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">input_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hls&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">output_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hsl&#39;</span><span class="w">   </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">    </span><span class="p">&amp;</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="n">input_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hsl&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">output_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hls&#39;</span><span class="w">   </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">    </span><span class="p">&amp;</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="n">input_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hvs&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">output_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hsv&#39;</span><span class="w">   </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">    </span><span class="p">&amp;</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="n">input_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hsv&#39;</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">output_color_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;hvs&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="n">clr1o</span><span class="o">=</span><span class="n">clr1i</span><span class="w"></span>
+<span class="w">         </span><span class="n">clr2o</span><span class="o">=</span><span class="n">clr3i</span><span class="w"></span>
+<span class="w">         </span><span class="n">clr3o</span><span class="o">=</span><span class="n">clr2i</span><span class="w"></span>
+<span class="w">         </span><span class="n">status</span><span class="o">=-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">         </span><span class="k">return</span>
+<span class="k">      endif</span>
+<span class="k">   END SELECT</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- assign new variables so that the input arguments can&#39;t possibly be changed by subsequent procedures.</span>
+<span class="w">   </span><span class="n">c1</span><span class="o">=</span><span class="n">clr1i</span><span class="w"></span>
+<span class="w">   </span><span class="n">c2</span><span class="o">=</span><span class="n">clr2i</span><span class="w"></span>
+<span class="w">   </span><span class="n">c3</span><span class="o">=</span><span class="n">clr3i</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- first, convert input values to rgb values.</span>
+<span class="w">   </span><span class="k">SELECT CASE</span><span class="w"> </span><span class="p">(</span><span class="n">input_color_model</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hls&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">hlsrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hvs&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">hvsrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hsl&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">hlsrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hsv&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">hvsrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;cmy&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">cmyrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;yiq&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">yiqrgb</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;rgb&#39;</span><span class="p">);</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="n">c1</span><span class="p">;</span><span class="n">g</span><span class="o">=</span><span class="n">c2</span><span class="p">;</span><span class="n">b</span><span class="o">=</span><span class="n">c3</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE </span><span class="n">DEFAULT</span><span class="w"> </span><span class="c">! unknown input model name</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="mi">2</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">   END SELECT</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="w">  </span><span class="o">/=</span><span class="w">  </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="k">then</span>
+<span class="k">      return</span>
+<span class="k">   endif</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="c">!-- then convert from RGB to the desired output values</span>
+<span class="c">!</span>
+<span class="w">   </span><span class="k">SELECT CASE</span><span class="w"> </span><span class="p">(</span><span class="n">output_color_model</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hls&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbhls</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hsl&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbhls</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hvs&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbhvs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;hsv&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbhvs</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;cmy&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbcmy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;rgb&#39;</span><span class="p">);</span><span class="w"> </span><span class="n">clr1o</span><span class="o">=</span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="n">clr2o</span><span class="o">=</span><span class="n">g</span><span class="p">;</span><span class="w"> </span><span class="n">clr3o</span><span class="o">=</span><span class="n">b</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;yiq&#39;</span><span class="p">);</span><span class="w"> </span><span class="k">call </span><span class="n">rgbyiq</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">clr1o</span><span class="p">,</span><span class="n">clr2o</span><span class="p">,</span><span class="n">clr3o</span><span class="p">,</span><span class="n">status</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">CASE </span><span class="n">DEFAULT</span><span class="w"> </span><span class="c">! unknown output model name</span>
+<span class="w">      </span><span class="n">status</span><span class="o">=</span><span class="mi">3</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span>
+<span class="k">   END SELECT</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="w">  </span><span class="o">/=</span><span class="w">  </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="k">then</span>
+<span class="k">      return</span>
+<span class="k">   endif</span><span class="w"></span>
+<span class="c">!-----------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="k">end subroutine </span><span class="n">hue</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              M_color
+ was developed by John S. Urban<br>              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-07-11 02:15 +0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
